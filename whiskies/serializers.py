@@ -63,7 +63,6 @@ class TagSerializer(serializers.ModelSerializer):
 
 class TagSearchSerializer(serializers.ModelSerializer):
 
-    #don't forget to set profile in view
     user = serializers.PrimaryKeyRelatedField(read_only=True)
     tags = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
