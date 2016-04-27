@@ -23,6 +23,11 @@ class Whiskey(models.Model):
     price = models.IntegerField()
     rating = models.IntegerField()
 
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
     class Meta:
         default_related_name = "whiskies"
 
@@ -33,8 +38,11 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, null=True)
 
-    liked_whiskies = models.ManyToManyField(Whiskey)
-    disliked_whiskies = models.ManyToManyField(Whiskey)
+    liked_whiskies = models.ManyToManyField(Whiskey,
+                                            related_name="liked_whiskies")
+    disliked_whiskies = models.ManyToManyField(Whiskey,
+                                            related_name="disliked_whiskies")
+
     #searches = models.ManyToManyField(TagSearch)
 
 
@@ -45,25 +53,26 @@ class Review(models.Model):
     text = models.TextField()
     rating = models.IntegerField(null=True, blank=True)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now_add=True)
+
     class Meta:
         default_related_name = "reviews"
 
 
-class TagSearch(models.Model):
-    user = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag)
-
-    class Meta:
-        default_related_name = "tag_searches"
-
-
 class Tag(models.Model):
+
     title = models.CharField(max_length=255)
 
     whiskies = models.ManyToManyField(Whiskey, through="TagTracker")
 
+    def __str__(self):
+        return self.title
+
+
     class Meta:
         default_related_name = "tags"
+
 
     # overwrite save.
         # if not self.pk get or create tagtracker
@@ -71,6 +80,16 @@ class Tag(models.Model):
         # return rest of the save
     # overwrite delete
         # decrement tag tracker
+
+
+class TagSearch(models.Model):
+    user = models.ForeignKey(User)
+    tags = models.ManyToManyField(Tag)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        default_related_name = "tag_searches"
 
 
 class TagTracker(models.Model):
@@ -81,3 +100,6 @@ class TagTracker(models.Model):
 
     def add_count(self):
         self.count += 1
+
+    def __str__(self):
+        return "{} on {} {} times".format(self.tag, self.whiskey, self.count)
