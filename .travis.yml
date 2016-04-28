@@ -3,7 +3,6 @@ python:
 - 3.5.1
 services:
 - postgresql
-
 env:
 - DJANGO=1.9.5
 before_install:
@@ -24,8 +23,7 @@ after_success:
 deploy:
   provider: heroku
   api_key:
-    secure: Ccwoi9Z1Ln1yHCDyxmJzA8tIYCRXkJ9MNamyy73IAlJs/tHnaYkX2RXCSHFCKuhTdlajhhgiZxic4Rc/0B4R/uCUoUWxVeHYV0bPrV2xZEbAI5qfR+avHwVNVbSP5Yj4UBHTwu7vmvCmj9DIDfvKuNiQDVGOTydHxZYoZQ1JrzwqLNMdVUAtRitxrODwJSUptCOHb9J9DOU+7QkWuNVz+/7BixIZ6obQOIV/klJu0CQivzjKDd2aoCaLhhYguUVBLl+CAPq7Vhd+wGJ4Dv/YNjQsLyM5174WLY/dTGgQ00OL+kI5FjHkr8gHhHrHHTXMvSC4h2oRARNmtB0UEfHaqABMN68csou0KI6bxIXfAkfkR/ubs436mSI4oKEg8/UsieDO/1Z3e1QGPTgiwRajvnrD3pzE2LgZ/06f03BBrO9dZQZw49KCanoypRlLy2zdxrqsvd1VwK71wWuwVNj8pJcy2vC5IBhDVIHzIsAgzVZpa77FbsH5vtCfml72uWR2GdfGjZxauT5DdHCUJMeSIW15VYrOFzIt6FkQS3Fj/PDtGtcPvfMUiWpftQE6p7otevkc41/ZBpi9DFuZKHNirJQKrP98CpVq6Hoe6S/a8znBhYrKTkIh/KRYrbHp3JZAB9PIYWjhN8xUSEQeSmV7u/4WONRN2g75OikHsISYi1s=
+    secure: TPc86AVahQkLO1YveQpuU7fs/3WGHqRKsfozTa3Mu9P1iHnYCYLTQssCc+Ygnw4Na8BFJfA6POB04ZcDa7EMdBbimqooz4DaYT88mxNu32jyQYjm5DZi4rvK0cNqW5+nN+AjCDJ/lW0CPjgF6QWjtyHWuoXWuXlrNVG47QmxkzX/Eh7nGS4PK+/T5gJeLBd1OKb2/mgV52X+m6GyjEr+l3yemTPaCY2pRKOaPSHoxpBrfqwvDQPzd3mYT8ujT9E98vZbsfcj9yiKkv7TpetXgo3j5hdIf4o4oDHf+RWOpMI7uziluuglLC/iRP9XQN4K7++UEW76Q1H54yR4JMnDqWuOPZd+rNuVRQmoj+dbWLKhidzwruV+ixjRr3HJDJYm9CzXeb+4abURvCaRU09L+jCfFMBAZtneLWZlNWejqBpWpmVrB1B8PFerEN5I5qnihpw8gy4smXP4z1f1tLxph+I8rRItoTafDnMnRlUY8RUY/UNqYL5wmdO9NnstHmLUAfB95fZAwpj0vOHfCz/wsJ4+QDpCY1mahVRjRh6mPQPK/rSuWspoGL/g1rN6FeQ8ck77/GkFTlHWpCctWMYzdR6bv2d070ZI3dkSX4Gw09CU/ZxaqQ3aUU1KSyrsUzYi5Hpq+v/GqRLUwZ3oxZo0pvqaHQNHs8WY/kASllpBBaw=
   app: evening-citadel-85778
   on:
     repo: WhiskeyProject/whiskey-api
-  run: 'python manage.py migrate'
