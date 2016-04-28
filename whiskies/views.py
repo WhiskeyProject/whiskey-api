@@ -8,8 +8,8 @@ from rest_framework.response import Response
 
 from whiskies.models import Whiskey, Review, TagSearch, Tag
 from whiskies.serializers import UserSerializer, WhiskeySerializer,\
-    ReviewSerializer, TagSearchSerializer, TagSerializer, TagTrackerSerializer
-
+    ReviewSerializer, TagSearchSerializer, TagSerializer, TagTrackerSerializer, \
+    AddLikedSerializer
 
 """
 Only create/delete Whiskey in the admin.
@@ -24,7 +24,7 @@ class UserListCreate(generics.ListCreateAPIView):
     serializer_class = UserSerializer
 
 
-class UserDetail(generics.RetrieveAPIView):
+class UserDetail(generics.RetrieveUpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -83,10 +83,20 @@ class TagDetailUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
 
-# TagTracker
+class WhiskeyLikeUpdate(APIView):
+    """
+    Put request needs only a whiskey_id.
+    Example: {"whiskey_id": 5}
+    """
 
+    def put(self, request, format=None):
 
-
+        user = request.user
+        serializer = AddLikedSerializer(user, data=request.data)
+        if serializer.is_valid():
+            serializer.save(whiskey_id = request.data["whiskey_id"])
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 

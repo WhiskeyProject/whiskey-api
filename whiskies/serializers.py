@@ -1,30 +1,18 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
+
 from whiskies.models import Whiskey, Profile, Review, TagSearch, Tag,\
     TagTracker
-
-
-class WhiskeySerializer(serializers.ModelSerializer):
-    reviews = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-
-    # might need to go through TagTracker
-    tags = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-
-    class Meta:
-        model = Whiskey
-        fields = "__all__"
 
 
 class ProfileSerializer(serializers.ModelSerializer):
 
     # check that liked and disliked whiskies are displayed
 
-
-
     class Meta:
         model = Profile
-        fields = "__all__"
+        fields = ("user", "liked_whiskies", "disliked_whiskies")
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -33,9 +21,21 @@ class UserSerializer(serializers.ModelSerializer):
     tag_searches = serializers.PrimaryKeyRelatedField(many=True,
                                                       read_only=True)
 
+    profile = ProfileSerializer(read_only=True)
+    password = serializers.CharField(max_length=128, write_only=True)
+
+    whiskey_id = serializers.IntegerField(read_only=True)
+
+    def update(self, instance, validated_data):
+        foo = 'bar'
+        bar = 'foo'
+
+        return super().update(instance, validated_data)
+
     class Meta:
         model = User
-        fields = "__all__"
+        fields = ("id", "username", "password", "tag_searches", "reviews",
+                  "profile", "whiskey_id")
 
 
 class ReviewSerializer(serializers.ModelSerializer):
@@ -51,8 +51,6 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class TagSerializer(serializers.ModelSerializer):
     # I don't think tag cares about tag_searches
-
-    # set whiskey in the view when a tag is created.
 
     whiskies = serializers.PrimaryKeyRelatedField(read_only=True)
 
@@ -73,8 +71,32 @@ class TagSearchSerializer(serializers.ModelSerializer):
 
 class TagTrackerSerializer(serializers.ModelSerializer):
 
-    # Not sure if this is needed for anything.
+    title = serializers.ReadOnlyField(source='tag.title')
 
     class Meta:
         model = TagTracker
+        fields = ("title", "count")
+
+
+class WhiskeySerializer(serializers.ModelSerializer):
+    #reviews = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    reviews = ReviewSerializer(many=True, read_only=True)
+    tags = TagTrackerSerializer(source="tagtracker_set", many=True)
+
+    class Meta:
+        model = Whiskey
         fields = "__all__"
+
+
+class AddLikedSerializer(serializers.Serializer):
+    """
+    For adding a liked whiskey for a user.
+    """
+
+    whiskey_id = serializers.IntegerField(read_only=True)
+
+    def update(self, instance, validated_data):
+
+        instance.profile.add_like(validated_data["whiskey_id"])
+
+        return instance

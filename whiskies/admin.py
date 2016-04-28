@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from whiskies.models import Whiskey, Tag, TagSearch, TagTracker, Review
+from whiskies.models import Whiskey, Tag, TagSearch, TagTracker, Review,\
+    Profile
 
 
 @admin.register(Whiskey)
@@ -17,4 +18,13 @@ class TagAdmin(admin.ModelAdmin):
 class TagTrackerAdmin(admin.ModelAdmin):
     list_display = ("id", "count", "whiskey", "tag")
 
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ("user",)
+
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ("rating", "text", "whiskey", "user")
 

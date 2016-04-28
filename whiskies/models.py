@@ -17,7 +17,7 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 class Whiskey(models.Model):
     title = models.CharField(max_length=255)
     img_url = models.URLField(null=True, blank=True)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
 
     # These will be tied to live data in the future.
     price = models.IntegerField()
@@ -40,9 +40,13 @@ class Profile(models.Model):
 
     liked_whiskies = models.ManyToManyField(Whiskey,
                                             related_name="liked_whiskies")
+
     disliked_whiskies = models.ManyToManyField(Whiskey,
                                             related_name="disliked_whiskies")
 
+    def add_like(self, whiskey_id):
+        self.liked_whiskies.add(Whiskey.objects.get(pk=whiskey_id))
+        self.save()
     #searches = models.ManyToManyField(TagSearch)
 
 
@@ -93,7 +97,7 @@ class TagSearch(models.Model):
 
 
 class TagTracker(models.Model):
-    count = 0
+    count = models.IntegerField(default=0)
 
     whiskey = models.ForeignKey(Whiskey)
     tag = models.ForeignKey(Tag)
