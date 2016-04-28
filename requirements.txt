@@ -1,0 +1,11 @@
+dj-database-url==0.4.1
+Django==1.9.5
+django-cors-headers==1.1.0
+django-debug-toolbar==1.4
+django-extensions==1.6.1
+djangorestframework==3.3.3
+gunicorn==19.4.5
+psycopg2==2.6.1
+six==1.10.0
+sqlparse==0.1.19
+whitenoise==3.0
