@@ -91,9 +91,23 @@ class AddLikedSerializer(serializers.Serializer):
     """
 
     whiskey_id = serializers.IntegerField(read_only=True)
+    action = serializers.CharField(read_only=True)
+    opinion = serializers.CharField(read_only=True)
 
     def update(self, instance, validated_data):
 
-        instance.profile.add_like(validated_data["whiskey_id"])
+        instance.profile.update_likes(**validated_data)
+
+        # if validated_data["action"] == "add":
+        #     if validated_data["opinion"] == "like":
+        #         instance.profile.add_like(validated_data["whiskey_id"])
+        #     elif validated_data["opinion"] == "dislike":
+        #         instance.profile.add_dislike(validated_data["whiskey_id"])
+        #
+        # elif validated_data["action"] == "remove":
+        #     if validated_data["opinion"] == "like":
+        #         instance.profile.add_like(validated_data["whiskey_id"])
+        #     elif validated_data["opinion"] == "dislike":
+        #         instance.profile.add_dislike(validated_data["whiskey_id"])
 
         return instance

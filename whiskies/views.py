@@ -85,8 +85,9 @@ class TagDetailUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
 
 class WhiskeyLikeUpdate(APIView):
     """
-    Put request needs only a whiskey_id.
-    Example: {"whiskey_id": 5}
+    Put request needs a whiskey_id, action ['add', 'remove'], and
+    opinion ['like', 'dislike'].
+    Example: {"whiskey_id": 5, "action": "remove", "opinion": "like"}
     """
 
     def put(self, request, format=None):
@@ -94,7 +95,10 @@ class WhiskeyLikeUpdate(APIView):
         user = request.user
         serializer = AddLikedSerializer(user, data=request.data)
         if serializer.is_valid():
-            serializer.save(whiskey_id=request.data["whiskey_id"])
+            serializer.save(whiskey_id=request.data["whiskey_id"],
+                            action=request.data["action"],
+                            opinion=request.data["opinion"])
+
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

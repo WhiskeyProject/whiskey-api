@@ -91,3 +91,41 @@ class ReviewTest(APITestCase):
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Review.objects.count(), 2)
+
+
+# Test adding and subtracting whiskies to a users likes/dislikes.
+# Check for adding duplicates and removing ones that are not present.
+class ChangeLikesTest(APITestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user(username="Tester",
+                                             password="pass_word")
+        self.whiskey = Whiskey.objects.create(title="test", price=5, rating=5)
+
+
+
+    def test_add_remove_like(self):
+
+        token = Token.objects.get(user_id=self.user.id)
+        url = reverse("change_liked_whiskey")
+
+        self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
+        data = {"whiskey_id": self.whiskey.id,
+                "opinion": "like",
+                "action": "add"}
+
+        response = self.client.put(url, data, format='json')
+
+        num_saved = self.user.profile.liked_whiskies.count()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(num_saved, 1)
+
+        remove_data = {"whiskey_id": self.whiskey.id,
+                       "opinion": "like",
+                       "action": "remove"}
+
+        # fill in other tests
+
+
+
+

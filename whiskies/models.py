@@ -45,10 +45,21 @@ class Profile(models.Model):
     disliked_whiskies = models.ManyToManyField(Whiskey,
                                             related_name="disliked_whiskies")
 
-    def add_like(self, whiskey_id):
-        self.liked_whiskies.add(Whiskey.objects.get(pk=whiskey_id))
+    def update_likes(self, whiskey_id, opinion, action):
+
+        if action == "add":
+            if opinion == "like":
+                self.liked_whiskies.add(Whiskey.objects.get(pk=whiskey_id))
+            elif opinion == "dislike":
+                self.disliked_whiskies.add(Whiskey.objects.get(pk=whiskey_id))
+
+        elif action == "remove":
+            if opinion == "like":
+                self.liked_whiskies.remove(Whiskey.objects.get(pk=whiskey_id))
+            elif opinion == "dislike":
+                self.disliked_whiskies.remove(Whiskey.objects.get(pk=whiskey_id))
+
         self.save()
-    #searches = models.ManyToManyField(TagSearch)
 
 
 class Review(models.Model):
