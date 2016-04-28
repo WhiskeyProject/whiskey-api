@@ -6,6 +6,9 @@ from whiskies.models import Whiskey, Profile, Review, TagSearch, Tag,\
     TagTracker
 
 
+# Add a serializer to display info on a profiles liked whiskies.
+
+
 class ProfileSerializer(serializers.ModelSerializer):
 
     # check that liked and disliked whiskies are displayed
@@ -25,12 +28,6 @@ class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(max_length=128, write_only=True)
 
     whiskey_id = serializers.IntegerField(read_only=True)
-
-    def update(self, instance, validated_data):
-        foo = 'bar'
-        bar = 'foo'
-
-        return super().update(instance, validated_data)
 
     class Meta:
         model = User
