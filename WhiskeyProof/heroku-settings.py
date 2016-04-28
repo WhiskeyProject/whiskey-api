@@ -18,8 +18,8 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 # make sure to include any directories that might be outside of the app/static directories.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../global/'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, '../global/'),
+# )
 
 
