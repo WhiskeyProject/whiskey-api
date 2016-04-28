@@ -94,7 +94,7 @@ class WhiskeyLikeUpdate(APIView):
         user = request.user
         serializer = AddLikedSerializer(user, data=request.data)
         if serializer.is_valid():
-            serializer.save(whiskey_id = request.data["whiskey_id"])
+            serializer.save(whiskey_id=request.data["whiskey_id"])
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
