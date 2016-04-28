@@ -1,0 +1,31 @@
+language: python
+python:
+- 3.5.1
+services:
+- postgresql
+
+env:
+- DJANGO=1.9.5
+before_install:
+- export DJANGO_SETTINGS_MODULE=WhiskeyProof.travis-settings
+- export PYTHONPATH=$HOME/builds/Aaron/WhiskeyProof
+- export PIP_USE_MIRRORS=true
+install:
+- pip install -r requirements.txt
+- pip install django==$DJANGO --quiet
+- pip install psycopg2 --quiet
+before_script:
+- psql -c "CREATE DATABASE whiskey_proof;" -U postgres
+- python manage.py migrate
+script:
+- coverage run --source='.' manage.py test whiskies
+after_success:
+- coveralls
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ccwoi9Z1Ln1yHCDyxmJzA8tIYCRXkJ9MNamyy73IAlJs/tHnaYkX2RXCSHFCKuhTdlajhhgiZxic4Rc/0B4R/uCUoUWxVeHYV0bPrV2xZEbAI5qfR+avHwVNVbSP5Yj4UBHTwu7vmvCmj9DIDfvKuNiQDVGOTydHxZYoZQ1JrzwqLNMdVUAtRitxrODwJSUptCOHb9J9DOU+7QkWuNVz+/7BixIZ6obQOIV/klJu0CQivzjKDd2aoCaLhhYguUVBLl+CAPq7Vhd+wGJ4Dv/YNjQsLyM5174WLY/dTGgQ00OL+kI5FjHkr8gHhHrHHTXMvSC4h2oRARNmtB0UEfHaqABMN68csou0KI6bxIXfAkfkR/ubs436mSI4oKEg8/UsieDO/1Z3e1QGPTgiwRajvnrD3pzE2LgZ/06f03BBrO9dZQZw49KCanoypRlLy2zdxrqsvd1VwK71wWuwVNj8pJcy2vC5IBhDVIHzIsAgzVZpa77FbsH5vtCfml72uWR2GdfGjZxauT5DdHCUJMeSIW15VYrOFzIt6FkQS3Fj/PDtGtcPvfMUiWpftQE6p7otevkc41/ZBpi9DFuZKHNirJQKrP98CpVq6Hoe6S/a8znBhYrKTkIh/KRYrbHp3JZAB9PIYWjhN8xUSEQeSmV7u/4WONRN2g75OikHsISYi1s=
+  app: evening-citadel-85778
+  on:
+    repo: WhiskeyProject/whiskey-api
+  run: 'python manage.py migrate'
