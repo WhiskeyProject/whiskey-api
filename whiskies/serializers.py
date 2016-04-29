@@ -76,7 +76,7 @@ class TagTrackerSerializer(serializers.ModelSerializer):
 
 
 class WhiskeySerializer(serializers.ModelSerializer):
-    #reviews = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
     reviews = ReviewSerializer(many=True, read_only=True)
     tags = TagTrackerSerializer(source="tagtracker_set", many=True)
 
@@ -98,16 +98,13 @@ class AddLikedSerializer(serializers.Serializer):
 
         instance.profile.update_likes(**validated_data)
 
-        # if validated_data["action"] == "add":
-        #     if validated_data["opinion"] == "like":
-        #         instance.profile.add_like(validated_data["whiskey_id"])
-        #     elif validated_data["opinion"] == "dislike":
-        #         instance.profile.add_dislike(validated_data["whiskey_id"])
-        #
-        # elif validated_data["action"] == "remove":
-        #     if validated_data["opinion"] == "like":
-        #         instance.profile.add_like(validated_data["whiskey_id"])
-        #     elif validated_data["opinion"] == "dislike":
-        #         instance.profile.add_dislike(validated_data["whiskey_id"])
-
         return instance
+
+
+# class FilteredWhiskeySerializer(serializers.ModelSerializer):
+#
+#     filter_array = serializers.ListField()
+#
+#     class Meta:
+#         model = Whiskey
+#         fields = "__all__"

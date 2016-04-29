@@ -19,7 +19,8 @@ from django.contrib import admin
 from whiskies.views import UserListCreate, UserDetail, WhiskeyList,\
     WhiskeyDetail, ReviewListCreate, ReviewDetailUpdateDelete,\
     TagSearchListCreate, TagSearchDetailUpdateDelete, TagListCreate,\
-    TagDetailUpdateDelete, WhiskeyLikeUpdate
+    TagDetailUpdateDelete, WhiskeyLikeUpdate, LikedWhiskeyList,\
+    DislikedWhiskeyList
 
 urlpatterns = [
     url(r'^users/$', UserListCreate.as_view(), name="list_users"),
@@ -28,6 +29,11 @@ urlpatterns = [
     url(r'^whiskey/$', WhiskeyList.as_view(), name="list_whiskey"),
     url(r'^whiskey/(?P<pk>\d+)/$', WhiskeyDetail.as_view(),
         name="detail_whiskey"),
+
+    url(r'^likedwhiskey/$', LikedWhiskeyList.as_view(),
+        name="liked_whiskey"),
+    url(r'^dislikedwhiskey/$', DislikedWhiskeyList.as_view(),
+        name="Disliked_whiskey"),
 
     url(r'^changeliked/$', WhiskeyLikeUpdate.as_view(),
         name="change_liked_whiskey"),

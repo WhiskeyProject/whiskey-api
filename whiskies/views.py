@@ -103,7 +103,22 @@ class WhiskeyLikeUpdate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+class LikedWhiskeyList(generics.ListAPIView):
+    queryset = Whiskey.objects.all()
+    serializer_class = WhiskeySerializer
 
+    def get_queryset(self):
+
+        return self.request.user.profile.liked_whiskies.all()
+
+
+class DislikedWhiskeyList(generics.ListAPIView):
+    queryset = Whiskey.objects.all()
+    serializer_class = WhiskeySerializer
+
+    def get_queryset(self):
+
+        return self.request.user.profile.disliked_whiskies.all()
 
 
 
