@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^whiskey/(?P<pk>\d+)/$', WhiskeyDetail.as_view(),
         name="detail_whiskey"),
 
-    url(r'^changedliked/$', WhiskeyLikeUpdate.as_view(),
+    url(r'^changeliked/$', WhiskeyLikeUpdate.as_view(),
         name="change_liked_whiskey"),
 
     url(r'^review/$', ReviewListCreate.as_view(), name="list_review"),

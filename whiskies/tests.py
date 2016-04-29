@@ -102,8 +102,6 @@ class ChangeLikesTest(APITestCase):
                                              password="pass_word")
         self.whiskey = Whiskey.objects.create(title="test", price=5, rating=5)
 
-
-
     def test_add_remove_like(self):
 
         token = Token.objects.get(user_id=self.user.id)
@@ -124,8 +122,32 @@ class ChangeLikesTest(APITestCase):
                        "opinion": "like",
                        "action": "remove"}
 
-        # fill in other tests
+        remove_response = self.client.put(url, remove_data, format='json')
+        new_num_saved = self.user.profile.liked_whiskies.count()
+        self.assertEqual(remove_response.status_code, status.HTTP_200_OK)
+        self.assertEqual(new_num_saved, 0)
 
+    def test_add_remove_dislike(self):
 
+        token = Token.objects.get(user_id=self.user.id)
+        url = reverse("change_liked_whiskey")
 
+        self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
+        data = {"whiskey_id": self.whiskey.id,
+                "opinion": "dislike",
+                "action": "add"}
 
+        response = self.client.put(url, data, format='json')
+
+        num_saved = self.user.profile.disliked_whiskies.count()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(num_saved, 1)
+
+        remove_data = {"whiskey_id": self.whiskey.id,
+                       "opinion": "dislike",
+                       "action": "remove"}
+
+        remove_response = self.client.put(url, remove_data, format='json')
+        new_num_saved = self.user.profile.disliked_whiskies.count()
+        self.assertEqual(remove_response.status_code, status.HTTP_200_OK)
+        self.assertEqual(new_num_saved, 0)
