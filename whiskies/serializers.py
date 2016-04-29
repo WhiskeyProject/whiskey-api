@@ -99,12 +99,3 @@ class AddLikedSerializer(serializers.Serializer):
         instance.profile.update_likes(**validated_data)
 
         return instance
-
-
-# class FilteredWhiskeySerializer(serializers.ModelSerializer):
-#
-#     filter_array = serializers.ListField()
-#
-#     class Meta:
-#         model = Whiskey
-#         fields = "__all__"
