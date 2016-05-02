@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import cloudinary
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'psycopg2',
     'whiskies',
+    'cloudinary',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -155,3 +157,10 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+cloudinary.config(
+  cloud_name="dt4sawqjx",
+  api_key="274364529955563",
+  api_secret=os.environ["CLOUDINARY_SECRET"]
+)

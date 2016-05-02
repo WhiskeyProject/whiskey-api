@@ -11,6 +11,10 @@ from whiskies.serializers import UserSerializer, WhiskeySerializer,\
     ReviewSerializer, TagSearchSerializer, TagSerializer, TagTrackerSerializer, \
     AddLikedSerializer
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 """
 Only create/delete Whiskey in the admin.
 
@@ -119,6 +123,18 @@ class DislikedWhiskeyList(generics.ListAPIView):
     def get_queryset(self):
 
         return self.request.user.profile.disliked_whiskies.all()
+
+
+"""
+Template views, just for local testing
+"""
+
+class AllWhiskey(ListView):
+    template_name = "whiskies/all_whiskies.html"
+    queryset = Whiskey.objects.all()
+    context_object_name = "whiskies"
+
+
 
 
 

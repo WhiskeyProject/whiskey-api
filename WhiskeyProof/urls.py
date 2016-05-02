@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.authtoken.views import obtain_auth_token
 
 from whiskies.views import UserListCreate, UserDetail, WhiskeyList,\
     WhiskeyDetail, ReviewListCreate, ReviewDetailUpdateDelete,\
     TagSearchListCreate, TagSearchDetailUpdateDelete, TagListCreate,\
     TagDetailUpdateDelete, WhiskeyLikeUpdate, LikedWhiskeyList,\
-    DislikedWhiskeyList
+    DislikedWhiskeyList, AllWhiskey
 
 urlpatterns = [
     url(r'^users/$', UserListCreate.as_view(), name="list_users"),
@@ -48,6 +49,10 @@ urlpatterns = [
     url(r'^tagsearch/$', TagSearchListCreate.as_view(), name="list_tagsearch"),
     url(r'^tagsearch/(?P<pk>\d+)/$', TagSearchDetailUpdateDelete.as_view(),
         name="detail_tagsearch"),
+
+    url(r'^allwhiskey/$', AllWhiskey.as_view(), name="test_list"),
+
+    url(r'api-token-auth/$', obtain_auth_token),
 
     url(r'^docs/', include('rest_framework_swagger.urls')),
     url(r'^admin/', admin.site.urls),

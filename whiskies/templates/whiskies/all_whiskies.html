@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for whiskey in whiskies %}
+    <div>
+        {{ whiskey.title }}
+        {% if whiskey.img_url %}
+            <img src="{{ whiskey.img_url }}" height="200" width="200">
+
+        {% endif %}
+
+
+    </div>
+{% endfor %}
+
+</body>
+</html>
