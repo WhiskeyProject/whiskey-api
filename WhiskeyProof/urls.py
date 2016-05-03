@@ -61,4 +61,5 @@ urlpatterns = [
 
     url(r'^docs/', include('rest_framework_swagger.urls')),
     url(r'^admin/', admin.site.urls),
+    url('^', include('django.contrib.auth.urls')),
 ]
