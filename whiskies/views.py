@@ -6,10 +6,10 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from whiskies.models import Whiskey, Review, TagSearch, Tag
+from whiskies.models import Whiskey, Review, TagSearch, Tag, Profile
 from whiskies.serializers import UserSerializer, WhiskeySerializer,\
     ReviewSerializer, TagSearchSerializer, TagSerializer, TagTrackerSerializer, \
-    AddLikedSerializer
+    AddLikedSerializer, ProfileSerializer, TestSerializer
 
 import cloudinary
 import cloudinary.uploader
@@ -21,6 +21,13 @@ Only create/delete Whiskey in the admin.
 notes: double check permissions, might need need to switch some to
 OwnerOrReadOnly.
 """
+
+
+class RetriveProfile(APIView):
+
+    def get(self, instance, format=None):
+        serializer = TestSerializer(instance)
+        return Response(serializer.data)
 
 
 class UserListCreate(generics.ListCreateAPIView):
@@ -129,6 +136,17 @@ class DislikedWhiskeyList(generics.ListAPIView):
     def get_queryset(self):
 
         return self.request.user.profile.disliked_whiskies.all()
+
+
+class SearchList(generics.ListAPIView):
+
+    # Add tag search filter on this view.
+
+    queryset = Whiskey.objects.all()
+    serializer_class = WhiskeySerializer
+
+
+
 
 
 """

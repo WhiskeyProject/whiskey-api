@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import math
 
-from whiskies.models import Whiskey, TagSearch, Tag, TagTracker
+from whiskies.models import Whiskey, Tag, TagTracker
 
 
 def euclidean_distance(v1, v2):
@@ -72,22 +72,21 @@ def main_scores(whiskies, tags):
 def clear_saved(whiskey):
 
     for comp in whiskey.comparables.all():
-        whiskey.comparable.remove(comp)
+        whiskey.comparables.remove(comp)
 
 
-def update_whiskey_comps(number_comps=3):
-    tags = Tag.objects.all()
+def update_whiskey_comps(whiskies, tags, number_comps=3):
 
     # Filter by region once we get those straightened out
-    whiskies = Whiskey.objects.all()
+    #whiskies = Whiskey.objects.all()
 
     score_df = main_scores(whiskies, tags)
 
     for whiskey in whiskies:
         scores = score_df[whiskey.id].copy()
-        scores.sort()
+        scores.sort_values(inplace=True)
 
         clear_saved(whiskey)
 
-        for pk in scores.index[:number_comps]:
-            whiskey.comparable.add(Whiskey.objects.get(pk=pk))
+        # for pk in scores.index[:number_comps]:
+        #     whiskey.comparable.add(Whiskey.objects.get(pk=pk))

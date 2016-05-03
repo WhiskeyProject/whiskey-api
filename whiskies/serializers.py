@@ -6,7 +6,10 @@ from whiskies.models import Whiskey, Profile, Review, TagSearch, Tag,\
     TagTracker
 
 
-# Add a serializer to display info on a profiles liked whiskies.
+
+class TestSerializer(serializers.Serializer):
+
+    user = serializers.PrimaryKeyRelatedField(read_only=True)
 
 
 class ProfileSerializer(serializers.ModelSerializer):
