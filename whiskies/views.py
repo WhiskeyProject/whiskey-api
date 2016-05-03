@@ -5,6 +5,7 @@ from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import permissions
 
 from whiskies.models import Whiskey, Review, TagSearch, Tag, Profile
 from whiskies.serializers import UserSerializer, WhiskeySerializer,\
@@ -26,6 +27,9 @@ OwnerOrReadOnly.
 class UserListCreate(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = [
+        permissions.AllowAny
+    ]
 
 
 class UserDetail(generics.RetrieveUpdateAPIView):
