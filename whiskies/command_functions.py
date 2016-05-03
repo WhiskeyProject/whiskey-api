@@ -77,9 +77,6 @@ def clear_saved(whiskey):
 
 def update_whiskey_comps(whiskies, tags, number_comps=3):
 
-    # Filter by region once we get those straightened out
-    #whiskies = Whiskey.objects.all()
-
     score_df = main_scores(whiskies, tags)
 
     for whiskey in whiskies:
@@ -88,5 +85,5 @@ def update_whiskey_comps(whiskies, tags, number_comps=3):
 
         clear_saved(whiskey)
 
-        # for pk in scores.index[:number_comps]:
-        #     whiskey.comparable.add(Whiskey.objects.get(pk=pk))
+        for pk in scores.index[:number_comps]:
+            whiskey.comparables.add(Whiskey.objects.get(pk=pk))

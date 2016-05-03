@@ -93,7 +93,6 @@ class ReviewTest(APITestCase):
         self.assertEqual(Review.objects.count(), 2)
 
 
-# Test adding and subtracting whiskies to a users likes/dislikes.
 # Check for adding duplicates and removing ones that are not present.
 class ChangeLikesTest(APITestCase):
 
@@ -151,3 +150,6 @@ class ChangeLikesTest(APITestCase):
         new_num_saved = self.user.profile.disliked_whiskies.count()
         self.assertEqual(remove_response.status_code, status.HTTP_200_OK)
         self.assertEqual(new_num_saved, 0)
+
+
+#Comparables

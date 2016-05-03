@@ -6,12 +6,6 @@ from whiskies.models import Whiskey, Profile, Review, TagSearch, Tag,\
     TagTracker
 
 
-
-class TestSerializer(serializers.Serializer):
-
-    user = serializers.PrimaryKeyRelatedField(read_only=True)
-
-
 class ProfileSerializer(serializers.ModelSerializer):
 
     # check that liked and disliked whiskies are displayed
@@ -80,10 +74,21 @@ class TagTrackerSerializer(serializers.ModelSerializer):
         fields = ("title", "count")
 
 
+class CompWhiskeySerializer(serializers.ModelSerializer):
+    """
+    For displaying comparable whiskies on the Whiskey model.
+    """
+
+    class Meta:
+        model = Whiskey
+        fields = ("id", "title")
+
+
 class WhiskeySerializer(serializers.ModelSerializer):
 
     reviews = ReviewSerializer(many=True, read_only=True)
     tags = TagTrackerSerializer(source="tagtracker_set", many=True)
+    comparables = CompWhiskeySerializer(many=True, read_only=True)
 
     class Meta:
         model = Whiskey

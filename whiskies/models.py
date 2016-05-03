@@ -25,7 +25,7 @@ class Whiskey(models.Model):
     rating = models.IntegerField()
 
     comparable = models.ManyToManyField('self', symmetrical=False,
-                                         related_name="comparables")
+                                        related_name="comparables")
 
     created_at = models.DateTimeField(auto_now_add=True)
 
