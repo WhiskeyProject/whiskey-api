@@ -29,6 +29,8 @@ class UserSerializer(serializers.ModelSerializer):
 
     whiskey_id = serializers.IntegerField(read_only=True)
 
+
+
     class Meta:
         model = User
         fields = ("id", "username", "password", "tag_searches", "reviews",

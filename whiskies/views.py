@@ -108,6 +108,9 @@ class WhiskeyLikeUpdate(APIView):
 
 
 class LikedWhiskeyList(generics.ListAPIView):
+    """
+    A GET request returns all of the requesting user's liked whiskies.
+    """
     queryset = Whiskey.objects.all()
     serializer_class = WhiskeySerializer
 
@@ -117,6 +120,9 @@ class LikedWhiskeyList(generics.ListAPIView):
 
 
 class DislikedWhiskeyList(generics.ListAPIView):
+    """
+    A GET request returns all of the requesting user's disliked whiskies.
+    """
     queryset = Whiskey.objects.all()
     serializer_class = WhiskeySerializer
 
