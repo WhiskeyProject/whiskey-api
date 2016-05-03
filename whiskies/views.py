@@ -131,14 +131,32 @@ class DislikedWhiskeyList(generics.ListAPIView):
         return self.request.user.profile.disliked_whiskies.all()
 
 
-class SearchList(generics.ListAPIView):
+class SearchList(generics.ListCreateAPIView):
+    """
+    Filter Whiskies based on tag title querystring.
+    Example: /shoot/?tags=tag1,tag2
+    """
 
-    # Add tag search filter on this view.
-
-    queryset = Whiskey.objects.all()
     serializer_class = WhiskeySerializer
 
+    def get_queryset(self):
+        # Use custom manager?
 
+        TagSearch.objects.create(user=self.request.user)
+
+        tag_titles = self.request.query_params['tags'].split(',')
+
+        qs = Whiskey.objects.all()
+        sorted_qs = sorted(qs, key=lambda x: x.tag_match(tag_titles),
+                           reverse=True)
+        return [x for x in sorted_qs if x.tag_match(tag_titles)]
+
+
+class SearchResults(APIView):
+
+    def post(self, request, format=None):
+
+        test = [Tag.objects.first()]
 
 
 
@@ -150,8 +168,3 @@ class AllWhiskey(ListView):
     template_name = "whiskies/all_whiskies.html"
     queryset = Whiskey.objects.all()
     context_object_name = "whiskies"
-
-
-
-
-

@@ -29,6 +29,15 @@ class Whiskey(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def tag_match(self, tag_list):
+        # Double check if tag_list will be pks, titles, or objects.
+
+        total = 0
+        for tracker in self.tagtracker_set.all():
+            if tracker.tag.title in tag_list:
+                total += tracker.count
+        return total
+
     def __str__(self):
         return self.title
 
