@@ -112,7 +112,8 @@ class Tag(models.Model):
 
 class TagSearch(models.Model):
     user = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag)
+    #tags = models.ManyToManyField(Tag)
+    search_string = models.CharField(max_length=255)
 
     created_at = models.DateTimeField(auto_now_add=True)
 

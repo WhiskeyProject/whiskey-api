@@ -28,3 +28,6 @@ class ProfileAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ("rating", "text", "whiskey", "user")
 
+@admin.register(TagSearch)
+class TagSearchAdmin(admin.ModelAdmin):
+    list_display = ("id", "user", "search_string", "created_at")

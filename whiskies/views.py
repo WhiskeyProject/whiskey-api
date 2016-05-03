@@ -69,6 +69,15 @@ class TagSearchListCreate(generics.ListCreateAPIView):
         serializer.save(user=self.request.user)
 
 
+class UserTagSearchList(generics.ListAPIView):
+
+    serializer_class = TagSearchSerializer
+
+    def get_queryset(self):
+        return TagSearch.objects.filter(
+            user=self.request.user).order_by("created_at")
+
+
 class TagSearchDetailUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = TagSearch.objects.all()
     serializer_class = TagSearchSerializer
@@ -142,7 +151,10 @@ class SearchList(generics.ListCreateAPIView):
     def get_queryset(self):
         # Use custom manager?
 
-        TagSearch.objects.create(user=self.request.user)
+        TagSearch.objects.create(
+            user=self.request.user,
+            search_string=self.request.query_params['tags']
+        )
 
         tag_titles = self.request.query_params['tags'].split(',')
 
@@ -152,11 +164,7 @@ class SearchList(generics.ListCreateAPIView):
         return [x for x in sorted_qs if x.tag_match(tag_titles)]
 
 
-class SearchResults(APIView):
 
-    def post(self, request, format=None):
-
-        test = [Tag.objects.first()]
 
 
 

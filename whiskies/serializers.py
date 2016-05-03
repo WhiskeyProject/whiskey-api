@@ -56,7 +56,7 @@ class TagSerializer(serializers.ModelSerializer):
 class TagSearchSerializer(serializers.ModelSerializer):
 
     user = serializers.PrimaryKeyRelatedField(read_only=True)
-    tags = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    search_string = serializers.CharField()
 
     class Meta:
         model = TagSearch
