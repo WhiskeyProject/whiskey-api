@@ -85,5 +85,7 @@ def update_whiskey_comps(whiskies, tags, number_comps=3):
 
         clear_saved(whiskey)
 
+        # Add similar whiskies to comparables.
+        # Would like to keep in reverse order they are added.
         for pk in scores.index[:number_comps]:
             whiskey.comparables.add(Whiskey.objects.get(pk=pk))

@@ -154,4 +154,4 @@ class ChangeLikesTest(APITestCase):
 
 # Comparables
 # TagSearch default name
-
+# add_tag_to_whiskey

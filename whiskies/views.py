@@ -156,10 +156,12 @@ class SearchList(generics.ListCreateAPIView):
     def get_queryset(self):
         # Use custom manager?
 
-        TagSearch.objects.create(
-            user=self.request.user,
-            search_string=self.request.query_params['tags']
-        )
+        if self.request.user.pk:
+
+            TagSearch.objects.create(
+                user=self.request.user,
+                search_string=self.request.query_params['tags']
+            )
 
         tag_titles = self.request.query_params['tags'].split(',')
 
@@ -170,6 +172,11 @@ class SearchList(generics.ListCreateAPIView):
 
 
 def add_tag_to_whiskey(whiskey, tag):
+    """
+    This will increment the tag tracker for the given whiskey and tag.
+    A new tracker will be created if this is the first time the tag is
+    applied to the whiskey.
+    """
     tracker = TagTracker.objects.filter(whiskey=whiskey, tag=tag).first()
     if not tracker:
         tracker = TagTracker.objects.create(whiskey=whiskey, tag=tag)

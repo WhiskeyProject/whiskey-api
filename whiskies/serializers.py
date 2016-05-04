@@ -33,7 +33,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ReviewSerializer(serializers.ModelSerializer):
-    # Set user and whiskey in the view. Not sure on whiskey though.
 
     user = serializers.PrimaryKeyRelatedField(read_only=True)
     whiskey = serializers.PrimaryKeyRelatedField(read_only=True)
@@ -44,7 +43,6 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class TagSerializer(serializers.ModelSerializer):
-    # I don't think tag cares about tag_searches
 
     whiskies = serializers.PrimaryKeyRelatedField(read_only=True)
 
