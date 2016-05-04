@@ -79,7 +79,7 @@ class CompWhiskeySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Whiskey
-        fields = ("id", "title")
+        fields = ("id", "title", "img_url", "rating", "price", "region")
 
 
 class WhiskeySerializer(serializers.ModelSerializer):
@@ -90,7 +90,8 @@ class WhiskeySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Whiskey
-        fields = "__all__"
+        fields = ("id", "title", "img_url", "region", "price", "rating",
+                  "description", "reviews", "tags", "comparables")
 
 
 class AddLikedSerializer(serializers.Serializer):
