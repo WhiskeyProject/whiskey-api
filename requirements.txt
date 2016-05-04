@@ -10,7 +10,11 @@ django-rest-swagger==0.3.6
 djangorestframework==3.3.3
 docopt==0.6.2
 gunicorn==19.4.5
+numpy==1.11.0
+pandas==0.18.0
 psycopg2==2.6.1
+python-dateutil==2.5.3
+pytz==2016.4
 PyYAML==3.11
 requests==2.9.1
 six==1.10.0
