@@ -156,6 +156,9 @@ class SearchList(generics.ListCreateAPIView):
     def get_queryset(self):
         # Use custom manager?
 
+        # if not self.request.query_params['tags']:
+        #     return []
+
         if self.request.user.pk:
 
             TagSearch.objects.create(
