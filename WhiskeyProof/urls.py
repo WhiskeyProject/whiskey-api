@@ -53,6 +53,8 @@ urlpatterns = [
     url(r'^tagsearch/(?P<pk>\d+)/$', TagSearchDetailUpdateDelete.as_view(),
         name="detail_tagsearch"),
 
+    # tagtowhiskey
+
     url(r'^shoot/$', SearchList.as_view(), name="search_list"),
 
     url(r'^allwhiskey/$', AllWhiskey.as_view(), name="test_list"),

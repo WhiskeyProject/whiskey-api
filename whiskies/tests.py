@@ -152,4 +152,6 @@ class ChangeLikesTest(APITestCase):
         self.assertEqual(new_num_saved, 0)
 
 
-#Comparables
+# Comparables
+# TagSearch default name
+

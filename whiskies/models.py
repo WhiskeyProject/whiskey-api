@@ -127,7 +127,7 @@ class TagSearch(models.Model):
                 self.title = ", ".join(items)
             else:
                 self.title = ", ".join(items[:3]) + "..."
-                
+
         super().save(force_insert, force_update, using, update_fields)
 
     class Meta:
@@ -140,8 +140,8 @@ class TagTracker(models.Model):
     whiskey = models.ForeignKey(Whiskey)
     tag = models.ForeignKey(Tag)
 
-    def add_count(self):
-        self.count += 1
+    def add_count(self, amount=1):
+        self.count += amount
 
     def __str__(self):
         return "{} on {} {} times".format(self.tag, self.whiskey, self.count)

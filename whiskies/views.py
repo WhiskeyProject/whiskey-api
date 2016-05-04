@@ -7,7 +7,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import permissions
 
-from whiskies.models import Whiskey, Review, TagSearch, Tag, Profile
+from whiskies.models import Whiskey, Review, TagSearch, Tag, Profile, \
+    TagTracker
 from whiskies.serializers import UserSerializer, WhiskeySerializer,\
     ReviewSerializer, TagSearchSerializer, TagSerializer, TagTrackerSerializer, \
     AddLikedSerializer, ProfileSerializer
@@ -168,7 +169,12 @@ class SearchList(generics.ListCreateAPIView):
         return [x for x in sorted_qs if x.tag_match(tag_titles)]
 
 
-
+def add_tag_to_whiskey(whiskey, tag):
+    tracker = TagTracker.objects.filter(whiskey=whiskey, tag=tag).first()
+    if not tracker:
+        tracker = TagTracker.objects.create(whiskey=whiskey, tag=tag)
+    tracker.add_count()
+    tracker.save()
 
 
 
