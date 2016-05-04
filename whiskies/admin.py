@@ -30,4 +30,4 @@ class ReviewAdmin(admin.ModelAdmin):
 
 @admin.register(TagSearch)
 class TagSearchAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "search_string", "created_at")
+    list_display = ("id", "title", "user", "search_string", "created_at")

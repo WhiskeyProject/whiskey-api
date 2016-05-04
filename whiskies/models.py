@@ -111,11 +111,24 @@ class Tag(models.Model):
 
 
 class TagSearch(models.Model):
+
+    title = models.CharField(max_length=255, null=True, blank=True)
     user = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag)
     search_string = models.CharField(max_length=255)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+
+        if not self.title:
+            items = self.search_string.split(',')
+            if len(items) <= 3:
+                self.title = ", ".join(items)
+            else:
+                self.title = ", ".join(items[:3]) + "..."
+                
+        super().save(force_insert, force_update, using, update_fields)
 
     class Meta:
         default_related_name = "tag_searches"
