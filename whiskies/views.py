@@ -159,20 +159,26 @@ class SearchList(generics.ListCreateAPIView):
         if "tags" not in self.request.query_params:
             return []
 
-        #  Do not create a TagSearch if user is anonymous or the search would
-        #  be a duplicate for that user.
-        if self.request.user.pk and not TagSearch.objects.filter(
-                user=self.request.user,
-                search_string=self.request.query_params['tags']).first():
+        if self.request.user.pk:
 
-            TagSearch.objects.create(
-                user=self.request.user,
-                search_string=self.request.query_params['tags']
-            )
+            dislikes = self.request.user.profile.disliked_whiskies.all().values_list('pk', flat=True)
+            qs = Whiskey.objects.exclude(pk__in=dislikes)
+
+            #  Do not create a TagSearch if user is anonymous or the search
+            #  would be a duplicate for that user.
+            if not TagSearch.objects.filter(
+                    user=self.request.user,
+                    search_string=self.request.query_params['tags']).first():
+
+                TagSearch.objects.create(
+                    user=self.request.user,
+                    search_string=self.request.query_params['tags']
+                )
+        else:
+            qs = Whiskey.objects.all()
 
         tag_titles = self.request.query_params['tags'].split(',')
 
-        qs = Whiskey.objects.all()
         sorted_qs = sorted(qs, key=lambda x: x.tag_match(tag_titles),
                            reverse=True)
 
