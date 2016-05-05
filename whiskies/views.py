@@ -156,8 +156,8 @@ class SearchList(generics.ListCreateAPIView):
     def get_queryset(self):
         # Use custom manager?
 
-        # if not self.request.query_params['tags']:
-        #     return []
+        if "tags" not in self.request.query_params:
+            return []
 
         if self.request.user.pk:
 
@@ -171,6 +171,7 @@ class SearchList(generics.ListCreateAPIView):
         qs = Whiskey.objects.all()
         sorted_qs = sorted(qs, key=lambda x: x.tag_match(tag_titles),
                            reverse=True)
+
         return [x for x in sorted_qs if x.tag_match(tag_titles)]
 
 

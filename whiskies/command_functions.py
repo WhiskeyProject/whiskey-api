@@ -76,6 +76,9 @@ def clear_saved(whiskey):
 
 
 def update_whiskey_comps(whiskies, tags, number_comps=3):
+    """
+    score_df creates a matrix of Eulidean distances between all whiskies.
+    """
 
     score_df = main_scores(whiskies, tags)
 
@@ -85,7 +88,6 @@ def update_whiskey_comps(whiskies, tags, number_comps=3):
 
         clear_saved(whiskey)
 
-        # Add similar whiskies to comparables.
-        # Would like to keep in reverse order they are added.
+        # Would like to store in reverse order they are added.
         for pk in scores.index[:number_comps]:
             whiskey.comparables.add(Whiskey.objects.get(pk=pk))

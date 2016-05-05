@@ -1,0 +1,18 @@
+[2016-05-04 16:12:54,275][INFO ][node                     ] [Modred the Mystic] version[2.3.2], pid[46404], build[b9e4a6a/2016-04-21T16:03:47Z]
+[2016-05-04 16:12:54,275][INFO ][node                     ] [Modred the Mystic] initializing ...
+[2016-05-04 16:12:56,094][INFO ][plugins                  ] [Modred the Mystic] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-05-04 16:12:56,272][INFO ][env                      ] [Modred the Mystic] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [316.6gb], net total_space [464.6gb], spins? [unknown], types [hfs]
+[2016-05-04 16:12:56,272][INFO ][env                      ] [Modred the Mystic] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-05-04 16:12:56,273][WARN ][env                      ] [Modred the Mystic] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2016-05-04 16:13:03,387][INFO ][node                     ] [Modred the Mystic] initialized
+[2016-05-04 16:13:03,387][INFO ][node                     ] [Modred the Mystic] starting ...
+[2016-05-04 16:13:03,913][INFO ][transport                ] [Modred the Mystic] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2016-05-04 16:13:03,935][INFO ][discovery                ] [Modred the Mystic] elasticsearch/P8jsYM-sRMK4JxWu-OxcXg
+[2016-05-04 16:13:07,028][INFO ][cluster.service          ] [Modred the Mystic] new_master {Modred the Mystic}{P8jsYM-sRMK4JxWu-OxcXg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-05-04 16:13:07,084][INFO ][http                     ] [Modred the Mystic] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2016-05-04 16:13:07,085][INFO ][node                     ] [Modred the Mystic] started
+[2016-05-04 16:13:07,210][INFO ][gateway                  ] [Modred the Mystic] recovered [0] indices into cluster_state
+[2016-05-04 17:42:59,982][INFO ][node                     ] [Modred the Mystic] stopping ...
+[2016-05-04 17:43:00,070][INFO ][node                     ] [Modred the Mystic] stopped
+[2016-05-04 17:43:00,073][INFO ][node                     ] [Modred the Mystic] closing ...
+[2016-05-04 17:43:00,087][INFO ][node                     ] [Modred the Mystic] closed

@@ -25,6 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 SECRET_KEY = os.environ['SECRET_KEY']
+#SECRET_KEY = '4$hq0n_7bm1vn822n)#3pr9j(a&4lo(wac37jk(@gh9#0p8mio'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
+     #'elasticutils',
+     #'elasticsearch',
     'corsheaders',
     'psycopg2',
     'whiskies',
@@ -159,3 +162,11 @@ cloudinary.config(
   api_key="274364529955563",
   api_secret=os.environ["CLOUDINARY_SECRET"]
 )
+
+# Elastic search settings
+# ES_DISABLED = True
+# ES_URLS = ['http://localhost:9200']
+# ES_INDEXES = {'default': 'main_index'}
+# ES_TIMEOUT = 5
+
+
