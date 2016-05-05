@@ -75,7 +75,7 @@ def clear_saved(whiskey):
         whiskey.comparables.remove(comp)
 
 
-def update_whiskey_comps(whiskies, tags, number_comps=3):
+def update_whiskey_comps(whiskies, tags, number_comps=12):
     """
     score_df creates a matrix of Eulidean distances between all whiskies.
     """

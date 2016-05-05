@@ -46,8 +46,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
-     #'elasticutils',
-     #'elasticsearch',
     'corsheaders',
     'psycopg2',
     'whiskies',
@@ -163,10 +161,5 @@ cloudinary.config(
   api_secret=os.environ["CLOUDINARY_SECRET"]
 )
 
-# Elastic search settings
-# ES_DISABLED = True
-# ES_URLS = ['http://localhost:9200']
-# ES_INDEXES = {'default': 'main_index'}
-# ES_TIMEOUT = 5
 
 

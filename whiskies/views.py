@@ -180,7 +180,7 @@ class SearchList(generics.ListCreateAPIView):
             qs = Whiskey.objects.all()
 
         tag_titles = self.request.query_params['tags'].split(',')
-
+        #Whiskey.objects.filter(tagtracker__tag__in=[]).annotate(Sum(tagtra).filter(sum_count__gt=0)
         sorted_qs = sorted(qs, key=lambda x: x.tag_match(tag_titles),
                            reverse=True)
 
