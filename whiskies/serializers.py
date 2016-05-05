@@ -44,11 +44,11 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class TagSerializer(serializers.ModelSerializer):
 
-    whiskies = serializers.PrimaryKeyRelatedField(read_only=True)
+    #whiskies = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = Tag
-        fields = "__all__"
+        fields = ("title",)
 
 
 class TagSearchSerializer(serializers.ModelSerializer):

@@ -161,7 +161,9 @@ class SearchList(generics.ListCreateAPIView):
 
         if self.request.user.pk:
 
-            dislikes = self.request.user.profile.disliked_whiskies.all().values_list('pk', flat=True)
+            dislikes = self.request.user.profile.disliked_whiskies.all().\
+                values_list('pk', flat=True)
+
             qs = Whiskey.objects.exclude(pk__in=dislikes)
 
             #  Do not create a TagSearch if user is anonymous or the search
