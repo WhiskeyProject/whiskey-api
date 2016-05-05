@@ -159,7 +159,11 @@ class SearchList(generics.ListCreateAPIView):
         if "tags" not in self.request.query_params:
             return []
 
-        if self.request.user.pk:
+        #  Do not create a TagSearch if user is anonymous or the search would
+        #  be a duplicate for that user.
+        if self.request.user.pk and not TagSearch.objects.filter(
+                user=self.request.user,
+                search_string=self.request.query_params['tags']).first():
 
             TagSearch.objects.create(
                 user=self.request.user,
