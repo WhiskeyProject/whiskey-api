@@ -1,3 +1,5 @@
+from functools import reduce
+
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.views.generic import ListView
@@ -6,6 +8,8 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import permissions
+import operator
+from django.db.models import Q
 
 from whiskies.models import Whiskey, Review, TagSearch, Tag, Profile, \
     TagTracker
@@ -199,6 +203,27 @@ def add_tag_to_whiskey(whiskey, tag):
     tracker.add_count()
     tracker.save()
 
+
+class TextSearchBox(generics.ListAPIView):
+    """
+    Returns a queryset of all whiskies with a title that contains 1 or more
+    of the search terms.
+
+    example: /searchbox/?terms=term1,term2
+    """
+
+    serializer_class = WhiskeySerializer
+
+    def get_queryset(self):
+
+        # if "terms" not in self.request.query_params:
+        #     return []
+
+        terms = self.request.query_params['terms'].split(',')
+        query = reduce(operator.or_, (Q(title__icontains=item) for item in
+                                       terms))
+        qs = Whiskey.objects.filter(query)
+        return qs
 
 
 """
