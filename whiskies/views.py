@@ -1,6 +1,7 @@
 from functools import reduce
 import logging
 
+from whiskies.command_functions import heroku_search_whiskies
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.views.generic import ListView
@@ -234,6 +235,18 @@ class TextSearchBox(generics.ListAPIView):
         qs = Whiskey.objects.filter(query)
         return qs
 
+
+class TestSearch(APIView):
+    """
+    For elastic search. Can only search on a single word.
+    Will improve later.
+    """
+
+    def get(self, request, format=None):
+        terms = request.query_params['terms']
+        res = heroku_search_whiskies(terms)
+
+        return Response(res['hits']['hits'])
 
 """
 Template views, just for local testing

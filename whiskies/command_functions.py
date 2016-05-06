@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import math
-
+import os, re, logging, base64
 from django.forms import model_to_dict
 
 from whiskies.models import Whiskey, Tag, TagTracker
@@ -113,8 +113,11 @@ def index_all_whiskies():
                  body=model_to_dict(w))
 
 
-def heroku_search_whiskies():
-    import os, re, logging, base64
+
+
+
+def heroku_search_whiskies(searchstring):
+
 
     bonsai = os.environ['BONSAI_URL']
 
@@ -130,12 +133,14 @@ def heroku_search_whiskies():
 
     es = Elasticsearch(es_header)
     es.ping()
-    return es.search()
+    search_body = {"query" : {"term" : { "title" : searchstring }}}
+
+    return es.search(index="whiskies", body=search_body)
 
 
 #res = requests.get('http://localhost:9200')
 
 #body={"query": {"match" : { "title" : "Aberfeldy"}}}
 
-q = {"query" : {"term" : { "title" : "aberlour" }}}
+
 
