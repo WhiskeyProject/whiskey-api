@@ -192,6 +192,7 @@ class SearchList(generics.ListCreateAPIView):
                            reverse=True)
 
         results = [x for x in sorted_qs if x.tag_match(tag_titles)]
+        logger.debug("tag search returned {} whiskies".format(len(results)))
         return results
 
 
