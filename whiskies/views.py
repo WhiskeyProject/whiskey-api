@@ -162,7 +162,6 @@ class SearchList(generics.ListCreateAPIView):
     serializer_class = WhiskeySerializer
 
     def get_queryset(self):
-        # Use custom manager?
 
         if "tags" not in self.request.query_params:
             return []

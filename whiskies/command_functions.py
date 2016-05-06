@@ -113,7 +113,7 @@ def index_all_whiskies():
                  body=model_to_dict(w))
 
 
-def heroku_index_whiskies():
+def heroku_search_whiskies():
     import os, re, logging, base64
 
     bonsai = os.environ['BONSAI_URL']
@@ -130,6 +130,7 @@ def heroku_index_whiskies():
 
     es = Elasticsearch(es_header)
     es.ping()
+    return es.search()
 
 
 #res = requests.get('http://localhost:9200')
