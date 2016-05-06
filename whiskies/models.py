@@ -91,7 +91,7 @@ class Review(models.Model):
 class Tag(models.Model):
 
     title = models.CharField(max_length=255)
-    category = models.CharField(max_length=255, null=True)
+    category = models.CharField(max_length=255, null=True, blank=True)
 
     whiskies = models.ManyToManyField(Whiskey, through="TagTracker")
 

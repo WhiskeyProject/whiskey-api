@@ -188,7 +188,9 @@ class SearchList(generics.ListCreateAPIView):
         sorted_qs = sorted(qs, key=lambda x: x.tag_match(tag_titles),
                            reverse=True)
 
-        return [x for x in sorted_qs if x.tag_match(tag_titles)]
+        results = [x for x in sorted_qs if x.tag_match(tag_titles)]
+        print(len(results))
+        return results
 
 
 def add_tag_to_whiskey(whiskey, tag):

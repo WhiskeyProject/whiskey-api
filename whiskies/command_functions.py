@@ -104,12 +104,37 @@ from elasticsearch import Elasticsearch
 
 
 def index_all_whiskies():
+    """
+    For indexing all whiskies locally
+    """
     es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
     for w in Whiskey.objects.all():
         es.index(index='whiskies', doc_type='whiskey', id=w.id,
                  body=model_to_dict(w))
 
 
+def heroku_index_whiskies():
+    import os, re, logging, base64
+
+    bonsai = os.environ['BONSAI_URL']
+
+    auth = re.search('https\:\/\/(.*)\@', bonsai).group(1).split(':')
+    host = bonsai.replace('https://%s:%s@' % (auth[0], auth[1]), '')
+
+    es_header = [{
+        'host': host,
+        'port': 443,
+        'use_ssl': True,
+        'http_auth': (auth[0], auth[1])
+    }]
+
+    es = Elasticsearch(es_header)
+    es.ping()
+
+
 #res = requests.get('http://localhost:9200')
 
 #body={"query": {"match" : { "title" : "Aberfeldy"}}}
+
+q = {"query" : {"term" : { "title" : "aberlour" }}}
+
