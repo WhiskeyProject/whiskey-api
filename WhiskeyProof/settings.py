@@ -162,4 +162,43 @@ cloudinary.config(
 )
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '[%(levelname)s] %(asctime)s %(module)s %(message)s'
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, "logs/general_logs.log"),
+            'formatter': 'verbose'
+        },
+        'error_file': {
+            'level': "WARNING",
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, "logs/error_logs.log"),
+            'formatter': 'verbose'
+        },
+        'mailer': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        'whiskies': {
+            'handlers': ['file', 'error_file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True
+        }
+    }
+}
 

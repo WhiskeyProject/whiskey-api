@@ -1,4 +1,5 @@
 from functools import reduce
+import logging
 
 from django.shortcuts import render
 from django.contrib.auth.models import User
@@ -27,6 +28,8 @@ Only create/delete Whiskey in the admin.
 notes: double check permissions, might need need to switch some to
 OwnerOrReadOnly.
 """
+
+logger = logging.getLogger(__name__)
 
 
 class UserListCreate(generics.ListCreateAPIView):
@@ -172,14 +175,14 @@ class SearchList(generics.ListCreateAPIView):
 
             #  Do not create a TagSearch if user is anonymous or the search
             #  would be a duplicate for that user.
-            if not TagSearch.objects.filter(
-                    user=self.request.user,
-                    search_string=self.request.query_params['tags']).first():
-
-                TagSearch.objects.create(
-                    user=self.request.user,
-                    search_string=self.request.query_params['tags']
-                )
+            # if not TagSearch.objects.filter(
+            #         user=self.request.user,
+            #         search_string=self.request.query_params['tags']).first():
+            #
+            #     TagSearch.objects.create(
+            #         user=self.request.user,
+            #         search_string=self.request.query_params['tags']
+            #     )
         else:
             qs = Whiskey.objects.all()
 
@@ -189,7 +192,6 @@ class SearchList(generics.ListCreateAPIView):
                            reverse=True)
 
         results = [x for x in sorted_qs if x.tag_match(tag_titles)]
-        print(len(results))
         return results
 
 
