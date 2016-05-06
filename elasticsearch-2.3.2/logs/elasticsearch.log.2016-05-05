@@ -1,0 +1,63 @@
+[2016-05-05 09:20:11,744][INFO ][node                     ] [Pistol] version[2.3.2], pid[48611], build[b9e4a6a/2016-04-21T16:03:47Z]
+[2016-05-05 09:20:11,747][INFO ][node                     ] [Pistol] initializing ...
+[2016-05-05 09:20:13,758][INFO ][plugins                  ] [Pistol] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-05-05 09:20:13,960][INFO ][env                      ] [Pistol] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [316.3gb], net total_space [464.6gb], spins? [unknown], types [hfs]
+[2016-05-05 09:20:13,960][INFO ][env                      ] [Pistol] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-05-05 09:20:13,961][WARN ][env                      ] [Pistol] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2016-05-05 09:20:20,170][INFO ][node                     ] [Pistol] initialized
+[2016-05-05 09:20:20,170][INFO ][node                     ] [Pistol] starting ...
+[2016-05-05 09:20:20,499][INFO ][transport                ] [Pistol] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2016-05-05 09:20:20,567][INFO ][discovery                ] [Pistol] elasticsearch/_yCynxsERq2OqBdZOhF2PQ
+[2016-05-05 09:20:23,660][INFO ][cluster.service          ] [Pistol] new_master {Pistol}{_yCynxsERq2OqBdZOhF2PQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-05-05 09:20:23,683][INFO ][http                     ] [Pistol] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2016-05-05 09:20:23,684][INFO ][node                     ] [Pistol] started
+[2016-05-05 09:20:23,777][INFO ][gateway                  ] [Pistol] recovered [0] indices into cluster_state
+[2016-05-05 09:56:34,929][INFO ][node                     ] [Pistol] stopping ...
+[2016-05-05 09:56:35,000][INFO ][node                     ] [Pistol] stopped
+[2016-05-05 09:56:35,001][INFO ][node                     ] [Pistol] closing ...
+[2016-05-05 09:56:35,012][INFO ][node                     ] [Pistol] closed
+[2016-05-05 09:57:08,533][INFO ][node                     ] [Coach] version[2.3.2], pid[48924], build[b9e4a6a/2016-04-21T16:03:47Z]
+[2016-05-05 09:57:08,556][INFO ][node                     ] [Coach] initializing ...
+[2016-05-05 09:57:09,559][INFO ][plugins                  ] [Coach] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-05-05 09:57:09,592][INFO ][env                      ] [Coach] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [316.3gb], net total_space [464.6gb], spins? [unknown], types [hfs]
+[2016-05-05 09:57:09,592][INFO ][env                      ] [Coach] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-05-05 09:57:09,593][WARN ][env                      ] [Coach] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2016-05-05 09:57:12,058][INFO ][node                     ] [Coach] initialized
+[2016-05-05 09:57:12,058][INFO ][node                     ] [Coach] starting ...
+[2016-05-05 09:57:12,157][INFO ][transport                ] [Coach] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2016-05-05 09:57:12,163][INFO ][discovery                ] [Coach] elasticsearch/8BDeyXpJQKWDUPfPH_l5Vg
+[2016-05-05 09:57:15,208][INFO ][cluster.service          ] [Coach] new_master {Coach}{8BDeyXpJQKWDUPfPH_l5Vg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-05-05 09:57:15,221][INFO ][http                     ] [Coach] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2016-05-05 09:57:15,221][INFO ][node                     ] [Coach] started
+[2016-05-05 09:57:15,248][INFO ][gateway                  ] [Coach] recovered [0] indices into cluster_state
+[2016-05-05 10:18:42,980][INFO ][cluster.metadata         ] [Coach] [movies] creating index, cause [auto(index api)], templates [], shards [5]/[1], mappings [movie]
+[2016-05-05 10:18:43,600][INFO ][cluster.routing.allocation] [Coach] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[movies][0], [movies][0], [movies][4]] ...]).
+[2016-05-05 10:18:43,686][INFO ][cluster.metadata         ] [Coach] [movies] update_mapping [movie]
+[2016-05-05 10:23:10,785][INFO ][cluster.metadata         ] [Coach] [movies] update_mapping [movie]
+[2016-05-05 11:00:21,510][INFO ][cluster.metadata         ] [Coach] [movies] update_mapping [movie]
+[2016-05-05 14:56:25,061][INFO ][node                     ] [Coach] stopping ...
+[2016-05-05 14:56:25,628][INFO ][node                     ] [Coach] stopped
+[2016-05-05 14:56:25,629][INFO ][node                     ] [Coach] closing ...
+[2016-05-05 14:56:25,663][INFO ][node                     ] [Coach] closed
+[2016-05-05 15:00:52,348][INFO ][node                     ] [Wendell Vaughn] version[2.3.2], pid[51582], build[b9e4a6a/2016-04-21T16:03:47Z]
+[2016-05-05 15:00:52,368][INFO ][node                     ] [Wendell Vaughn] initializing ...
+[2016-05-05 15:00:54,101][INFO ][plugins                  ] [Wendell Vaughn] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-05-05 15:00:54,281][INFO ][env                      ] [Wendell Vaughn] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [316.6gb], net total_space [464.6gb], spins? [unknown], types [hfs]
+[2016-05-05 15:00:54,281][INFO ][env                      ] [Wendell Vaughn] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-05-05 15:00:54,282][WARN ][env                      ] [Wendell Vaughn] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2016-05-05 15:01:00,078][INFO ][node                     ] [Wendell Vaughn] initialized
+[2016-05-05 15:01:00,091][INFO ][node                     ] [Wendell Vaughn] starting ...
+[2016-05-05 15:01:00,465][INFO ][transport                ] [Wendell Vaughn] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2016-05-05 15:01:00,478][INFO ][discovery                ] [Wendell Vaughn] elasticsearch/S-Z5aZCBTSWJaFmgDaa0uw
+[2016-05-05 15:01:03,571][INFO ][cluster.service          ] [Wendell Vaughn] new_master {Wendell Vaughn}{S-Z5aZCBTSWJaFmgDaa0uw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-05-05 15:01:03,594][INFO ][http                     ] [Wendell Vaughn] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2016-05-05 15:01:03,594][INFO ][node                     ] [Wendell Vaughn] started
+[2016-05-05 15:01:03,810][INFO ][gateway                  ] [Wendell Vaughn] recovered [1] indices into cluster_state
+[2016-05-05 15:01:04,845][INFO ][cluster.routing.allocation] [Wendell Vaughn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[movies][2]] ...]).
+[2016-05-05 16:20:07,608][INFO ][cluster.metadata         ] [Wendell Vaughn] [sw] creating index, cause [auto(index api)], templates [], shards [5]/[1], mappings [people]
+[2016-05-05 16:20:07,863][INFO ][cluster.routing.allocation] [Wendell Vaughn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[sw][0], [sw][4], [sw][0]] ...]).
+[2016-05-05 16:20:07,928][INFO ][cluster.metadata         ] [Wendell Vaughn] [sw] update_mapping [people]
+[2016-05-05 16:47:06,022][INFO ][cluster.metadata         ] [Wendell Vaughn] [whiskies] creating index, cause [auto(index api)], templates [], shards [5]/[1], mappings [whiskey]
+[2016-05-05 16:47:06,214][INFO ][cluster.routing.allocation] [Wendell Vaughn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[whiskies][4]] ...]).
+[2016-05-05 16:47:06,232][INFO ][cluster.metadata         ] [Wendell Vaughn] [whiskies] update_mapping [whiskey]
+[2016-05-05 16:52:27,158][INFO ][cluster.metadata         ] [Wendell Vaughn] [whiskies] update_mapping [whiskey]

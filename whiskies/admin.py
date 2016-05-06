@@ -11,7 +11,7 @@ class WhiskeyAdmin(admin.ModelAdmin):
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    list_display = ("id", "title")
+    list_display = ("id", "title", "category")
 
 
 @admin.register(TagTracker)

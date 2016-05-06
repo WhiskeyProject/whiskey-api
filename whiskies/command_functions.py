@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import math
 
+from django.forms import model_to_dict
+
 from whiskies.models import Whiskey, Tag, TagTracker
 
 
@@ -91,3 +93,23 @@ def update_whiskey_comps(whiskies, tags, number_comps=12):
         # Would like to store in reverse order they are added.
         for pk in scores.index[:number_comps]:
             whiskey.comparables.add(Whiskey.objects.get(pk=pk))
+
+
+"""
+elastic search functions
+"""
+import requests
+import json
+from elasticsearch import Elasticsearch
+
+
+def index_all_whiskies():
+    es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
+    for w in Whiskey.objects.all():
+        es.index(index='whiskies', doc_type='whiskey', id=w.id,
+                 body=model_to_dict(w))
+
+
+#res = requests.get('http://localhost:9200')
+
+#body={"query": {"match" : { "title" : "Aberfeldy"}}}

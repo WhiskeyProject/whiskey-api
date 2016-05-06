@@ -220,8 +220,11 @@ class TextSearchBox(generics.ListAPIView):
         #     return []
 
         terms = self.request.query_params['terms'].split(',')
-        query = reduce(operator.or_, (Q(title__icontains=item) for item in
-                                       terms))
+
+        query = reduce(operator.or_, (
+            Q(title__icontains=item) for item in terms)
+                       )
+
         qs = Whiskey.objects.filter(query)
         return qs
 
