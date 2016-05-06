@@ -183,6 +183,12 @@ LOGGING = {
             'filename': os.path.join(BASE_DIR, "logs/error_logs.log"),
             'formatter': 'verbose'
         },
+        'tagsearch_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, "logs/tagsearch_logs.log"),
+            'formatter': 'verbose'
+        },
         'mailer': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler'
@@ -196,6 +202,11 @@ LOGGING = {
     'loggers': {
         'whiskies': {
             'handlers': ['file', 'error_file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+        'whiskey_tag': {
+            'handlers': ['tagsearch_file'],
             'level': 'DEBUG',
             'propagate': True
         }

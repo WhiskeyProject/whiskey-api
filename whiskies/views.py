@@ -29,7 +29,8 @@ notes: double check permissions, might need need to switch some to
 OwnerOrReadOnly.
 """
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("whiskies")  #__name__
+tag_logger = logging.getLogger("whiskey_tag")
 
 
 class UserListCreate(generics.ListCreateAPIView):
@@ -192,6 +193,7 @@ class SearchList(generics.ListCreateAPIView):
                            reverse=True)
 
         results = [x for x in sorted_qs if x.tag_match(tag_titles)]
+        tag_logger.debug(self.request.query_params['tags'])
         logger.debug("tag search returned {} whiskies".format(len(results)))
         return results
 
