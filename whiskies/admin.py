@@ -8,6 +8,8 @@ from whiskies.models import Whiskey, Tag, TagSearch, TagTracker, Review,\
 class WhiskeyAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "price", "rating", "img_url")
 
+    search_fields = ["title", "description"]
+
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):

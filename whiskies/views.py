@@ -171,16 +171,16 @@ class SearchList(generics.ListCreateAPIView):
 
         if self.request.user.pk and self.request.user.profile.disliked_whiskies.all():
 
-            # dislikes = self.request.user.profile.disliked_whiskies.all().\
-            #     values_list('pk', flat=True)
+            dislikes = self.request.user.profile.disliked_whiskies.all().\
+                values_list('pk', flat=True)
 
-            dislikes = self.request.user.profile.disliked_whiskies.all()
-
-            qs = Whiskey.objects.exclude(dislikes)
+            #dislikes = self.request.user.profile.disliked_whiskies.all()
+            qs = Whiskey.objects.exclude(pk__in=dislikes)
+            #qs = Whiskey.objects.exclude(dislikes)
         else:
             qs = Whiskey.objects.all()
 
-            # qs = Whiskey.objects.exclude(pk__in=dislikes)
+            #
 
         a = qs.filter(tagtracker__tag__title__in=tag_titles)
         b = a.annotate(tag_count=Sum('tagtracker__count'))
