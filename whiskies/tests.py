@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 
 from rest_framework.authtoken.models import Token
-from whiskies.models import Whiskey, Review, Profile
+from whiskies.models import Whiskey, Review, Profile, Tag, TagTracker
 
 
 class UserTest(APITestCase):
@@ -155,3 +155,37 @@ class ChangeLikesTest(APITestCase):
 # Comparables
 # TagSearch default name
 # add_tag_to_whiskey
+class TagTrackerSearchTest(APITestCase):
+
+    def setUp(self):
+        self.whiskey1 = Whiskey.objects.create(title="whiskey1",
+                                               price=10,
+                                               rating=10)
+        self.whiskey2 = Whiskey.objects.create(title="whiskey2",
+                                               price=20,
+                                               rating=20)
+        self.whiskey3 = Whiskey.objects.create(title="whiskey3",
+                                               price=30,
+                                               rating=30)
+        self.tags = [Tag.objects.create(title="tag{}".format(x))
+                for x in range(1,4)]
+
+    def test_tag_search(self):
+        tracker1 = TagTracker.objects.create(whiskey=self.whiskey1,
+                                             tag=self.tags[0],
+                                             count=5)
+        tracker2 = TagTracker.objects.create(whiskey=self.whiskey3,
+                                             tag=self.tags[0],
+                                             count=3)
+        url = reverse("search_list")
+
+        response = self.client.get(url + "?tags=tag1")
+        results = response.data['results']
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(results[0]['title'], self.whiskey1.title)
+        self.assertEqual(results[1]['title'], self.whiskey3.title)
+        self.assertEqual(len(results), 2)
+
+
+
