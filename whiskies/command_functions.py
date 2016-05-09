@@ -143,4 +143,11 @@ def heroku_search_whiskies(searchstring):
 #body={"query": {"match" : { "title" : "Aberfeldy"}}}
 
 
+"""
+Functions for loading in data.
+"""
+
+
+
+
 

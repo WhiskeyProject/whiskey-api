@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.conf import settings
+from django.db.models import Sum
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
@@ -29,14 +30,13 @@ class Whiskey(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def tag_match(self, tag_list):
-        # Double check if tag_list will be pks, titles, or objects.
-
-        total = 0
-        for tracker in self.tagtracker_set.all():
-            if tracker.tag.title in tag_list:
-                total += tracker.count
-        return total
+    # def tag_match(self, tag_list):
+    #     amount = self.tagtracker_set.filter(tag__title__in=tag_list).aggregate(
+    #         Sum("count"))['count__sum']
+    #     if amount:
+    #         return amount
+    #     else:
+    #         return 0
 
     def __str__(self):
         return self.title

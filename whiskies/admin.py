@@ -6,7 +6,7 @@ from whiskies.models import Whiskey, Tag, TagSearch, TagTracker, Review,\
 
 @admin.register(Whiskey)
 class WhiskeyAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "img_url", "price", "rating")
+    list_display = ("id", "title", "price", "rating", "img_url")
 
 
 @admin.register(Tag)
@@ -16,7 +16,7 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(TagTracker)
 class TagTrackerAdmin(admin.ModelAdmin):
-    list_display = ("id", "count", "whiskey", "tag")
+    list_display = ("id", "tag", "whiskey", "count")
 
 
 @admin.register(Profile)

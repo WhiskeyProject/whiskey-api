@@ -11,7 +11,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import permissions
 import operator
-from django.db.models import Q
+from django.db.models import Q, Sum, Count, Min, Max, Avg
 
 from whiskies.models import Whiskey, Review, TagSearch, Tag, Profile, \
     TagTracker
@@ -167,34 +167,27 @@ class SearchList(generics.ListCreateAPIView):
         if "tags" not in self.request.query_params:
             return []
 
-        if self.request.user.pk:
+        tag_titles = self.request.query_params['tags'].split(',')
 
-            dislikes = self.request.user.profile.disliked_whiskies.all().\
-                values_list('pk', flat=True)
+        if self.request.user.pk and self.request.user.profile.disliked_whiskies.all():
 
-            qs = Whiskey.objects.exclude(pk__in=dislikes)
+            # dislikes = self.request.user.profile.disliked_whiskies.all().\
+            #     values_list('pk', flat=True)
 
-            #  Do not create a TagSearch if user is anonymous or the search
-            #  would be a duplicate for that user.
-            # if not TagSearch.objects.filter(
-            #         user=self.request.user,
-            #         search_string=self.request.query_params['tags']).first():
-            #
-            #     TagSearch.objects.create(
-            #         user=self.request.user,
-            #         search_string=self.request.query_params['tags']
-            #     )
+            dislikes = self.request.user.profile.disliked_whiskies.all()
+
+            qs = Whiskey.objects.exclude(dislikes)
         else:
             qs = Whiskey.objects.all()
 
-        tag_titles = self.request.query_params['tags'].split(',')
-        #Whiskey.objects.filter(tagtracker__tag__in=[]).annotate(Sum(tagtra).filter(sum_count__gt=0)
-        sorted_qs = sorted(qs, key=lambda x: x.tag_match(tag_titles),
-                           reverse=True)
+            # qs = Whiskey.objects.exclude(pk__in=dislikes)
 
-        results = [x for x in sorted_qs if x.tag_match(tag_titles)]
-        tag_logger.debug(self.request.query_params['tags'])
-        logger.debug("tag search returned {} whiskies".format(len(results)))
+        a = qs.filter(tagtracker__tag__title__in=tag_titles)
+        b = a.annotate(tag_count=Sum('tagtracker__count'))
+        results = b.order_by('-tag_count')[:10]
+
+
+        #results = Whiskey.objects.filter(tagtracker__tag__title__in=tag_titles).annotate(tag_count=Sum('tagtracker__count')).order_by('-tag_count')[:10]
         return results
 
 
