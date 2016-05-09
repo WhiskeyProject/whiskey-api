@@ -1,6 +1,8 @@
 from functools import reduce
 import logging
 
+from rest_framework.pagination import PageNumberPagination
+
 from whiskies.command_functions import heroku_search_whiskies
 from django.shortcuts import render
 from django.contrib.auth.models import User
@@ -30,8 +32,14 @@ notes: double check permissions, might need need to switch some to
 OwnerOrReadOnly.
 """
 
-logger = logging.getLogger("whiskies")  #__name__
+logger = logging.getLogger("whiskies")
 tag_logger = logging.getLogger("whiskey_tag")
+
+
+class ShootPagination(PageNumberPagination):
+    page_size = 12
+    page_size_query_param = 'page_size'
+    max_page_size = 120
 
 
 class UserListCreate(generics.ListCreateAPIView):
@@ -161,6 +169,7 @@ class SearchList(generics.ListCreateAPIView):
     """
 
     serializer_class = WhiskeySerializer
+    pagination_class = ShootPagination
 
     def get_queryset(self):
 
@@ -180,7 +189,6 @@ class SearchList(generics.ListCreateAPIView):
         else:
             qs = Whiskey.objects.all()
 
-            #
 
         a = qs.filter(tagtracker__tag__title__in=tag_titles)
         b = a.annotate(tag_count=Sum('tagtracker__count'))
