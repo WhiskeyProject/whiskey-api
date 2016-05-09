@@ -28,9 +28,9 @@ class UserTest(APITestCase):
     def test_retrieve_user(self):
         response = self.client.get(self.url,{"pk": self.user.id},
                                    format="json")
-        self.assertEqual(response.data[0]['username'], self.user.username)
+        self.assertEqual(response.data['results'][0]['username'], self.user.username)
 
-        profile = response.data[0].get('profile', None)
+        profile = response.data['results'][0].get('profile', None)
         self.assertNotEqual(profile, None)
 
 
@@ -46,14 +46,14 @@ class WhiskeyTest(APITestCase):
         url = reverse("list_whiskey")
         response = self.client.get(url, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), Whiskey.objects.count())
+        self.assertEqual(len(response.data['results']), Whiskey.objects.count())
 
     def test_retrieve_whiskey(self):
         url = reverse("list_whiskey")
         whiskey = self.whiskies[0]
         response = self.client.get(url, {"pk": whiskey.id}, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(whiskey.price, response.data[0].get('price', None))
+        self.assertEqual(whiskey.price, response.data['results'][0].get('price', None))
 
 
 class ReviewTest(APITestCase):
@@ -71,13 +71,13 @@ class ReviewTest(APITestCase):
         url = reverse("list_review")
         response = self.client.get(url, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), Review.objects.count())
+        self.assertEqual(len(response.data['results']), Review.objects.count())
 
     def test_retrieve_review(self):
         url = reverse("list_review")
         response = self.client.get(url, {"pk": self.review.id}, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(self.review.text, response.data[0].get('text', None))
+        self.assertEqual(self.review.text, response.data['results'][0].get('text', None))
 
     def test_create_review(self):
         url = reverse("list_review")
