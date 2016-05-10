@@ -243,7 +243,7 @@ class TestSearch(APIView):
 
     def get(self, request, format=None):
         terms = request.query_params['terms']
-        res = heroku_search_whiskies(terms)
+        res = heroku_search_whiskies(terms.split(","))
 
         return Response(res['hits']['hits'])
 

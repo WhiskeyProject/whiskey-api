@@ -134,6 +134,10 @@ def index_all_whiskey_heroku():
 
 
 def heroku_search_whiskies(searchstring):
+    """
+    Main elasticsearch function.
+    :param searchstring: A list of search terms, ie. ['term1', 'term2']
+    """
 
     bonsai = os.environ['BONSAI_URL']
 
@@ -151,12 +155,12 @@ def heroku_search_whiskies(searchstring):
 
     es.ping()
 
-    search_body = {
-        "query": {
-            "term": {"title": searchstring}
-        }
-    }
-
+    # search_body = {
+    #     "query": {
+    #         "term": {"title": searchstring}
+    #     }
+    # }
+    search_body = {"query": {"terms": {"title": searchstring}}}
     return es.search(index="whiskies", body=search_body)
 
 
@@ -187,7 +191,7 @@ def custom_search(search_body):
 Functions for loading in data.
 """
 
-
+#search_body = {"query":{"terms": {"title": ["aberlour", "10"]}}}
 
 
 
