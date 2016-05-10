@@ -210,7 +210,30 @@ def add_tag_to_whiskey(whiskey, tag):
     tracker.save()
 
 
-class TextSearchBox(generics.ListAPIView):
+class TextSearchBox(APIView):
+    """
+    For elastic search. Can only search on a single word.
+    Will improve later.
+    """
+
+    def get(self, request, format=None):
+        terms = request.query_params['terms']
+        res = heroku_search_whiskies(terms.split(","))
+
+        return Response(res['hits']['hits'])
+
+"""
+Template views, just for local testing
+"""
+
+class AllWhiskey(ListView):
+    template_name = "whiskies/all_whiskies.html"
+    queryset = Whiskey.objects.all()
+    context_object_name = "whiskies"
+
+
+#  No longer used, just here in case I need to swap elasticsearch out.
+class PlaceholderSearch(generics.ListAPIView):
     """
     Returns a queryset of all whiskies with a title that contains 1 or more
     of the search terms.
@@ -233,25 +256,3 @@ class TextSearchBox(generics.ListAPIView):
 
         qs = Whiskey.objects.filter(query)
         return qs
-
-
-class TestSearch(APIView):
-    """
-    For elastic search. Can only search on a single word.
-    Will improve later.
-    """
-
-    def get(self, request, format=None):
-        terms = request.query_params['terms']
-        res = heroku_search_whiskies(terms.split(","))
-
-        return Response(res['hits']['hits'])
-
-"""
-Template views, just for local testing
-"""
-
-class AllWhiskey(ListView):
-    template_name = "whiskies/all_whiskies.html"
-    queryset = Whiskey.objects.all()
-    context_object_name = "whiskies"
