@@ -5,6 +5,7 @@ import os, re, logging, base64
 from django.forms import model_to_dict
 
 from whiskies.models import Whiskey, Tag, TagTracker
+from elasticsearch import Elasticsearch
 
 
 def euclidean_distance(v1, v2):
@@ -100,10 +101,10 @@ elastic search functions
 """
 import requests
 import json
-from elasticsearch import Elasticsearch
 
 
-def index_all_whiskies():
+
+def index_all_whiskies_local():
     """
     For indexing all whiskies locally
     """
@@ -113,11 +114,26 @@ def index_all_whiskies():
                  body=model_to_dict(w))
 
 
+def index_all_whiskey_heroku():
+    bonsai = os.environ['BONSAI_URL']
 
+    auth = re.search('https\:\/\/(.*)\@', bonsai).group(1).split(':')
+    host = bonsai.replace('https://%s:%s@' % (auth[0], auth[1]), '')
+
+    es_header = [{
+        'host': host,
+        'port': 443,
+        'use_ssl': True,
+        'http_auth': (auth[0], auth[1])
+    }]
+
+    es = Elasticsearch(es_header)
+    for w in Whiskey.objects.all():
+        es.index(index='whiskies', doc_type='whiskey', id=w.id,
+                 body=model_to_dict(w))
 
 
 def heroku_search_whiskies(searchstring):
-
 
     bonsai = os.environ['BONSAI_URL']
 
@@ -132,13 +148,37 @@ def heroku_search_whiskies(searchstring):
     }]
 
     es = Elasticsearch(es_header)
+
     es.ping()
-    search_body = {"query" : {"term" : { "title" : searchstring }}}
+
+    search_body = {
+        "query": {
+            "term": {"title": searchstring}
+        }
+    }
 
     return es.search(index="whiskies", body=search_body)
 
 
-#res = requests.get('http://localhost:9200')
+search_body = { "terms": { "title": [ "aberlour"] }}
+
+
+def custom_search(search_body):
+    bonsai = os.environ['BONSAI_URL']
+
+    auth = re.search('https\:\/\/(.*)\@', bonsai).group(1).split(':')
+    host = bonsai.replace('https://%s:%s@' % (auth[0], auth[1]), '')
+
+    es_header = [{
+        'host': host,
+        'port': 443,
+        'use_ssl': True,
+        'http_auth': (auth[0], auth[1])
+    }]
+
+    es = Elasticsearch(es_header)
+
+    return es.search(index="whiskies", body=search_body)
 
 #body={"query": {"match" : { "title" : "Aberfeldy"}}}
 

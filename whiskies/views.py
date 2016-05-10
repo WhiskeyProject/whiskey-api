@@ -191,8 +191,7 @@ class SearchList(generics.ListCreateAPIView):
 
         a = qs.filter(tagtracker__tag__title__in=tag_titles)
         b = a.annotate(tag_count=Sum('tagtracker__count'))
-        results = b.order_by('-tag_count')[:10]
-
+        results = b.order_by('-tag_count')
 
         #results = Whiskey.objects.filter(tagtracker__tag__title__in=tag_titles).annotate(tag_count=Sum('tagtracker__count')).order_by('-tag_count')[:10]
         return results
