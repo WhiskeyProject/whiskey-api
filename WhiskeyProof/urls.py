@@ -21,7 +21,8 @@ from whiskies.views import UserListCreate, UserDetail, WhiskeyList,\
     WhiskeyDetail, ReviewListCreate, ReviewDetailUpdateDelete,\
     TagSearchListCreate, TagSearchDetailUpdateDelete, TagListCreate,\
     TagDetailUpdateDelete, WhiskeyLikeUpdate, LikedWhiskeyList,\
-    DislikedWhiskeyList, AllWhiskey, SearchList, UserTagSearchList, TextSearchBox
+    DislikedWhiskeyList, AllWhiskey, SearchList, UserTagSearchList, TextSearchBox, \
+    TestSearch
 
 urlpatterns = [
     url(r'^users/$', UserListCreate.as_view(), name="list_users"),
@@ -54,7 +55,7 @@ urlpatterns = [
         name="detail_tagsearch"),
 
     url(r'^searchbox/$', TextSearchBox.as_view(), name="search_box"),
-    #url(r'^testsearch/$', TestSearch.as_view(), name="test_search"),
+    url(r'^testsearch/$', TestSearch.as_view(), name="test_search"),
 
     url(r'^shoot/$', SearchList.as_view(), name="search_list"),
 

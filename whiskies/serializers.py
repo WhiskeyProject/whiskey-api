@@ -94,7 +94,7 @@ class WhiskeySerializer(serializers.ModelSerializer):
 
 class AddLikedSerializer(serializers.Serializer):
     """
-    For adding a liked whiskey for a user.
+    For updating a profiles liked/disliked whiskies.
     """
 
     whiskey_id = serializers.IntegerField(read_only=True)

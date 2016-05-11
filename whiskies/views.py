@@ -187,6 +187,9 @@ class SearchList(generics.ListCreateAPIView):
         else:
             qs = Whiskey.objects.all()
 
+        # for param in self.request.query_params:
+        #     pass
+
         a = qs.filter(tagtracker__tag__title__in=tag_titles)
         b = a.annotate(tag_count=Sum('tagtracker__count'))
         results = b.order_by('-tag_count')
@@ -218,6 +221,20 @@ class TextSearchBox(APIView):
         res = heroku_search_whiskies(terms.split(","))
         hits = res['hits']['hits']
         return Response([hit["_source"] for hit in hits])
+
+
+class TestSearch(APIView):
+    """
+    For elastic search. Can only search on a single word.
+    Will improve later.
+    """
+
+    def get(self, request, format=None):
+        terms = request.query_params['terms']
+        res = heroku_search_whiskies(terms.split(","))
+        hits = res['hits']['hits']
+        return Response(hits)
+
 
 """
 Template views, just for local testing

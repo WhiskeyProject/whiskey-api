@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db import models
 
 from whiskies.models import Whiskey, Tag, TagSearch, TagTracker, Review,\
     Profile

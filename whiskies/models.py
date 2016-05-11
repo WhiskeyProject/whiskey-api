@@ -30,6 +30,9 @@ class Whiskey(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # def trackers(self):
+    #     return self.tagtracker_set.count()
+
     # def tag_match(self, tag_list):
     #     amount = self.tagtracker_set.filter(tag__title__in=tag_list).aggregate(
     #         Sum("count"))['count__sum']
@@ -90,7 +93,7 @@ class Review(models.Model):
 
 class Tag(models.Model):
 
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, db_index=True)
     category = models.CharField(max_length=255, null=True, blank=True)
 
     whiskies = models.ManyToManyField(Whiskey, through="TagTracker")
@@ -140,6 +143,10 @@ class TagTracker(models.Model):
 
     whiskey = models.ForeignKey(Whiskey)
     tag = models.ForeignKey(Tag)
+
+    class Meta:
+        index_together = [["whiskey", "tag"]]
+
 
     def add_count(self, amount=1):
         self.count += amount
