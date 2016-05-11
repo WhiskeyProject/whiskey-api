@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'django_extensions',
-    'django_elasticsearch',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
