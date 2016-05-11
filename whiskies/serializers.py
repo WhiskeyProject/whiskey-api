@@ -89,7 +89,7 @@ class WhiskeySerializer(serializers.ModelSerializer):
     class Meta:
         model = Whiskey
         fields = ("id", "title", "img_url", "region", "price", "rating",
-                  "description", "reviews", "tags", "comparables")
+                  "description", "reviews", "comparables", "tags")
 
 
 class AddLikedSerializer(serializers.Serializer):

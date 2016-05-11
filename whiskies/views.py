@@ -183,9 +183,7 @@ class SearchList(generics.ListCreateAPIView):
             dislikes = self.request.user.profile.disliked_whiskies.all().\
                 values_list('pk', flat=True)
 
-            #dislikes = self.request.user.profile.disliked_whiskies.all()
             qs = Whiskey.objects.exclude(pk__in=dislikes)
-            #qs = Whiskey.objects.exclude(dislikes)
         else:
             qs = Whiskey.objects.all()
 
@@ -193,7 +191,6 @@ class SearchList(generics.ListCreateAPIView):
         b = a.annotate(tag_count=Sum('tagtracker__count'))
         results = b.order_by('-tag_count')
 
-        #results = Whiskey.objects.filter(tagtracker__tag__title__in=tag_titles).annotate(tag_count=Sum('tagtracker__count')).order_by('-tag_count')[:10]
         return results
 
 
@@ -219,8 +216,8 @@ class TextSearchBox(APIView):
     def get(self, request, format=None):
         terms = request.query_params['terms']
         res = heroku_search_whiskies(terms.split(","))
-
-        return Response(res['hits']['hits'])
+        hits = res['hits']['hits']
+        return Response([hit["_source"] for hit in hits])
 
 """
 Template views, just for local testing

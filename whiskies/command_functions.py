@@ -155,16 +155,8 @@ def heroku_search_whiskies(searchstring):
 
     es.ping()
 
-    # search_body = {
-    #     "query": {
-    #         "term": {"title": searchstring}
-    #     }
-    # }
     search_body = {"query": {"terms": {"title": searchstring}}}
     return es.search(index="whiskies", body=search_body)
-
-
-search_body = { "terms": { "title": [ "aberlour"] }}
 
 
 def custom_search(search_body):
@@ -184,7 +176,7 @@ def custom_search(search_body):
 
     return es.search(index="whiskies", body=search_body)
 
-#body={"query": {"match" : { "title" : "Aberfeldy"}}}
+
 
 
 """
@@ -192,6 +184,6 @@ Functions for loading in data.
 """
 
 #search_body = {"query":{"terms": {"title": ["aberlour", "10"]}}}
-
-
+#search_body = { "terms": { "title": [ "aberlour"] }}
+#body={"query": {"match" : { "title" : "Aberfeldy"}}}
 
