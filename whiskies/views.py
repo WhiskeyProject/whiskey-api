@@ -213,8 +213,7 @@ def add_tag_to_whiskey(whiskey, tag):
 
 class TextSearchBox(APIView):
     """
-    For elastic search. Can only search on a single word.
-    Will improve later.
+    Elasticsearch of Whiskey titles.
     """
 
     def get(self, request, format=None):

@@ -91,6 +91,11 @@ class Review(models.Model):
     class Meta:
         default_related_name = "reviews"
 
+# def populate_reviews(user, whiskies):
+#     for w in whiskies:
+#         for i in range(3):
+#             Review.objects.create(user=user, whiskey=w, title=fake.bs(), text=fake.paragraph(), rating=random.randint(1,100))
+#
 
 class Tag(models.Model):
 
