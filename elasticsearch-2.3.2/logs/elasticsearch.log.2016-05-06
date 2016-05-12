@@ -1,0 +1,384 @@
+[2016-05-06 09:58:53,246][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=b08nlQLGTkevBHeIfDx1mg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5201903c] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [whiskies] QueryParsingException[No query registered for [fuzzy_like_this_field]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-06 09:58:53,251][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=DuE7c5h6SkuGNPhZKHrCiA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5201903c] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [whiskies] QueryParsingException[No query registered for [fuzzy_like_this_field]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-06 09:58:53,251][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=IFnl5MgESb25u91tn6G2Dw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5201903c]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [whiskies] QueryParsingException[No query registered for [fuzzy_like_this_field]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-06 09:58:53,251][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=TbGRVxTqQRCrtVossfSdow]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5201903c] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [whiskies] QueryParsingException[No query registered for [fuzzy_like_this_field]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-06 09:58:53,246][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=RDlMnpQnQ76uNbsLR6UGhA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5201903c] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [whiskies] QueryParsingException[No query registered for [fuzzy_like_this_field]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-06 09:58:53,553][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"fuzzy_like_this_field": {"title": {"like_text": "aberfeldy", "max_query_terms": 4}}}}]]; nested: QueryParsingException[No query registered for [fuzzy_like_this_field]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [whiskies] QueryParsingException[No query registered for [fuzzy_like_this_field]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-06 15:48:32,884][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=b08nlQLGTkevBHeIfDx1mg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4b9d9023] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:48:32,884][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=TbGRVxTqQRCrtVossfSdow]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4b9d9023] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:48:32,884][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=IFnl5MgESb25u91tn6G2Dw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4b9d9023] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:48:32,884][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=DuE7c5h6SkuGNPhZKHrCiA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4b9d9023] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:48:32,884][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=RDlMnpQnQ76uNbsLR6UGhA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4b9d9023]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:48:32,951][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:49:10,641][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=RDlMnpQnQ76uNbsLR6UGhA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7ea503e3] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:49:10,641][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=IFnl5MgESb25u91tn6G2Dw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7ea503e3]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:49:10,641][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=DuE7c5h6SkuGNPhZKHrCiA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7ea503e3] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:49:10,641][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=b08nlQLGTkevBHeIfDx1mg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7ea503e3] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:49:10,641][DEBUG][action.search            ] [Wendell Vaughn] [whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=TbGRVxTqQRCrtVossfSdow]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7ea503e3] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more
+[2016-05-06 15:49:10,685][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+Caused by: SearchParseException[failed to parse search source [_na_]]; nested: ElasticsearchParseException[Failed to derive xcontent];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[Failed to derive xcontent]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:240)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:824)
+	... 12 more

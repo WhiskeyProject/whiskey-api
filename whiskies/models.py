@@ -81,6 +81,7 @@ class Review(models.Model):
 
     user = models.ForeignKey(User)
     whiskey = models.ForeignKey(Whiskey)
+    title = models.CharField(max_length=255)
     text = models.TextField()
     rating = models.IntegerField(null=True, blank=True)
 

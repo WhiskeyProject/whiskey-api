@@ -3,7 +3,8 @@ import logging
 
 from rest_framework.pagination import PageNumberPagination
 
-from whiskies.command_functions import heroku_search_whiskies
+from whiskies.command_functions import heroku_search_whiskies, \
+    local_whiskey_search
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.views.generic import ListView
@@ -231,7 +232,8 @@ class TestSearch(APIView):
 
     def get(self, request, format=None):
         terms = request.query_params['terms']
-        res = heroku_search_whiskies(terms.split(","))
+        #res = heroku_search_whiskies(terms.split(","))
+        res = local_whiskey_search(terms.split(","))
         hits = res['hits']['hits']
         return Response(hits)
 

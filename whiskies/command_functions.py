@@ -103,7 +103,23 @@ import requests
 import json
 
 
+def prep_whiskey(whiskey):
+    """
+    Turn a whiskey object into a dict for indexing into elasticsearch
+    """
+    whiskey_dict = model_to_dict(whiskey)
+    tags = []
+    for track in whiskey.tagtracker_set.all():
+        tags.append({
+            "title": track.tag.title,
+            "count": track.count
+        })
+    whiskey_dict["tags"] = tags
+    return whiskey_dict
 
+
+#  Probably have two different indices.
+#  Set them up for heroku scheduling
 def index_all_whiskies_local():
     """
     For indexing all whiskies locally
@@ -112,6 +128,19 @@ def index_all_whiskies_local():
     for w in Whiskey.objects.all():
         es.index(index='whiskies', doc_type='whiskey', id=w.id,
                  body=model_to_dict(w))
+
+
+def local_whiskey_search(searchstring):
+    es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
+    #search_body = {"query": {"terms": {"title": searchstring}}}
+    search_body = {
+        "query": {
+            "terms": {
+                "tags.title": searchstring
+            }
+        }
+    }
+    return es.search(index="full_whiskies", body=search_body)
 
 
 def index_all_whiskey_heroku():
