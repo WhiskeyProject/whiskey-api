@@ -145,7 +145,7 @@ def local_whiskey_search(searchstring):
                     "sum": {"field": "price"}
                 },
                 "speyside_type": {
-                    "filter": {"term": {"region": "Speyside"}},
+                    "filter": {"term": {"region": "speyside"}},
                     "aggs": {
                         "avg_price": {"avg": {"field": "price"}}
                     }

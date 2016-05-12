@@ -67,6 +67,12 @@ class WhiskeyDetail(generics.RetrieveAPIView):
 
 
 class ReviewListCreate(generics.ListCreateAPIView):
+    """
+    To create a review send a POST request with title, text, whiskey id, and
+     an optional rating from 1-100.
+     Example: {"title": "Test Title", "text": "Review body text",
+     "whiskey": 5, "rating": 90}
+    """
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
