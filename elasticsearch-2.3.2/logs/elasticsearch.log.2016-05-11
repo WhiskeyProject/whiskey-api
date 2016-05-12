@@ -1,0 +1,1018 @@
+[2016-05-11 15:02:05,788][INFO ][cluster.metadata         ] [Wendell Vaughn] [full_whiskies] creating index, cause [auto(index api)], templates [], shards [5]/[1], mappings [full_whiskies]
+[2016-05-11 15:02:07,395][INFO ][cluster.routing.allocation] [Wendell Vaughn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[full_whiskies][4]] ...]).
+[2016-05-11 15:02:07,588][INFO ][cluster.metadata         ] [Wendell Vaughn] [full_whiskies] update_mapping [full_whiskies]
+[2016-05-11 15:28:59,214][WARN ][monitor.jvm              ] [Wendell Vaughn] [gc][young][205533][55] duration [1.2s], collections [1]/[2s], total [1.2s]/[4.7s], memory [83.7mb]->[26.6mb]/[990.7mb], all_pools {[young] [61.2mb]->[792.6kb]/[266.2mb]}{[survivor] [598kb]->[3.9mb]/[33.2mb]}{[old] [21.9mb]->[21.9mb]/[691.2mb]}
+[2016-05-11 15:50:37,672][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@67730757] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:50:37,672][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@67730757] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:50:37,672][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@67730757]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:50:37,672][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@67730757] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:50:37,672][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@67730757] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:50:37,784][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:51:31,165][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2490c0dc]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[match] query does not support [title]]
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:146)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:51:31,165][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2490c0dc] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[match] query does not support [title]]
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:146)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:51:31,165][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2490c0dc] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[match] query does not support [title]]
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:146)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:51:31,165][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2490c0dc] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[match] query does not support [title]]
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:146)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:51:31,165][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2490c0dc] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[match] query does not support [title]]
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:146)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 15:51:31,186][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"match": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[match] query does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[match] query does not support [title]]
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:146)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:27:12,033][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@57025e44] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:27:12,033][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@57025e44] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:27:12,033][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@57025e44] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:27:12,033][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@57025e44] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:27:12,033][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@57025e44]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:27:12,084][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["sweet"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:29:02,766][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@593d11a0]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:29:02,766][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@593d11a0] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:29:02,766][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@593d11a0] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:29:02,766][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@593d11a0] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:29:02,766][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@593d11a0] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:29:02,790][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": {"title": ["sweet"]}, "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:31:08,232][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3134a9bd] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [path]]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:155)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:31:08,233][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3134a9bd]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [path]]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:155)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:31:08,232][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3134a9bd] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [path]]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:155)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:31:08,232][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3134a9bd] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [path]]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:155)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:31:08,232][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3134a9bd] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [path]]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:155)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:31:08,253][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"], "path": "tags"}}}]]; nested: QueryParsingException[[terms] query does not support [path]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [path]]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:155)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:31:42,523][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6a239601]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-11 16:31:42,523][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6a239601] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-11 16:31:42,523][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6a239601] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-11 16:31:42,523][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6a239601] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-11 16:31:42,523][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@6a239601] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-11 16:31:42,564][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"title": ["sweet"]}, "path": "tags"}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [VALUE_STRING]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-11 16:42:14,375][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@60ac79bd] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:42:14,376][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@60ac79bd]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:42:14,376][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@60ac79bd] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:42:14,375][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@60ac79bd] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:42:14,375][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@60ac79bd] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-11 16:42:14,436][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+Caused by: SearchParseException[failed to parse search source [{"query": {"terms": {"tags": {"title": ["spicy"]}}}}]]; nested: QueryParsingException[[terms] query does not support [title] within lookup element];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[terms] query does not support [title] within lookup element]
+	at org.elasticsearch.index.query.TermsQueryParser.parse(TermsQueryParser.java:126)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more

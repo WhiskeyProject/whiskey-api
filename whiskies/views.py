@@ -235,7 +235,7 @@ class TestSearch(APIView):
         #res = heroku_search_whiskies(terms.split(","))
         res = local_whiskey_search(terms.split(","))
         hits = res['hits']['hits']
-        return Response(hits)
+        return Response(res)
 
 
 """

@@ -133,14 +133,29 @@ def index_all_whiskies_local():
 def local_whiskey_search(searchstring):
     es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
     #search_body = {"query": {"terms": {"title": searchstring}}}
+
     search_body = {
-        "query": {
-            "terms": {
-                "tags.title": searchstring
+            "query": {
+                "terms": {
+                    "tags.title": searchstring
+                        }
+            },
+            "aggs": {
+                "avg_count": {
+                    "avg": {"field": "price"}
+                }
             }
         }
-    }
-    return es.search(index="full_whiskies", body=search_body)
+
+    # search_body = {
+    #     "query": {
+    #         "terms": {
+    #             "tags.title": searchstring #, "boost": 2
+    #         }
+    #     }
+    # }
+
+    return es.search(index="full_whiskies", body=search_body, size=3)
 
 
 def index_all_whiskey_heroku():
