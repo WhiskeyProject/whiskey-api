@@ -86,7 +86,8 @@ class ReviewTest(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
 
         data = {"whiskey": self.whiskey.id,
-                "text": "testing"}
+                "text": "testing",
+                "title": "test"}
 
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
