@@ -135,23 +135,37 @@ def local_whiskey_search(searchstring):
     #search_body = {"query": {"terms": {"title": searchstring}}}
 
     search_body = {
-            "query": {
-                "terms": {
-                    "tags.title": searchstring
-                        }
-            },
-            "aggs": {
-                "avg_count": {
-                    "sum": {"field": "price"}
-                },
-                "speyside_type": {
-                    "filter": {"term": {"region": "speyside"}},
-                    "aggs": {
-                        "avg_price": {"avg": {"field": "price"}}
-                    }
-                }
+        "query": {
+            "tag_count": {
+
             }
         }
+    }
+    #
+    # search_body = {
+    #         "query": {
+    #             "terms": {
+    #                 "tags.title": searchstring
+    #                     }
+    #         },
+    #         "aggs": {
+    #             "total_price": {
+    #                 "sum": {"field": "price"}
+    #             },
+    #             "speyside_type": {
+    #                 "filter": {"term": {"region": "speyside"}},
+    #                 "aggs": {
+    #                     "avg_price": {"avg": {"field": "price"}},
+    #                 }
+    #             },
+    #             "tag_count": {
+    #                 "filter": {"terms": {"tags.title": searchstring}},
+    #                 "aggs": {
+    #                     "total_count": {"sum": {"field": "tags.count"}}
+    #                 }
+    #             }
+    #         }
+    #     }
 
     # search_body = {
     #     "query": {

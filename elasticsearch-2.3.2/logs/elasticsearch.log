@@ -1732,3 +1732,1401 @@ Caused by: SearchParseException[Could not find aggregator type [count] in [avg_c
 	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
 	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
 	... 12 more
+[2016-05-12 16:59:47,754][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1028bb79] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 16:59:47,755][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1028bb79] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 16:59:47,755][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1028bb79]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 16:59:47,754][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1028bb79] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 16:59:47,754][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1028bb79] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 16:59:47,792][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:01:08,142][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@628079e] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:01:08,143][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@628079e]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:01:08,143][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@628079e] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:01:08,143][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@628079e] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:01:08,142][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@628079e] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:01:08,176][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags", "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:03:02,886][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@50fc0827] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:03:02,888][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@50fc0827] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:03:02,888][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@50fc0827] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:03:02,888][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@50fc0827]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:03:02,887][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@50fc0827] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:03:02,907][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"path": "tags", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "score_mode": "avg"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 17:03:27,051][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@38ee689a] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:03:27,051][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@38ee689a] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:03:27,051][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@38ee689a]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:03:27,051][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@38ee689a] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:03:27,051][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@38ee689a] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:03:27,063][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:12:51,751][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2b03c905] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:12:51,751][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2b03c905]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:12:51,751][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2b03c905] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:12:51,751][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2b03c905] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:12:51,751][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2b03c905] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:12:51,776][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:39:59,533][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@35bad9b8] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:39:59,534][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@35bad9b8] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:39:59,534][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@35bad9b8] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:39:59,533][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@35bad9b8] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:39:59,533][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@35bad9b8]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:39:59,610][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"terms": {"title": ["old", "chocolate", "coffee"]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:44:56,643][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2dee1a39] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:44:56,643][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2dee1a39] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:44:56,643][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2dee1a39] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:44:56,643][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2dee1a39]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:44:56,643][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2dee1a39] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 17:44:56,709][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags", "score_mode": "avg"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 18:37:22,818][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@597565a6] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 18:37:22,818][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@597565a6] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 18:37:22,818][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@597565a6]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 18:37:22,818][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@597565a6] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 18:37:22,818][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@597565a6] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 18:37:22,912][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+Caused by: SearchParseException[failed to parse search source [{"nested": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: SearchParseException[failed to parse search source. unknown search element [nested]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: SearchParseException[failed to parse search source. unknown search element [nested]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 12 more
+[2016-05-12 19:17:18,991][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2a3ef66e] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:17:18,991][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2a3ef66e]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:17:18,991][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2a3ef66e] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:17:18,991][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2a3ef66e] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:17:18,991][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@2a3ef66e] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:17:19,067][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+Caused by: SearchParseException[failed to parse search source [{"query": {"nested": {"path": "tags", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "score_mode": "avg"}}}]]; nested: QueryParsingException[[nested] nested object under path [tags] is not of nested type];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[nested] nested object under path [tags] is not of nested type]
+	at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:162)
+	at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:18:06,856][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3e1fd47] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:18:06,857][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3e1fd47]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:18:06,857][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3e1fd47] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:18:06,856][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3e1fd47] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:18:06,856][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3e1fd47] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:18:06,963][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+Caused by: SearchParseException[failed to parse search source [{"query": {"score_mode": "avg", "query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}}, "path": "tags"}}]]; nested: QueryParsingException[[_na] query malformed, no field after start_object];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [full_whiskies] QueryParsingException[[_na] query malformed, no field after start_object]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:243)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-05-12 19:22:30,878][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][2], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=5w7_tfTmR5KEy9kzzZJzYg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7253d9b0] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-12 19:22:30,878][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][0], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=fKDXhwzARXKesCc5oO6wsQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7253d9b0] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-12 19:22:30,878][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][3], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=PAq_VowJQcKkO6hBt5zjgg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7253d9b0] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-12 19:22:30,878][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][1], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=KoebFl5lTieY34WVxRsjgw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7253d9b0] lastShard [true]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-12 19:22:30,878][DEBUG][action.search            ] [Wendell Vaughn] [full_whiskies][4], node[S-Z5aZCBTSWJaFmgDaa0uw], [P], v[2], s[STARTED], a[id=Ljb7uA4XTC2NCQdbr5zWmw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7253d9b0]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more
+[2016-05-12 19:22:31,015][DEBUG][action.search            ] [Wendell Vaughn] All shards failed for phase: [query]
+RemoteTransportException[[Wendell Vaughn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+Caused by: SearchParseException[failed to parse search source [{"query": {"bool": {"must": [{"match": {"tags.title": "sweet"}}]}, "query": {}}}]]; nested: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchParseException[failed to parse search source. expected field name but got [START_OBJECT]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 12 more

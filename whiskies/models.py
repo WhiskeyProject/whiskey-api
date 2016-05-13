@@ -89,6 +89,7 @@ class Review(models.Model):
     modified_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        ordering = ["-created_at"]
         default_related_name = "reviews"
 
 # def populate_reviews(user, whiskies):
