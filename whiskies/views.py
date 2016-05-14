@@ -185,13 +185,14 @@ class DislikedWhiskeyList(generics.ListAPIView):
 
 class SearchList(generics.ListCreateAPIView):
     """
-    Filter whiskies based on three optional parameters:
-    tags: The titles of any Tags in the database, the endpoint /tag provides
-    a list.
-    price: 1, 2, or 3 for low, mid, and/or high priced whiskies.
-    region: Filter by one or more regions.
+    Filter whiskies based on three optional parameters.\n
+    <b>tags</b>: The titles of any Tags in the database, the endpoint
+    /tag provides a list.\n
+    <b>price</b>: 1, 2, or 3 for low, mid, and/or high priced whiskies.\n
+    <b>region</b>: Filter by one or more regions.\n
 
-    An example of a valid query: /shoot/?tags=chocolate&region=highland&price=1
+    For example a valid query could look like 
+    "/shoot/?region=highland&tags=chocolate&price=1"
 
     The price ranges are broken down as:
     1: price <=40
