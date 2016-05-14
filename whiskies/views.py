@@ -185,13 +185,18 @@ class DislikedWhiskeyList(generics.ListAPIView):
 
 class SearchList(generics.ListCreateAPIView):
     """
-    Filter Whiskies based on tag title querystring.
-    Example: /shoot/?tags=tag1,tag2
+    Filter whiskies based on three optional parameters:
+    tags: The titles of any Tags in the database, the endpoint /tag provides
+    a list.
+    price: 1, 2, or 3 for low, mid, and/or high priced whiskies.
+    region: Filter by one or more regions.
 
-    For prices ranges:
+    An example of a valid query: /shoot/?tags=chocolate&region=highland&price=1
+
+    The price ranges are broken down as:
     1: price <=40
-    2: >40 price <= 75
-    3: >75 price
+    2: 40< price <= 75
+    3: 75< price
     """
 
     serializer_class = WhiskeySerializer
