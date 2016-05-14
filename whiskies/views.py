@@ -191,7 +191,7 @@ class SearchList(generics.ListCreateAPIView):
     <b>price</b>: 1, 2, or 3 for low, mid, and/or high priced whiskies.\n
     <b>region</b>: Filter by one or more regions.\n
 
-    For example a valid query could look like 
+    For example a valid query could look like
     "/shoot/?region=highland&tags=chocolate&price=1"
 
     The price ranges are broken down as:
@@ -225,7 +225,7 @@ class SearchList(generics.ListCreateAPIView):
                             '3': [x for x in range(76, 300)]}
             prices = []
             for price in self.request.query_params["price"]:
-                prices += price_ranges[price]
+                prices += price_ranges.get(price, [])
 
             qs = qs.filter(price__in=prices)
 
@@ -238,6 +238,13 @@ class SearchList(generics.ListCreateAPIView):
             results = b.order_by('-tag_count')
 
             return results
+
+
+class RegionList(APIView):
+
+    def get(self, request, format=None):
+        data = Whiskey.objects.all().values("region").annotate(number=Count("pk"))
+        return Response(data)
 
 
 class TextSearchBox(APIView):

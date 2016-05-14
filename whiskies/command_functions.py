@@ -341,3 +341,16 @@ mapping = {
     }
 }
 """
+region_changes = {
+"Island ": "Island",
+"Tennessee": "American",
+"Tennessee ": "American",
+"American ": "American",
+"Australia": "Other",
+"Blend": "Other",
+"Sweden": "Other",
+"Lowland": "Other",
+"Wheat": "Other",
+"India": "Other",
+"Taiwan": "Other",
+"Canada": "Other"}
