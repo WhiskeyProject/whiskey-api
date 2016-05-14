@@ -134,13 +134,11 @@ def local_whiskey_search(searchstring):
     es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
     #search_body = {"query": {"terms": {"title": searchstring}}}
 
-    search_body = {
-        "query": {
-            "tag_count": {
 
-            }
-        }
-    }
+
+
+
+    # Top level agg that works
     #
     # search_body = {
     #         "query": {
@@ -167,15 +165,73 @@ def local_whiskey_search(searchstring):
     #         }
     #     }
 
+
+
+    #Nested agg
+    #https://www.elastic.co/guide/en/elasticsearch/guide/current/nested-aggregation.html
+    #
     # search_body = {
     #     "query": {
     #         "terms": {
-    #             "tags.title": searchstring #, "boost": 2
+    #             "tags.title": searchstring
+    #         },
+    #         "aggs": {
+    #             "tags": {
+    #                 "nested": {
+    #                     "path": "tags"
+    #                 },
+    #             },
+    #             # "query": {
+    #             #     "match": {}
+    #             # },
+    #             "aggs": {
+    #                 "by_region": {
+    #                     "region_histogram": {
+    #                         "field": "region"
+    #                     },
+    #                     "aggs": {
+    #                         "avg_count": {
+    #                             "avg": {
+    #                                 "field": "tags.count"
+    #                             }
+    #                         }
+    #                     }
+    #                 }
+    #             }
+    #         }
+    #
+    #         }
+    #     }
+
+
+    # Nested search
+
+    # search_body = {
+    #     "query": {
+    #         "nested": {
+    #             "path": "tags",
+    #             "query": {
+    #                 "match_all": {
+    #                     "tags.title": searchstring
+    #                 }
+    #             }
     #         }
     #     }
     # }
 
-    return es.search(index="full_whiskies", body=search_body, size=3)
+    search_body = {
+        "query": {
+            "bool": {
+                "must": [
+                    {"term": {"tags.title": "sweet"}},
+                    {"term": {"tags.title": "amber"}},
+                    {"term": {"tags.title": "rich"}}
+                ]
+            }
+        }
+    }
+
+    return es.search(index="full_whiskies", body=search_body, size=400)
 
 
 def index_all_whiskey_heroku():
@@ -251,3 +307,37 @@ Functions for loading in data.
 #search_body = { "terms": { "title": [ "aberlour"] }}
 #body={"query": {"match" : { "title" : "Aberfeldy"}}}
 
+
+mapping = {
+    "tag_whiskey": {
+        "properties": {
+
+            "tags": {
+                "type": "nested",
+                "properties": {
+                    "title": {"type": "string"},
+                    "count": {"type": "short"}
+                }
+            }
+        }
+    }
+}
+
+
+"""
+mapping = {
+    "trip": {
+        "properties": {
+            "duration": {"type": "integer"},
+            "start_date": {"type": "string"},
+            "start_station": {"type": "string", "index": "not_analyzed"},
+            "start_terminal": {"type": "integer"},
+            "end_date": {"type": "string"},
+            "end_station": {"type": "string", "index": "not_analyzed"},
+            "end_terminal": {"type": "integer"},
+            "bike_id": {"type": "string"},
+            "subscriber": {"type": "string"}
+        }
+    }
+}
+"""

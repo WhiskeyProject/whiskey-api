@@ -29,7 +29,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ("id", "rating", "text", "whiskey", "user")
+    list_display = ("id", "title", "rating", "text", "whiskey", "user")
 
 @admin.register(TagSearch)
 class TagSearchAdmin(admin.ModelAdmin):

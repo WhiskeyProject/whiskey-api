@@ -37,6 +37,20 @@ logger = logging.getLogger("whiskies")
 tag_logger = logging.getLogger("whiskey_tag")
 
 
+def add_tag_to_whiskey(whiskey, tag):
+    """
+    This will increment the tag tracker for the given whiskey and tag.
+    A new tracker will be created if this is the first time the tag is
+    applied to the whiskey.
+    """
+    tracker = TagTracker.objects.filter(whiskey=whiskey, tag=tag).first()
+    if not tracker:
+        tracker = TagTracker.objects.create(whiskey=whiskey, tag=tag)
+    tracker.add_count()
+    tracker.save()
+
+
+
 class ShootPagination(PageNumberPagination):
     page_size = 12
     page_size_query_param = 'page_size'
@@ -173,17 +187,17 @@ class SearchList(generics.ListCreateAPIView):
     """
     Filter Whiskies based on tag title querystring.
     Example: /shoot/?tags=tag1,tag2
+
+    For prices ranges:
+    1: price <=40
+    2: >40 price <= 75
+    3: >75 price
     """
 
     serializer_class = WhiskeySerializer
     pagination_class = ShootPagination
 
     def get_queryset(self):
-
-        if "tags" not in self.request.query_params:
-            return []
-
-        tag_titles = self.request.query_params['tags'].split(',')
 
         if self.request.user.pk and self.request.user.profile.disliked_whiskies.all():
 
@@ -194,27 +208,30 @@ class SearchList(generics.ListCreateAPIView):
         else:
             qs = Whiskey.objects.all()
 
-        # for param in self.request.query_params:
-        #     pass
+        if "region" in self.request.query_params:
+            regions = self.request.query_params['region'].split(',')
+            regions = [x.capitalize() for x in regions]
+            qs = qs.filter(region__in=regions)
 
-        a = qs.filter(tagtracker__tag__title__in=tag_titles)
-        b = a.annotate(tag_count=Sum('tagtracker__count'))
-        results = b.order_by('-tag_count')
+        if "price" in self.request.query_params:
+            price_ranges = {'1': [x for x in range(1,41)],
+                            '2': [x for x in range(41, 76)],
+                            '3': [x for x in range(76, 300)]}
+            prices = []
+            for price in self.request.query_params["price"]:
+                prices += price_ranges[price]
 
-        return results
+            qs = qs.filter(price__in=prices)
 
+        if "tags" not in self.request.query_params:
+            return qs
+        else:
+            tag_titles = self.request.query_params['tags'].split(',')
+            a = qs.filter(tagtracker__tag__title__in=tag_titles)
+            b = a.annotate(tag_count=Sum('tagtracker__count'))
+            results = b.order_by('-tag_count')
 
-def add_tag_to_whiskey(whiskey, tag):
-    """
-    This will increment the tag tracker for the given whiskey and tag.
-    A new tracker will be created if this is the first time the tag is
-    applied to the whiskey.
-    """
-    tracker = TagTracker.objects.filter(whiskey=whiskey, tag=tag).first()
-    if not tracker:
-        tracker = TagTracker.objects.create(whiskey=whiskey, tag=tag)
-    tracker.add_count()
-    tracker.save()
+            return results
 
 
 class TextSearchBox(APIView):
@@ -229,22 +246,8 @@ class TextSearchBox(APIView):
         return Response([hit["_source"] for hit in hits])
 
 
-class TestSearch(APIView):
-    """
-    For elastic search. Can only search on a single word.
-    Will improve later.
-    """
-
-    def get(self, request, format=None):
-        terms = request.query_params['terms']
-        #res = heroku_search_whiskies(terms.split(","))
-        res = local_whiskey_search(terms.split(","))
-        hits = res['hits']['hits']
-        return Response(res)
-
-
 """
-Template views, just for local testing
+Unused views for local testing or future development.
 """
 
 class AllWhiskey(ListView):
@@ -277,3 +280,21 @@ class PlaceholderSearch(generics.ListAPIView):
 
         qs = Whiskey.objects.filter(query)
         return qs
+
+
+class TestSearch(APIView):
+    """
+    For converting the shoot/ endpoint from sql queries to elasticsearch.
+    Not currently in use.
+    """
+
+    def get(self, request, format=None):
+        terms = request.query_params['terms']
+        #res = heroku_search_whiskies(terms.split(","))
+        res = local_whiskey_search(terms.split(","))
+        ids = [item["_source"]["id"] for item in res['hits']['hits']]
+        qs = Whiskey.objects.filter(id__in=ids)
+        sorted_qs = sorted(qs, key=lambda x: x.tag_match(terms.split(",")), reverse=True)
+        serializer = WhiskeySerializer(sorted_qs, many=True)
+
+        return Response(serializer.data)

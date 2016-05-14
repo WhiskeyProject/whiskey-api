@@ -33,13 +33,13 @@ class Whiskey(models.Model):
     # def trackers(self):
     #     return self.tagtracker_set.count()
 
-    # def tag_match(self, tag_list):
-    #     amount = self.tagtracker_set.filter(tag__title__in=tag_list).aggregate(
-    #         Sum("count"))['count__sum']
-    #     if amount:
-    #         return amount
-    #     else:
-    #         return 0
+    def tag_match(self, tag_list):
+        amount = self.tagtracker_set.filter(tag__title__in=tag_list).aggregate(
+            Sum("count"))['count__sum']
+        if amount:
+            return amount
+        else:
+            return 0
 
     def __str__(self):
         return self.title
