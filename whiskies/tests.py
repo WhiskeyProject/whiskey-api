@@ -1,11 +1,10 @@
 from django.core.urlresolvers import reverse
-from django.test import TestCase
 from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.test import APITestCase
 
 from rest_framework.authtoken.models import Token
-from whiskies.models import Whiskey, Review, Profile, Tag, TagTracker
+from whiskies.models import Whiskey, Review, Tag, TagTracker
 
 
 class UserTest(APITestCase):
@@ -158,6 +157,9 @@ class ChangeLikesTest(APITestCase):
 
 
 class TagTrackerSearchTest(APITestCase):
+    """
+    Testing for tagtracker creation and searches at the shoot endpoint.
+    """
 
     def setUp(self):
         self.whiskey1 = Whiskey.objects.create(title="whiskey1",
