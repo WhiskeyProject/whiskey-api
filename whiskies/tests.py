@@ -5,6 +5,7 @@ from rest_framework.test import APITestCase
 
 from rest_framework.authtoken.models import Token
 from whiskies.models import Whiskey, Review, Tag, TagTracker
+from whiskies.views import add_tag_to_whiskey
 
 
 class UserTest(APITestCase):
@@ -158,21 +159,38 @@ class ChangeLikesTest(APITestCase):
 
 class TagTrackerSearchTest(APITestCase):
     """
-    Testing for tagtracker creation and searches at the shoot endpoint.
+    Test for tagtracker creation.
+    Test shoot endpoint with tag, price, and region filters.
     """
 
     def setUp(self):
         self.whiskey1 = Whiskey.objects.create(title="whiskey1",
                                                price=10,
-                                               rating=10)
+                                               rating=10,
+                                               region="A")
         self.whiskey2 = Whiskey.objects.create(title="whiskey2",
-                                               price=20,
-                                               rating=20)
+                                               price=50,
+                                               rating=20,
+                                               region="A")
         self.whiskey3 = Whiskey.objects.create(title="whiskey3",
-                                               price=30,
-                                               rating=30)
+                                               price=90,
+                                               rating=30,
+                                               region="B")
+
         self.tags = [Tag.objects.create(title="tag{}".format(x))
-                for x in range(1,4)]
+                     for x in range(1, 4)]
+
+        self.url = reverse("search_list")
+
+    def test_tagtracker_add_count(self):
+        tracker = TagTracker.objects.create(whiskey=self.whiskey1,
+                                            tag=self.tags[0],
+                                            count=2)
+        tracker.add_count()
+        self.assertEqual(tracker.count, 3)
+        
+        tracker.add_count(5)
+        self.assertEqual(tracker.count, 8)
 
     def test_tag_search(self):
         tracker1 = TagTracker.objects.create(whiskey=self.whiskey1,
@@ -181,9 +199,8 @@ class TagTrackerSearchTest(APITestCase):
         tracker2 = TagTracker.objects.create(whiskey=self.whiskey3,
                                              tag=self.tags[0],
                                              count=3)
-        url = reverse("search_list")
 
-        response = self.client.get(url + "?tags=tag1")
+        response = self.client.get(self.url + "?tags=tag1")
         results = response.data['results']
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -191,10 +208,31 @@ class TagTrackerSearchTest(APITestCase):
         self.assertEqual(results[1]['title'], self.whiskey3.title)
         self.assertEqual(len(results), 2)
 
+    def test_price_search(self):
+        response = self.client.get(self.url + "?price=1")
+        results = response.data['results']
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(results), 1)
+
+        response = self.client.get(self.url + "?price=1,3")
+        results = response.data['results']
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(results), 2)
+
+    def test_region_search(self):
+        response = self.client.get(self.url + "?region=a")
+        results = response.data['results']
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(results), 2)
+
+        response = self.client.get(self.url + "?price=3&region=a")
+        results = response.data['results']
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertFalse(results)
 
 
-# Expand tagsearch to cover region and price
-# Throw in a region endpoint test as well.
+class AddTagToWhiskeyTest:
+    pass
 
 # Comparables
 # TagSearch default name
