@@ -118,7 +118,7 @@ class UserTagSearchList(generics.ListAPIView):
 
     def get_queryset(self):
         return TagSearch.objects.filter(
-            user=self.request.user).order_by("created_at")
+            user=self.request.user)
 
 
 class TagSearchDetailUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
@@ -272,46 +272,3 @@ class AllWhiskey(ListView):
     queryset = Whiskey.objects.all()
     context_object_name = "whiskies"
 
-
-#  No longer used, just here in case I need to swap elasticsearch out.
-class PlaceholderSearch(generics.ListAPIView):
-    """
-    Returns a queryset of all whiskies with a title that contains 1 or more
-    of the search terms.
-
-    example: /searchbox/?terms=term1,term2
-    """
-
-    serializer_class = WhiskeySerializer
-
-    def get_queryset(self):
-
-        # if "terms" not in self.request.query_params:
-        #     return []
-
-        terms = self.request.query_params['terms'].split(',')
-
-        query = reduce(operator.or_, (
-            Q(title__icontains=item) for item in terms)
-                       )
-
-        qs = Whiskey.objects.filter(query)
-        return qs
-
-
-class TestSearch(APIView):
-    """
-    For converting the shoot/ endpoint from sql queries to elasticsearch.
-    Not currently in use.
-    """
-
-    def get(self, request, format=None):
-        terms = request.query_params['terms']
-        #res = heroku_search_whiskies(terms.split(","))
-        res = local_whiskey_search(terms.split(","))
-        ids = [item["_source"]["id"] for item in res['hits']['hits']]
-        qs = Whiskey.objects.filter(id__in=ids)
-        sorted_qs = sorted(qs, key=lambda x: x.tag_match(terms.split(",")), reverse=True)
-        serializer = WhiskeySerializer(sorted_qs, many=True)
-
-        return Response(serializer.data)

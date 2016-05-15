@@ -143,6 +143,7 @@ class TagSearch(models.Model):
 
     class Meta:
         default_related_name = "tag_searches"
+        ordering = ["-created_at"]
 
 
 class TagTracker(models.Model):
