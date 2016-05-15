@@ -241,9 +241,13 @@ class SearchList(generics.ListCreateAPIView):
 
 
 class RegionList(APIView):
+    """
+    All unique whiskey regions with 'number' equal to their number of
+    occurances in the database.
+    """
 
     def get(self, request, format=None):
-        data = Whiskey.objects.all().values("region").annotate(number=Count("pk"))
+        data = Whiskey.objects.values("region").annotate(number=Count("pk"))
         return Response(data)
 
 

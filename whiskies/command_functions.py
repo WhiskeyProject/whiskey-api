@@ -97,160 +97,29 @@ def update_whiskey_comps(whiskies, tags, number_comps=12):
 
 
 """
-elastic search functions
+Elastic search functions.
+Some indexing and future tag search functions have been saved locally.
 """
-import requests
-import json
-
-
-def prep_whiskey(whiskey):
-    """
-    Turn a whiskey object into a dict for indexing into elasticsearch
-    """
-    whiskey_dict = model_to_dict(whiskey)
-    tags = []
-    for track in whiskey.tagtracker_set.all():
-        tags.append({
-            "title": track.tag.title,
-            "count": track.count
-        })
-    whiskey_dict["tags"] = tags
-    return whiskey_dict
-
-
-#  Probably have two different indices.
-#  Set them up for heroku scheduling
-def index_all_whiskies_local():
-    """
-    For indexing all whiskies locally
-    """
-    es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
-    for w in Whiskey.objects.all():
-        es.index(index='whiskies', doc_type='whiskey', id=w.id,
-                 body=model_to_dict(w))
 
 
 def local_whiskey_search(searchstring):
     es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
-    #search_body = {"query": {"terms": {"title": searchstring}}}
+    search_body = {"query": {"terms": {"title": searchstring}}}
 
-
-
-
-
-    # Top level agg that works
-    #
-    # search_body = {
-    #         "query": {
-    #             "terms": {
-    #                 "tags.title": searchstring
-    #                     }
-    #         },
-    #         "aggs": {
-    #             "total_price": {
-    #                 "sum": {"field": "price"}
-    #             },
-    #             "speyside_type": {
-    #                 "filter": {"term": {"region": "speyside"}},
-    #                 "aggs": {
-    #                     "avg_price": {"avg": {"field": "price"}},
-    #                 }
-    #             },
-    #             "tag_count": {
-    #                 "filter": {"terms": {"tags.title": searchstring}},
-    #                 "aggs": {
-    #                     "total_count": {"sum": {"field": "tags.count"}}
-    #                 }
-    #             }
-    #         }
-    #     }
-
-
-
-    #Nested agg
-    #https://www.elastic.co/guide/en/elasticsearch/guide/current/nested-aggregation.html
-    #
-    # search_body = {
-    #     "query": {
-    #         "terms": {
-    #             "tags.title": searchstring
-    #         },
-    #         "aggs": {
-    #             "tags": {
-    #                 "nested": {
-    #                     "path": "tags"
-    #                 },
-    #             },
-    #             # "query": {
-    #             #     "match": {}
-    #             # },
-    #             "aggs": {
-    #                 "by_region": {
-    #                     "region_histogram": {
-    #                         "field": "region"
-    #                     },
-    #                     "aggs": {
-    #                         "avg_count": {
-    #                             "avg": {
-    #                                 "field": "tags.count"
-    #                             }
-    #                         }
-    #                     }
-    #                 }
-    #             }
-    #         }
-    #
-    #         }
-    #     }
-
-
-    # Nested search
 
     # search_body = {
     #     "query": {
-    #         "nested": {
-    #             "path": "tags",
-    #             "query": {
-    #                 "match_all": {
-    #                     "tags.title": searchstring
-    #                 }
-    #             }
+    #         "bool": {
+    #             "must": [
+    #                 {"term": {"tags.title": "sweet"}},
+    #                 {"term": {"tags.title": "amber"}},
+    #                 {"term": {"tags.title": "rich"}}
+    #             ]
     #         }
     #     }
     # }
 
-    search_body = {
-        "query": {
-            "bool": {
-                "must": [
-                    {"term": {"tags.title": "sweet"}},
-                    {"term": {"tags.title": "amber"}},
-                    {"term": {"tags.title": "rich"}}
-                ]
-            }
-        }
-    }
-
     return es.search(index="full_whiskies", body=search_body, size=400)
-
-
-def index_all_whiskey_heroku():
-    bonsai = os.environ['BONSAI_URL']
-
-    auth = re.search('https\:\/\/(.*)\@', bonsai).group(1).split(':')
-    host = bonsai.replace('https://%s:%s@' % (auth[0], auth[1]), '')
-
-    es_header = [{
-        'host': host,
-        'port': 443,
-        'use_ssl': True,
-        'http_auth': (auth[0], auth[1])
-    }]
-
-    es = Elasticsearch(es_header)
-    for w in Whiskey.objects.all():
-        es.index(index='whiskies', doc_type='whiskey', id=w.id,
-                 body=model_to_dict(w))
 
 
 def heroku_search_whiskies(searchstring):
@@ -278,79 +147,3 @@ def heroku_search_whiskies(searchstring):
     search_body = {"query": {"terms": {"title": searchstring}}}
     return es.search(index="whiskies", body=search_body)
 
-
-def custom_search(search_body):
-    bonsai = os.environ['BONSAI_URL']
-
-    auth = re.search('https\:\/\/(.*)\@', bonsai).group(1).split(':')
-    host = bonsai.replace('https://%s:%s@' % (auth[0], auth[1]), '')
-
-    es_header = [{
-        'host': host,
-        'port': 443,
-        'use_ssl': True,
-        'http_auth': (auth[0], auth[1])
-    }]
-
-    es = Elasticsearch(es_header)
-
-    return es.search(index="whiskies", body=search_body)
-
-
-
-
-"""
-Functions for loading in data.
-"""
-
-#search_body = {"query":{"terms": {"title": ["aberlour", "10"]}}}
-#search_body = { "terms": { "title": [ "aberlour"] }}
-#body={"query": {"match" : { "title" : "Aberfeldy"}}}
-
-
-mapping = {
-    "tag_whiskey": {
-        "properties": {
-
-            "tags": {
-                "type": "nested",
-                "properties": {
-                    "title": {"type": "string"},
-                    "count": {"type": "short"}
-                }
-            }
-        }
-    }
-}
-
-
-"""
-mapping = {
-    "trip": {
-        "properties": {
-            "duration": {"type": "integer"},
-            "start_date": {"type": "string"},
-            "start_station": {"type": "string", "index": "not_analyzed"},
-            "start_terminal": {"type": "integer"},
-            "end_date": {"type": "string"},
-            "end_station": {"type": "string", "index": "not_analyzed"},
-            "end_terminal": {"type": "integer"},
-            "bike_id": {"type": "string"},
-            "subscriber": {"type": "string"}
-        }
-    }
-}
-"""
-region_changes = {
-"Island ": "Island",
-"Tennessee": "American",
-"Tennessee ": "American",
-"American ": "American",
-"Australia": "Other",
-"Blend": "Other",
-"Sweden": "Other",
-"Lowland": "Other",
-"Wheat": "Other",
-"India": "Other",
-"Taiwan": "Other",
-"Canada": "Other"}
