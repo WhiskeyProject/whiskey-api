@@ -8,6 +8,7 @@ from rest_framework.test import APITestCase
 from whiskies.command_functions import get_tag_counts, create_features_dict, \
     update_whiskey_comps, clear_saved, create_scores, main_scores
 from whiskies.models import Whiskey, Review, Tag, TagTracker
+from whiskies.views import add_tag_to_whiskey
 
 
 class UserTest(APITestCase):
@@ -197,10 +198,12 @@ class TagTrackerSearchTest(APITestCase):
     def test_tag_search(self):
         tracker1 = TagTracker.objects.create(whiskey=self.whiskey1,
                                              tag=self.tags[0],
-                                             count=5)
+                                             count=5,
+                                             normalized_count=5)
         tracker2 = TagTracker.objects.create(whiskey=self.whiskey3,
                                              tag=self.tags[0],
-                                             count=3)
+                                             count=3,
+                                             normalized_count=3)
 
         response = self.client.get(self.url + "?tags=tag1")
         results = response.data['results']
@@ -259,17 +262,21 @@ class ComparablesTest(APITestCase):
 
         TagTracker.objects.create(whiskey=self.whiskey1,
                                   tag=self.tags[0],
-                                  count=2)
+                                  count=2,
+                                  normalized_count=2)
         TagTracker.objects.create(whiskey=self.whiskey1,
                                   tag=self.tags[1],
-                                  count=3)
+                                  count=3,
+                                  normalized_count=3)
 
         TagTracker.objects.create(whiskey=self.whiskey2,
                                   tag=self.tags[0],
-                                  count=2)
+                                  count=2,
+                                  normalized_count=2)
         TagTracker.objects.create(whiskey=self.whiskey3,
                                   tag=self.tags[0],
-                                  count=3)
+                                  count=3,
+                                  normalized_count=3)
 
     def test_get_tag_counts(self):
         whiskey1_array = get_tag_counts(self.whiskey1, self.tags)
@@ -321,3 +328,8 @@ class ComparablesTest(APITestCase):
         clear_saved(self.whiskey1)
 
         self.assertFalse(self.whiskey1.comparable.first())
+
+
+#add_tag_to_whiskey
+# textsearchbox
+
