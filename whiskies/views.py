@@ -224,7 +224,7 @@ class SearchList(generics.ListCreateAPIView):
         else:
             tag_titles = self.request.query_params['tags'].split(',')
             a = qs.filter(tagtracker__tag__title__in=tag_titles)
-            b = a.annotate(tag_count=Sum('tagtracker__count'))
+            b = a.annotate(tag_count=Sum('tagtracker__normalized_count'))
             results = b.order_by('-tag_count')
 
             return results

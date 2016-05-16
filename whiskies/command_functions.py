@@ -1,18 +1,17 @@
+import math
+import os
+import re
+
 import numpy as np
 import pandas as pd
-import math
-import os, re, logging, base64
-from django.forms import model_to_dict
-
-from whiskies.models import Whiskey, Tag, TagTracker
 from elasticsearch import Elasticsearch
+
+from whiskies.models import Whiskey, TagTracker
 
 
 def euclidean_distance(v1, v2):
     squares = (v1 - v2) ** 2
     return math.sqrt(squares.sum())
-
-#tags = Tag.objects.all()
 
 
 def get_tag_counts(whiskey, tags):
@@ -20,7 +19,8 @@ def get_tag_counts(whiskey, tags):
     # Then loop through tag_list
 
     trackers = TagTracker.objects.filter(whiskey=whiskey).values()
-    count_dict = {t["tag_id"]: t["count"] for t in trackers}
+    # count_dict = {t["tag_id"]: t["count"] for t in trackers}
+    count_dict = {t["tag_id"]: t["normalized_count"] for t in trackers}
     counts = []
     for tag in tags:
         count = count_dict.get(tag.id, 0)

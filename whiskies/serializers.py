@@ -8,8 +8,6 @@ from whiskies.models import Whiskey, Profile, Review, TagSearch, Tag,\
 
 class ProfileSerializer(serializers.ModelSerializer):
 
-    # check that liked and disliked whiskies are displayed
-
     class Meta:
         model = Profile
         fields = ("user", "liked_whiskies", "disliked_whiskies")
@@ -44,8 +42,6 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class TagSerializer(serializers.ModelSerializer):
 
-    #whiskies = serializers.PrimaryKeyRelatedField(read_only=True)
-
     class Meta:
         model = Tag
         fields = ("title",)
@@ -67,7 +63,7 @@ class TagTrackerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TagTracker
-        fields = ("title", "count")
+        fields = ("title", "count", "normalized_count")
 
 
 class CompWhiskeySerializer(serializers.ModelSerializer):
