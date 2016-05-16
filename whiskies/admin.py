@@ -20,7 +20,7 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(TagTracker)
 class TagTrackerAdmin(admin.ModelAdmin):
-    list_display = ("id", "tag", "whiskey", "count")
+    list_display = ("id", "tag", "whiskey", "count", "normalized_count")
 
 
 @admin.register(Profile)

@@ -109,8 +109,8 @@ def update_tagtracker_normalized_counts():
 
     for whiskey in Whiskey.objects.all():
         for tracker in whiskey.tagtracker_set.all():
-            adjusted_count = tracker.count * 100 / whiskey.review_count
-            tracker.normalized_count = adjusted_count
+            adjusted_count = (tracker.count / whiskey.review_count) * 100
+            tracker.normalized_count = int(adjusted_count)
             tracker.save()
 
 
