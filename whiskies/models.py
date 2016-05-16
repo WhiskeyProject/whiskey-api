@@ -131,7 +131,12 @@ class TagSearch(models.Model):
 
 
 class TagTracker(models.Model):
+    """
+    normalized_count is the number of times the tag is applied to the whiseky
+    per 100 reviews.
+    """
     count = models.IntegerField(default=0)
+    normalized_count = models.IntegerField()
 
     whiskey = models.ForeignKey(Whiskey)
     tag = models.ForeignKey(Tag)

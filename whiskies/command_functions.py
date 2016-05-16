@@ -101,6 +101,22 @@ def update_whiskey_comps(whiskies, tags, number_comps=12):
 
 
 """
+Normalizing Tagtracker counts.
+"""
+
+
+def update_tagtracker_normalized_counts():
+
+    for whiskey in Whiskey.objects.all():
+        for tracker in whiskey.tagtracker_set.all():
+            adjusted_count = tracker.count * 100 / whiskey.review_count
+            tracker.normalized_count = adjusted_count
+            tracker.save()
+
+
+
+
+"""
 Elastic search functions.
 Some indexing and future tag search functions have been saved locally.
 """
@@ -150,4 +166,3 @@ def heroku_search_whiskies(searchstring):
 
     search_body = {"query": {"terms": {"title": searchstring}}}
     return es.search(index="whiskies", body=search_body)
-
