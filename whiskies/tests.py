@@ -6,7 +6,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
 
 from whiskies.command_functions import get_tag_counts, create_features_dict, \
-    update_whiskey_comps, clear_saved
+    update_whiskey_comps, clear_saved, create_scores, main_scores
 from whiskies.models import Whiskey, Review, Tag, TagTracker
 
 
@@ -284,11 +284,33 @@ class ComparablesTest(APITestCase):
         self.assertEqual(features[1].all(), np.array([2, 3, 0]).all())
         self.assertEqual(features[3].all(), np.array([3, 0, 0]).all())
 
-    def create_scores_test(self):
-        # features = create_features_dict(Whiskey.objects.all(), self.tags)
-        # whiskey_ids = Whiskey.objects.values_list("pk", flat=True)
-        # scores = create_scores(whiskey_ids, features)
-        #scores_df = main_scores(Whiskey.objects.all(), self.tags)
+    def test_create_scores(self):
+        features = create_features_dict(Whiskey.objects.all(), self.tags)
+        whiskey_ids = Whiskey.objects.values_list("pk", flat=True)
+        scores = create_scores(whiskey_ids, features)
+
+        first_whiskey = scores[0]
+        second_whiskey = scores[1]
+
+        self.assertLess(first_whiskey[self.whiskey2.id], first_whiskey[self.whiskey3.id])
+        self.assertLess(second_whiskey[self.whiskey3.id], second_whiskey[self.whiskey1.id])
+
+    def test_main_scores(self):
+        scores_df = main_scores(Whiskey.objects.all(), self.tags)
+        first_whiskey = scores_df.loc[self.whiskey1.id].values
+        third_whiskey = scores_df[self.whiskey3.id].values
+
+        self.assertLess(first_whiskey[1],
+                        first_whiskey[2])
+
+        self.assertLess(third_whiskey[1],
+                        third_whiskey[0])
+
+
+
+    def update_whiskey_comps_test(self):
+
+
         update_whiskey_comps(Whiskey.objects.all(),
                              self.tags,
                              number_comps=1)

@@ -42,7 +42,8 @@ def create_features_dict(whiskies, tags):
 
 def create_scores(whiskey_ids, whiskey_features):
     """
-    Return a matrix of all Euclidean distances.
+    Return a list of dicts, each list represents a whiskies Euclidean Distance
+    from each other whiskey.
     """
 
     results = []
@@ -61,9 +62,10 @@ def create_scores(whiskey_ids, whiskey_features):
 
 
 def main_scores(whiskies, tags):
-    # Create pandas dataframe distance matrix for all whiskies and tags
-    # that are passed in.
-    # Whiskies will usually be a filtered for a specific type.
+    """
+    Create pandas dataframe distance matrix for all whiskies and tags
+    that are passed in.
+    """
 
     whiskey_features = create_features_dict(whiskies, tags)
     whiskey_ids = list(whiskey_features.keys())
