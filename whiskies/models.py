@@ -21,17 +21,15 @@ class Whiskey(models.Model):
     description = models.TextField(null=True, blank=True)
     region = models.CharField(max_length=100, null=True, blank=True)
 
-    # These will be tied to live data in the future.
     price = models.IntegerField()
     rating = models.IntegerField()
+
+    review_count = models.IntegerField(null=True, blank=True)
 
     comparable = models.ManyToManyField("self", symmetrical=False,
                                         related_name="comparables")
 
     created_at = models.DateTimeField(auto_now_add=True)
-
-    # def trackers(self):
-    #     return self.tagtracker_set.count()
 
     def tag_match(self, tag_list):
         amount = self.tagtracker_set.filter(tag__title__in=tag_list).aggregate(
@@ -49,8 +47,6 @@ class Whiskey(models.Model):
 
 
 class Profile(models.Model):
-
-    # https://docs.djangoproject.com/es/1.9/topics/db/examples/many_to_many/
 
     user = models.OneToOneField(User, null=True)
 
@@ -72,7 +68,8 @@ class Profile(models.Model):
             if opinion == "like":
                 self.liked_whiskies.remove(Whiskey.objects.get(pk=whiskey_id))
             elif opinion == "dislike":
-                self.disliked_whiskies.remove(Whiskey.objects.get(pk=whiskey_id))
+                self.disliked_whiskies.remove(
+                    Whiskey.objects.get(pk=whiskey_id))
 
         self.save()
 
@@ -92,11 +89,6 @@ class Review(models.Model):
         ordering = ["-created_at"]
         default_related_name = "reviews"
 
-# def populate_reviews(user, whiskies):
-#     for w in whiskies:
-#         for i in range(3):
-#             Review.objects.create(user=user, whiskey=w, title=fake.bs(), text=fake.paragraph(), rating=random.randint(1,100))
-#
 
 class Tag(models.Model):
 
@@ -111,14 +103,6 @@ class Tag(models.Model):
 
     class Meta:
         default_related_name = "tags"
-
-
-    # overwrite save.
-        # if not self.pk get or create tagtracker
-        # call add_count
-        # return rest of the save
-    # overwrite delete
-        # decrement tag tracker
 
 
 class TagSearch(models.Model):

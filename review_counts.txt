@@ -1,0 +1,500 @@
+Tomatin Decades,6
+Glen Grant 10,10
+Colonel E.H. Taylor Straight Rye,19
+Green Spot,12
+Arran Port Cask Finish,8
+Bowmore 15 Darkest,25
+Bruichladdich Port Charlotte Scottish Barley,16
+Very Old Barton Bottled In Bond,7
+Macallan 10 Fine Oak,31
+Kilchoman Machir Bay,49
+Nikka Coffey Grain,7
+Elijah Craig 18,8
+GlenDronach 18 Allardice,11
+Laphroaig 25 Cask Strength 2008,10
+Glenlivet 12,98
+George T Stagg 2014,9
+Elmer T. Lee,42
+Highland Park 15 Freya,8
+BenRiach 17 Solstice,12
+Glenfarclas 10,19
+Knob Creek 9 Small Batch,30
+Arran Sauternes Cask Finish,9
+Talisker Storm,35
+Deanston Virgin Oak,13
+Talisker 57° North,28
+Amrut Peated Cask Strength,8
+Wild Turkey 81,7
+Caol Ila Cask Strength,6
+Laphroaig Cairdeas 2015,6
+Hazelburn 8,6
+Aberlour 18,15
+Black Bottle,20
+Kirkland Signature 20 Speyside Sherry Cask Finish,7
+Dalwhinnie 15,56
+Balvenie 10 Founder's Reserve,6
+Bruichladdich Islay Barley 2006,9
+Van Winkle Family Reserve Rye 13 Years Old,6
+Balcones Texas Single Malt,8
+Balvenie 12 Signature,12
+Arran 10,24
+Bruichladdich Port Charlotte 10,10
+Bruichladdich Rocks,22
+Kilchoman 5 Single Bourbon Cask,6
+Bushmills Original,8
+Aberlour A'bunadh batch #45,11
+Balvenie Tun 1401 Batch #5,8
+Bruichladdich Port Charlotte The Peat Project,13
+Bunnahabhain Toiteach,11
+Benrinnes 14 AD Rattray Sherry Cask,7
+Cragganmore 12,37
+Seagram's Seven Crown,6
+Sazerac 18,7
+Ardbeg Airigh Nam Beist 1990,9
+Ardbeg Blasda,6
+Johnnie Walker Black Label,75
+Aberlour A'bunadh batch #47,8
+Bowmore 18,18
+Glenfarclas 12,63
+Jefferson's Presidential Select 18,9
+Angel's Envy,15
+BenRiach 12 Sherry Matured,7
+Bruichladdich The Classic Laddie,8
+Laphroaig Cairdeas 2011 Ileach,6
+Ballantine's Finest,7
+Ledaig 10,26
+Pappy Van Winkle Family Reserve Bourbon 20,10
+Bruichladdich Waves,6
+Scapa 16,20
+Old Grand Dad 114,32
+Amrut Fusion,23
+Glenfiddich 21 Gran Reserva,11
+BenRiach 21 Authenticus Peated,8
+Glenfarclas 31 Port Cask,6
+Compass Box Asyla,15
+Tomatin 12,27
+Glenfiddich 14 Rich Oak,13
+Jack Daniel's Single Barrel,11
+Speyburn Bradan Orach,6
+Maker's Mark,29
+Crown Royal Northern Harvest Rye,11
+Pappy Van Winkle Family Reserve Bourbon 15,16
+Glenmorangie Quinta Ruban,97
+Wild Turkey 101,50
+Colonel E.H. Taylor Barrel Proof,25
+Black Grouse,9
+Glenlivet 21 Archive,14
+Tomatin 15,12
+Springbank 15,31
+Nikka From The Barrel,11
+BenRiach 10 Curiositas,16
+Redbreast 12 Cask Strength B1/11,7
+Old Pulteney 17,18
+Highland Park 10,7
+Bushmills 10,8
+Ardbeg Day,10
+Caperdonich 18 Signatory,7
+Glenmorangie Lasanta,44
+GlenDronach Cask Strength,16
+Eagle Rare 17 2013,8
+Benrinnes 23,13
+Henry McKenna 10 Single Barrel,19
+Kilchoman Port Cask Matured,8
+Benromach Traditional,6
+Dewar's White Label,24
+Dimple Pinch 15,6
+Black Maple Hill,12
+Talisker Distiller's Edition 2012,10
+Highland Park Dark Origins,17
+Hakushu 12,11
+Famous Grouse,11
+Mackmyra First Edition,6
+Jura 16,23
+Four Roses Single Barrel Private Selection OESO,8
+Crown Royal Special Reserve,7
+Four Roses Single Barrel Private Selection OBSV,11
+High West Bourye,7
+Jim Beam White Label,21
+Ardbeg Supernova 2014,7
+Old Forester Birthday Bourbon 2013,9
+Smokehead,6
+Lagavulin 16,134
+Kavalan Concertmaster,8
+Glengoyne 17,15
+Bruichladdich PC7,15
+Glenmorangie Finealta,6
+Tomatin 18,17
+Smooth Ambler Old Scout Bourbon 7 Year,8
+BenRiach 12 Importanticus Fumosus,6
+Ardbeg 10,132
+Benrinnes 15 DARKNESS! Oloroso,6
+Benromach 10 100 Proof,8
+Elijah Craig Barrel Proof,36
+Caol Ila Stitchell Reserve,6
+Eagle Rare 10,48
+Jim Beam Signature Craft 12,7
+Talisker Distiller's Edition 2000,8
+Auchentoshan American Oak,6
+Jim Beam Black 8 Double Aged,17
+Mortlach 15 Gordon & MacPhail,8
+Jefferson's 10 Year Rye Whiskey,9
+Knob Creek Single Barrel Reserve,14
+Highland Park 25,18
+Amrut Single Malt Whisky,7
+Highland Park 15 Loki,9
+Jim Beam Bonded,7
+Talisker Distiller's Edition 2013,7
+Macallan Sienna,7
+Balvenie 12 Single Barrel First Fill,15
+Black Bottle ,9
+Wild Turkey Rare Breed,30
+Alberta Premium Dark Horse,19
+Bunnahabhain 25,7
+Old Forester Birthday Bourbon 2014,7
+Four Roses Small Batch Limited Edition 2013,21
+Glenlivet 25,8
+McClelland Highland,6
+AnCnoc 16,17
+BenRiach 16,7
+Glenmorangie 18,21
+Hakushu 14 SMWS 120.7,8
+Longrow 11 Red Cabernet Sauvignon Cask,6
+AnCnoc Rutter,9
+Dewar's 12,12
+J&B Rare,9
+Macallan Select Oak,9
+Parker's Heritage Collection Blend of Mashbills,6
+Teacher's Highland Cream,10
+Ardbeg Galileo,33
+Bruichladdich Black Art 3,7
+Yamazaki 18,9
+Evan Williams Black Label,15
+Whistle Pig Boss Hog,8
+Monkey Shoulder,31
+Mortlach 16 Flora & Fauna,6
+Ledaig 7 /r/Scotch Community Cask,13
+Glenfiddich Snow Phoenix,6
+Blanton's Straight from the Barrel,7
+Glenfiddich 12,112
+Angel's Envy Rye,8
+Glenfiddich 18,47
+Dalmore 15,21
+High West American Prairie Reserve,12
+Booker's Bourbon,51
+Colonel E.H. Taylor Single Barrel,15
+Ardbeg Corryvreckan,67
+Tobermory 10,25
+Lagavulin 12,46
+Glenlivet 15 French Oak Reserve,48
+Maker's Mark 46,20
+Johnnie Walker Red Label,47
+Longmorn 19 Signatory 1992,6
+GlenDronach 21 Parliament,17
+Glen Garioch Founder's Reserve,14
+Macallan Amber,9
+Evan Williams Bottled in Bond,17
+Finlaggan Old Reserve,18
+Woodford Reserve Distiller's Select,30
+Forty Creek Barrel Select,10
+Bulleit Bourbon 10,10
+Teeling Small Batch,7
+Balvenie Tun 1401 Batch #3,11
+Stalk & Barrel Single Malt,6
+Wild Turkey 101 Rye,14
+Auchentoshan Valinch,33
+Laphroaig 10,111
+Bruichladdich Octomore 6.1,17
+Balvenie 17 Peated Cask,17
+Aberfeldy 12,24
+William Larue Weller,10
+Balvenie 14 Caribbean Cask,80
+Glenmorangie Nectar D'Or,53
+Aberlour A'bunadh,23
+Stagg Jr,32
+Arran 12 Cask Strength,11
+Dalmore 12,31
+Longrow CV,10
+Compass Box Spice Tree,30
+Four Roses Single Barrel Private Selection OESK,8
+Glen Garioch 12,11
+Glenfiddich 15 Distillery Edition,15
+Macallan 18 Sherry,26
+Springbank 10,46
+AnCnoc 12,44
+Macallan 25 Sherry,11
+Woodford Reserve,6
+Caol Ila 18,12
+Ardbeg Uigeadail,123
+Talisker 30,6
+Baker's 107,15
+Glenrothes 1998,11
+Auchentoshan Three Wood,43
+Smooth Ambler Old Scout Rye 7 Year,10
+Laphroaig 15,10
+Tobermory 15,17
+Rittenhouse Rye 100,42
+Woodford Reserve Double Oaked,9
+Rowan's Creek,7
+Bunnahabhain 12,82
+Willett Family Estate 2 Year Small Batch Rye,11
+Balvenie 12 Doublewood,91
+High West Double Rye,21
+Amrut Portonova,8
+Old Pulteney 1990 – Single Cask Bottling for The Official Line,6
+Arran 14,21
+Aberlour 10,25
+Glenlivet 16 Nadurra,59
+Glenlivet 18,47
+Laphroaig 10 Cask Strength,34
+Old Grand Dad 86,7
+Old Crow Reserve,6
+Bowmore Legend,17
+Springbank CV,8
+Four Roses Single Barrel,51
+Russell's Reserve 10,13
+Lagavulin 1995 Distillers Edition,11
+Evan Williams Single Barrel 2003,24
+Highland Park 18,60
+Cardhu 12,25
+White Oak Akashi 14,6
+Parker's Heritage Collection Wheat Whiskey,11
+Old Pulteney 12,57
+Glenmorangie Signet,15
+Jefferson's Very Small Batch,7
+Aberlour 16,26
+Knob Creek Single Barrel,6
+Longrow Red 11 Fresh Port Cask,7
+Macallan 12 Sherry,80
+Tomintoul 14,7
+Kavalan Solist Ex-Bourbon,7
+George T Stagg,6
+Aberlour 12 Sherry Cask Matured,7
+Four Roses Single Barrel Private Selection OESF,9
+Old Weller Antique 107,63
+John J. Bowman,6
+Bulleit Bourbon,35
+Laphroaig Cairdeas 2012 Origin,22
+Pike Creek 10,6
+Kavalan Solist Vinho Barrique,6
+Compass Box Oak Cross,17
+Redbreast 12,16
+Oban 14,69
+Willett 4 Year Rye,24
+Breckenridge Bourbon,6
+Laphroaig An Cuan Mor,7
+Compass Box Great King St. Artist's Blend,13
+Parker's Heritage Collection Cognac Finished,6
+Springbank 12 Cask Strength,35
+Bruichladdich Port Charlotte Tro Na Linntean,6
+Orphan Barrel Old Blowhard 26,9
+Blanton's Original Single Barrel,35
+Glenmorangie Companta,7
+Kilchoman Loch Gorm,14
+Glenfarclas 15,23
+Glenfarclas 40,12
+Arran Amarone Cask Finish,8
+W.L. Weller 12,51
+Compass Box Hedonism,23
+Singleton of Glendullan 12,9
+Highland Park 15,16
+Wild Turkey Forgiven,6
+Noah's Mill,12
+Elijah Craig 12,51
+Talisker 25,13
+Redbreast 15,9
+Old Forester Signature,13
+Jameson 12,6
+Aberlour A'bunadh batch #42,9
+Four Roses Small Batch,42
+Glenfarclas 17,25
+Thomas H. Handy,13
+Springbank 12 Calvados Wood,7
+Balvenie 14 Golden Cask,8
+Forty Creek Confederation Oak,6
+Buffalo Trace,52
+Forty Creek Copper Pot Reserve,6
+Four Roses Single Barrel Private Selection OBSK,8
+Glenmorangie Astar,26
+Bruichladdich Octomore 4.2_167 Comus,11
+Aberlour A'bunadh batch #36,9
+Benrinnes 14 Lady of the Glen 1999,8
+Aberlour 12 Double Cask Matured,43
+Tomintoul 16,10
+Old Pulteney 21,16
+Laphroaig 17 SMWS 29.157,8
+Van Winkle Special Reserve 12 Year Lot B,13
+High West Campfire,15
+Balcones Brimstone,11
+Dalmore Cigar Malt,8
+Aberlour A'bunadh batch #41,7
+Hibiki 17,8
+Jack Daniel's Old No. 7,22
+Maker's Mark Cask Strength,23
+Sheep Dip,9
+Tyrconnell Irish Single Malt,6
+Ardbeg Ardbog,37
+Nikka Yoichi 10,8
+Jim Beam Single Barrel,7
+Colonel E.H. Taylor Small Batch,29
+Balvenie 17 Madeira Cask,11
+Glengoyne 10,10
+Ardmore Traditional Cask Peated,22
+Thomas H. Handy 2013,10
+Macallan Sherry Cask Strength,64
+Royal Lochnagar 12,6
+Bulleit Rye,35
+Four Roses Single Barrel Private Selection OESV,7
+Laphroaig 18,71
+Aberlour A'bunadh batch #40,10
+BenRiach 12,13
+Té Bheag,10
+Laphroaig Triplewood,32
+Rock Hill Farms Single Barrel Bourbon,8
+Orphan Barrel Barterhouse 20,14
+Jura Prophecy,9
+Glenrothes Select Reserve,10
+Craigellachie 13,6
+Glen Elgin 12,8
+Old Rip Van Winkle 10 Year,20
+George T Stagg 2012,9
+Ardbeg 21 Sovereign,8
+Four Roses /r/bourbon selection OBSK,8
+Glenkinchie 12,27
+Talisker Port Ruighe,9
+Glenmorangie Ealanta,22
+High West Son of Bourye,13
+Evan Williams Single Barrel 2004,17
+High West Rendezvous Rye,30
+Amrut Kadhambam,7
+Hibiki 12,11
+Glenfarclas 21,21
+Tomintoul 10,8
+Balvenie 15 Single Barrel,48
+Russell's Reserve Single Barrel,16
+Lagavulin 1997 Distillers Edition,9
+Bowmore Devil's Cask,8
+Glenfiddich 15,58
+Tomintoul Peaty Tang,7
+1792 Ridgemont Reserve,11
+Four Roses Small Batch Limited Edition 2014,7
+Oban 18,8
+McClelland Islay,15
+Johnnie Walker Blue Label,19
+Bruichladdich Port Charlotte An Turas Mor,17
+Glengoyne 12,7
+Glenfarclas 105 Cask Strength,47
+Wiser's Legacy,6
+Talisker 18,26
+Macallan Rare Cask,6
+Bunnahabhain 18,25
+Balvenie 21 Portwood,31
+Port Ellen 32 12th Release,12
+Compass Box Peat Monster,20
+Talisker Distiller's Edition,12
+Macallan 15 Fine Oak,17
+Clynelish 14,41
+Caol Ila Distiller's Edition,10
+George T Stagg 2013,13
+Sazerac Rye,28
+Glenfarclas 25,20
+GlenDronach 12 Original,29
+Bruichladdich The Laddie Sixteen,7
+Jim Beam Devil's Cut,9
+Evan Williams 1783,7
+Dalmore 1263 King Alexander III,7
+Speyburn 10,22
+Balcones Baby Blue,6
+Aberlour A'bunadh batch #46,6
+Balvenie 17 Doublewood,17
+Yoichi 26 SMWS 116.20,7
+Auchentoshan Classic,8
+Amrut Cask Strength,11
+Compass Box Flaming Heart,6
+Eagle Rare 17,12
+Cutty Sark,15
+Glenlossie 19 Signatory 1992,6
+GlenDronach 15 Revival,47
+Laphroaig Cairdeas 2014 Amontillado,15
+Kavalan Solist Sherry,9
+Bruichladdich Black Art 2,19
+Pig's Nose,15
+High West A Midwinter Nights Dram,18
+Bruichladdich Octomore 2.2 Orpheus,8
+Yamazaki 12,39
+Bushmills Black Bush,6
+W.L. Weller Special Reserve,23
+Gentleman Jack,7
+Bushmills 16,6
+Johnnie Walker Gold Label,20
+Four Roses Single Barrel Private Selection OBSQ,9
+Four Roses Single Barrel Private Selection OESQ,8
+Four Roses Single Barrel Private Selection OBSO,7
+Springbank 21,8
+Macallan 12 Fine Oak,8
+Buchanan's 12 De Luxe,6
+Springbank 18,12
+Ardbeg Alligator,24
+Four Roses Single Barrel Private Selection OBSF,11
+Aberlour A'bunadh batch #39,15
+Jura 10,32
+Booker's 25th Anniversary,9
+Highland Park 12,144
+Bernheim Original Small Batch Wheat Whiskey,10
+Jameson,17
+Templeton Rye,6
+Deanston 12,14
+Overeem Port Cask Cask Strength,6
+Glendronach 12,9
+Ardbeg Auriverdes,11
+Glenmorangie Artein,16
+Macallan Gold,7
+Lot No. 40,12
+Tamdhu 8 Signatory 2005,10
+Glenmorangie 10 Original,99
+Benromach 10,34
+Bowmore Tempest Batch 3,8
+Four Roses Yellow Label,15
+Balvenie 15 Single Barrel Sherry Cask,6
+Kilchoman 100% Islay 3rd Edition,11
+Talisker 10,117
+Glenlochy 31 Signatory 1980,6
+Caol Ila 12,90
+Bruichladdich Octomore 6.3,6
+Laphroaig Cairdeas 2013 Portwood,39
+Longrow Peated,14
+Bruichladdich The Organic,10
+Grant's Family Reserve,7
+Highland Park 8 MacPhail’s Collection,7
+Laphroaig Quarter Cask,123
+Knob Creek Rye,15
+Old Ezra 101,7
+Kilchoman Sherry Cask Release,9
+Chivas Regal 12,44
+Bowmore 12,43
+Old Grand Dad 100 Bottled in Bond,29
+Angel's Envy Cask Strength,7
+Johnnie Walker Double Black,15
+Benrinnes 15 DARKNESS! Pedro Ximenez,8
+Bowmore 15 Laimrig,8
+Larceny Small Batch Bourbon,12
+Connemara Peated,8
+Arran Sherry Single Cask,8
+Evan Williams Single Barrel 2002,8
+Springbank 10 100 Proof,7
+Jura Superstition,29
+Laphroaig PX Cask,23
+Basil Hayden,10
+Bruichladdich The Laddie Ten,69
+Four Roses /r/bourbon selection OBSF,7
+Johnnie Walker Platinum Label,14
+Auchentoshan 12,30
+Edradour 10,20
+Johnnie Walker Green Label,56
+Mackinlay's Shackleton Rare Old Highland Malt Whisky,15
+Glengoyne 21,7
+Isle of Skye 8 Ian Macleod,8
+Parker's Heritage Collection Promise of Hope,6
+Whistle Pig 10 Straight Rye,10
+Bruichladdich Octomore 5.1,12
+Bruichladdich Bere Barley 2006,6
+Aberlour 12 Non Chill Filtered,44
