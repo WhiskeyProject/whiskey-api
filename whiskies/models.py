@@ -136,7 +136,7 @@ class TagTracker(models.Model):
     per 100 reviews.
     """
     count = models.IntegerField(default=0)
-    normalized_count = models.IntegerField()
+    normalized_count = models.IntegerField(null=True, blank=True)
 
     whiskey = models.ForeignKey(Whiskey)
     tag = models.ForeignKey(Tag)
