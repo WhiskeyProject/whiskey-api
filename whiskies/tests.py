@@ -1,11 +1,13 @@
-from django.core.urlresolvers import reverse
+import numpy as np
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 from rest_framework import status
+from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
 
-from rest_framework.authtoken.models import Token
+from whiskies.command_functions import get_tag_counts, create_features_dict, \
+    update_whiskey_comps, clear_saved
 from whiskies.models import Whiskey, Review, Tag, TagTracker
-from whiskies.views import add_tag_to_whiskey
 
 
 class UserTest(APITestCase):
@@ -188,7 +190,7 @@ class TagTrackerSearchTest(APITestCase):
                                             count=2)
         tracker.add_count()
         self.assertEqual(tracker.count, 3)
-        
+
         tracker.add_count(5)
         self.assertEqual(tracker.count, 8)
 
@@ -231,12 +233,69 @@ class TagTrackerSearchTest(APITestCase):
         self.assertFalse(results)
 
 
-class AddTagToWhiskeyTest:
-    pass
+class ComparablesTest(APITestCase):
+    """
+    For testing the creation of comparables.
+    Note that numpy arrays must be called with .all() in order for
+    assertEqual to work.
+    """
 
-# Comparables
-# TagSearch default name
-# add_tag_to_whiskey
+    def setUp(self):
+        self.whiskey1 = Whiskey.objects.create(title="whiskey1",
+                                               price=10,
+                                               rating=10,
+                                               region="A")
 
+        self.whiskey2 = Whiskey.objects.create(title="whiskey2",
+                                               price=50,
+                                               rating=20,
+                                               region="A")
+        self.whiskey3 = Whiskey.objects.create(title="whiskey3",
+                                               price=90,
+                                               rating=30,
+                                               region="B")
 
+        self.tags = [Tag.objects.create(title=x) for x in 'abc']
 
+        TagTracker.objects.create(whiskey=self.whiskey1,
+                                  tag=self.tags[0],
+                                  count=2)
+        TagTracker.objects.create(whiskey=self.whiskey1,
+                                  tag=self.tags[1],
+                                  count=3)
+
+        TagTracker.objects.create(whiskey=self.whiskey2,
+                                  tag=self.tags[0],
+                                  count=2)
+        TagTracker.objects.create(whiskey=self.whiskey3,
+                                  tag=self.tags[0],
+                                  count=3)
+
+    def test_get_tag_counts(self):
+        whiskey1_array = get_tag_counts(self.whiskey1, self.tags)
+        whiskey2_array = get_tag_counts(self.whiskey2, self.tags)
+
+        self.assertEqual(whiskey1_array.all(), np.array([2, 3, 0]).all())
+        self.assertEqual(whiskey2_array.all(), np.array([2, 0, 0]).all())
+
+    def create_features_dict_test(self):
+        features = create_features_dict(Whiskey.objects.all(), self.tags)
+
+        self.assertEqual(features[1].all(), np.array([2, 3, 0]).all())
+        self.assertEqual(features[3].all(), np.array([3, 0, 0]).all())
+
+    def create_scores_test(self):
+        # features = create_features_dict(Whiskey.objects.all(), self.tags)
+        # whiskey_ids = Whiskey.objects.values_list("pk", flat=True)
+        # scores = create_scores(whiskey_ids, features)
+        #scores_df = main_scores(Whiskey.objects.all(), self.tags)
+        update_whiskey_comps(Whiskey.objects.all(),
+                             self.tags,
+                             number_comps=1)
+
+        self.assertEqual(self.whiskey1.comparable.first(), self.whiskey2)
+        self.assertEqual(self.whiskey2.comparable.first(), self.whiskey3)
+
+        clear_saved(self.whiskey1)
+
+        self.assertFalse(self.whiskey1.comparable.first())

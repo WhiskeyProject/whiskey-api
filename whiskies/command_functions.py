@@ -12,7 +12,7 @@ def euclidean_distance(v1, v2):
     squares = (v1 - v2) ** 2
     return math.sqrt(squares.sum())
 
-tags = Tag.objects.all()
+#tags = Tag.objects.all()
 
 
 def get_tag_counts(whiskey, tags):
@@ -41,6 +41,9 @@ def create_features_dict(whiskies, tags):
 
 
 def create_scores(whiskey_ids, whiskey_features):
+    """
+    Return a matrix of all Euclidean distances.
+    """
 
     results = []
     for column_whiskey in whiskey_ids:
@@ -91,7 +94,6 @@ def update_whiskey_comps(whiskies, tags, number_comps=12):
 
         clear_saved(whiskey)
 
-        # Would like to store in reverse order they are added.
         for pk in scores.index[:number_comps]:
             whiskey.comparables.add(Whiskey.objects.get(pk=pk))
 
