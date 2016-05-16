@@ -1,30 +1,20 @@
-from functools import reduce
 import logging
 
-from rest_framework.pagination import PageNumberPagination
-
-from whiskies.command_functions import heroku_search_whiskies, \
-    local_whiskey_search
-from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.db.models import Sum, Count
 from django.views.generic import ListView
 from rest_framework import generics, status
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from rest_framework.views import APIView
-from rest_framework.response import Response
 from rest_framework import permissions
-import operator
-from django.db.models import Q, Sum, Count, Min, Max, Avg
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from whiskies.models import Whiskey, Review, TagSearch, Tag, Profile, \
-    TagTracker
+from whiskies.command_functions import heroku_search_whiskies
+from whiskies.models import Whiskey, Review, TagSearch, Tag, TagTracker
 from whiskies.serializers import UserSerializer, WhiskeySerializer,\
-    ReviewSerializer, TagSearchSerializer, TagSerializer, TagTrackerSerializer, \
-    AddLikedSerializer, ProfileSerializer
-
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+    ReviewSerializer, TagSearchSerializer, TagSerializer, AddLikedSerializer
+from whiskies.permissions import IsOwnerOrReadOnly
 
 """
 Only create/delete Whiskey in the admin.
@@ -48,7 +38,6 @@ def add_tag_to_whiskey(whiskey, tag):
         tracker = TagTracker.objects.create(whiskey=whiskey, tag=tag)
     tracker.add_count()
     tracker.save()
-
 
 
 class ShootPagination(PageNumberPagination):
@@ -101,12 +90,13 @@ class ReviewListCreate(generics.ListCreateAPIView):
 class ReviewDetailUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsOwnerOrReadOnly,)
 
 
 class TagSearchListCreate(generics.ListCreateAPIView):
     queryset = TagSearch.objects.all()
     serializer_class = TagSearchSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -124,7 +114,7 @@ class UserTagSearchList(generics.ListAPIView):
 class TagSearchDetailUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = TagSearch.objects.all()
     serializer_class = TagSearchSerializer
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsOwnerOrReadOnly,)
 
 
 class TagListCreate(generics.ListCreateAPIView):
@@ -264,7 +254,7 @@ class TextSearchBox(APIView):
 
 
 """
-Unused views for local testing or future development.
+Unused views for local testing.
 """
 
 class AllWhiskey(ListView):
