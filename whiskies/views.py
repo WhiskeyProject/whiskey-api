@@ -241,8 +241,9 @@ class TextSearchBox(APIView):
     """
 
     def get(self, request, format=None):
-        terms = request.query_params['terms']
-        res = heroku_search_whiskies(terms.split(","))
+        search = request.query_params['terms']
+        terms = search.split(",")
+        res = heroku_search_whiskies([x.lower() for x in terms])
         hits = res['hits']['hits']
         return Response([hit["_source"] for hit in hits])
 
