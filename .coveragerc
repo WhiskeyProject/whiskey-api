@@ -1,2 +1,4 @@
 [report]
-omit = WhiskeyProof/*
+omit =
+    WhiskeyProof/*
+    whiskies.tests.py

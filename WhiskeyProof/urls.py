@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework.authtoken.views import obtain_auth_token
+from django.views.decorators.cache import cache_page
 
 from whiskies.views import UserListCreate, UserDetail, WhiskeyList,\
     WhiskeyDetail, ReviewListCreate, ReviewDetailUpdateDelete,\
@@ -59,7 +60,8 @@ urlpatterns = [
     url(r'^searchbox/$', TextSearchBox.as_view(), name="search_box"),
     #url(r'^testsearch/$', TestSearch.as_view(), name="test_search"),
 
-    url(r'^shoot/$', SearchList.as_view(), name="search_list"),
+    url(r'^shoot/$', cache_page(60 * 2)(SearchList.as_view()),
+        name="search_list"),
 
     url(r'^allwhiskey/$', AllWhiskey.as_view(), name="test_list"),
 
@@ -69,3 +71,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^', include('django.contrib.auth.urls')),
 ]
+# cache_page(60 * 2)

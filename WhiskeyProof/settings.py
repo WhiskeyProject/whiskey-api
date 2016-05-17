@@ -57,9 +57,9 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
+    #'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    #'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -108,8 +108,8 @@ CACHES = {
 }
 
 CACHE_BACKEND = 'db://search_cache'
-CACHE_MIDDLEWARE_SECONDS = 1#60 * 60 * 24
-CACHE_MIDDLEWARE_KEY_PREFIX = ""
+#CACHE_MIDDLEWARE_SECONDS = 1#60 * 60 * 24
+#CACHE_MIDDLEWARE_KEY_PREFIX = ""
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
