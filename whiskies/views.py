@@ -16,12 +16,6 @@ from whiskies.serializers import UserSerializer, WhiskeySerializer,\
     ReviewSerializer, TagSearchSerializer, TagSerializer, AddLikedSerializer
 from whiskies.permissions import IsOwnerOrReadOnly
 
-"""
-Only create/delete Whiskey in the admin.
-
-notes: double check permissions, might need need to switch some to
-OwnerOrReadOnly.
-"""
 
 logger = logging.getLogger("whiskies")
 tag_logger = logging.getLogger("whiskey_tag")
