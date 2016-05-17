@@ -1,3 +1,5 @@
+from unittest import TestCase
+
 import numpy as np
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
@@ -330,6 +332,44 @@ class ComparablesTest(APITestCase):
         self.assertFalse(self.whiskey1.comparable.first())
 
 
-#add_tag_to_whiskey
 # textsearchbox
 
+class AddTagToWhiskeyTest(APITestCase):
+
+    def setUp(self):
+        self.whiskey1 = Whiskey.objects.create(title="whiskey1",
+                                               price=10,
+                                               rating=10)
+        self.tag1 = Tag.objects.create(title="tag1")
+
+    def test_add_tag_to_whiskey(self):
+
+        self.assertFalse(TagTracker.objects.first())
+
+        add_tag_to_whiskey(self.whiskey1, self.tag1)
+        self.assertEqual(TagTracker.objects.first().count, 1)
+
+        add_tag_to_whiskey(self.whiskey1, self.tag1)
+        self.assertEqual(TagTracker.objects.first().count, 2)
+
+
+class TextSearchBoxTest(APITestCase):
+
+    def setUp(self):
+        self.whiskey1 = Whiskey.objects.create(title="first whiskey",
+                                               price=10,
+                                               rating=10)
+        self.whiskey1 = Whiskey.objects.create(title="second whiskey",
+                                               price=10,
+                                               rating=10)
+        self.whiskey1 = Whiskey.objects.create(title="third whiskey",
+                                               price=10,
+                                               rating=10)
+
+    def test_get_results(self):
+        url = reverse("search_box")
+        response = self.client.get(url + "?terms=first")
+        results = response.data
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(results), 2)
+        self.assertEqual(results[0]['title'], "Mackmyra First Edition")
