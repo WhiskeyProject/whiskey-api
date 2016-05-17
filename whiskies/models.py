@@ -16,6 +16,10 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 
 
 class Whiskey(models.Model):
+    """
+    comparable field is set with a command and contains the other whiskies
+    most similar to it in the database.
+    """
     title = models.CharField(max_length=255)
     img_url = models.URLField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -31,13 +35,13 @@ class Whiskey(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def tag_match(self, tag_list):
-        amount = self.tagtracker_set.filter(tag__title__in=tag_list).aggregate(
-            Sum("count"))['count__sum']
-        if amount:
-            return amount
-        else:
-            return 0
+    # def tag_match(self, tag_list):
+    #     amount = self.tagtracker_set.filter(tag__title__in=tag_list).aggregate(
+    #         Sum("count"))['count__sum']
+    #     if amount:
+    #         return amount
+    #     else:
+    #         return 0
 
     def __str__(self):
         return self.title
@@ -47,6 +51,10 @@ class Whiskey(models.Model):
 
 
 class Profile(models.Model):
+    """
+    Profile for a user. This tracks their liked and disliked whiskies.
+
+    """
 
     user = models.OneToOneField(User, null=True)
 
@@ -57,6 +65,9 @@ class Profile(models.Model):
                                             related_name="disliked_whiskies")
 
     def update_likes(self, whiskey_id, opinion, action):
+        """
+        Method for adding/removing a like/dislike whiskey.
+        """
 
         if action == "add":
             if opinion == "like":
@@ -75,6 +86,9 @@ class Profile(models.Model):
 
 
 class Review(models.Model):
+    """
+    A user generated review that can be created from a whiskey detail page.
+    """
 
     user = models.ForeignKey(User)
     whiskey = models.ForeignKey(Whiskey)
@@ -91,6 +105,9 @@ class Review(models.Model):
 
 
 class Tag(models.Model):
+    """
+    A single attribute that can be applied to a Whiskey.
+    """
 
     title = models.CharField(max_length=255, db_index=True)
     category = models.CharField(max_length=255, null=True, blank=True)
@@ -106,6 +123,11 @@ class Tag(models.Model):
 
 
 class TagSearch(models.Model):
+    """
+    When a logged in user makes a tag search an object is created to save
+    that search. If they do not provide a title a default one will be
+    generated in save() based on the search.
+    """
 
     title = models.CharField(max_length=255, null=True, blank=True)
     user = models.ForeignKey(User)
@@ -132,9 +154,15 @@ class TagSearch(models.Model):
 
 class TagTracker(models.Model):
     """
+    A join table for Tag and Whiskey objects.
+
+    count parameter tracks how many times the tag has been applied to the
+    whiskey.
+
     normalized_count is the number of times the tag is applied to the whiseky
     per 100 reviews.
     """
+
     count = models.IntegerField(default=0)
     normalized_count = models.IntegerField(null=True, blank=True)
 
@@ -146,6 +174,7 @@ class TagTracker(models.Model):
 
 
     def add_count(self, amount=1):
+
         self.count += amount
 
     def __str__(self):

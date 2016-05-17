@@ -10,7 +10,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        # loop through regions.
         tags = Tag.objects.all()
         whiskies = Whiskey.objects.all()
 
@@ -18,5 +17,3 @@ class Command(BaseCommand):
             update_whiskey_comps(whiskies, tags, number_comps=options['number'])
         else:
             update_whiskey_comps(whiskies, tags)
-
-

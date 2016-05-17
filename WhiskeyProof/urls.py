@@ -71,4 +71,3 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^', include('django.contrib.auth.urls')),
 ]
-# cache_page(60 * 2)

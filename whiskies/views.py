@@ -261,4 +261,3 @@ class AllWhiskey(ListView):
     template_name = "whiskies/all_whiskies.html"
     queryset = Whiskey.objects.all()
     context_object_name = "whiskies"
-

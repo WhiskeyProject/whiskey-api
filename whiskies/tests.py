@@ -382,11 +382,3 @@ class TextSearchBoxTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(results), 2)
         self.assertEqual(results[0]['title'], "Mackmyra First Edition")
-
-# class SetCompsTest(TestCase):
-#
-#     def setUp(self):
-#         pass
-#
-#     def test_set_comps(self):
-#         pass
