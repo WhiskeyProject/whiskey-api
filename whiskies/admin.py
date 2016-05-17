@@ -11,6 +11,9 @@ class WhiskeyAdmin(admin.ModelAdmin):
                     "img_url")
 
     search_fields = ["title", "description", "region"]
+    
+    list_display_links = ("id", "title", "img_url", "price", "rating",
+                          "region", "review_count")
 
 
 @admin.register(Tag)
