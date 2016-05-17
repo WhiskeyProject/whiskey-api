@@ -1,4 +1,4 @@
-a[report]
+[report]
 omit =
     WhiskeyProof/*
     whiskies/tests.py
