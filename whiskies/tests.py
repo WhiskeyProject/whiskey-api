@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
+from django.core.management import call_command
 
 from whiskies.command_functions import get_tag_counts, create_features_dict, \
     update_whiskey_comps, clear_saved, create_scores, main_scores
@@ -315,10 +316,7 @@ class ComparablesTest(APITestCase):
         self.assertLess(third_whiskey[1],
                         third_whiskey[0])
 
-
-
     def update_whiskey_comps_test(self):
-
 
         update_whiskey_comps(Whiskey.objects.all(),
                              self.tags,
@@ -331,8 +329,19 @@ class ComparablesTest(APITestCase):
 
         self.assertFalse(self.whiskey1.comparable.first())
 
+    def test_set_comp(self):
+        clear_saved(self.whiskey1)
 
-# textsearchbox
+        kwargs = {"number": 1}
+        call_command("set_comps", **kwargs)
+        self.assertEqual(self.whiskey1.comparables.count(), 1)
+
+        clear_saved(self.whiskey1)
+
+        kwargs = {"number": 2}
+        call_command("set_comps", **kwargs)
+        self.assertEqual(self.whiskey1.comparables.count(), 2)
+
 
 class AddTagToWhiskeyTest(APITestCase):
 
@@ -373,3 +382,11 @@ class TextSearchBoxTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(results), 2)
         self.assertEqual(results[0]['title'], "Mackmyra First Edition")
+
+# class SetCompsTest(TestCase):
+#
+#     def setUp(self):
+#         pass
+#
+#     def test_set_comps(self):
+#         pass
