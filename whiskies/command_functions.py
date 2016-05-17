@@ -126,19 +126,6 @@ def local_whiskey_search(searchstring):
     es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
     search_body = {"query": {"terms": {"title": searchstring}}}
 
-
-    # search_body = {
-    #     "query": {
-    #         "bool": {
-    #             "must": [
-    #                 {"term": {"tags.title": "sweet"}},
-    #                 {"term": {"tags.title": "amber"}},
-    #                 {"term": {"tags.title": "rich"}}
-    #             ]
-    #         }
-    #     }
-    # }
-
     return es.search(index="full_whiskies", body=search_body, size=400)
 
 
