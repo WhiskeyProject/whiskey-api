@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 
 from whiskies.models import Whiskey, Profile, Review, TagSearch, Tag,\
-    TagTracker
+    TagTracker, WhiskeyFact
 
 
 class ProfileSerializer(serializers.ModelSerializer):
@@ -103,3 +103,10 @@ class AddLikedSerializer(serializers.Serializer):
         instance.profile.update_likes(**validated_data)
 
         return instance
+
+
+class WhiskeyFactSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = WhiskeyFact
+        fields = "__all__"

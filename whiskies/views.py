@@ -1,4 +1,5 @@
 import logging
+import random
 
 from django.contrib.auth.models import User
 from django.db.models import Sum, Count
@@ -11,9 +12,11 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from whiskies.command_functions import heroku_search_whiskies
-from whiskies.models import Whiskey, Review, TagSearch, Tag, TagTracker
+from whiskies.models import Whiskey, Review, TagSearch, Tag, TagTracker, \
+    WhiskeyFact
 from whiskies.serializers import UserSerializer, WhiskeySerializer,\
-    ReviewSerializer, TagSearchSerializer, TagSerializer, AddLikedSerializer
+    ReviewSerializer, TagSearchSerializer, TagSerializer, AddLikedSerializer, \
+    WhiskeyFactSerializer
 from whiskies.permissions import IsOwnerOrReadOnly
 
 
@@ -246,6 +249,11 @@ class TextSearchBox(APIView):
         res = heroku_search_whiskies([x.lower() for x in terms])
         hits = res['hits']['hits']
         return Response([hit["_source"] for hit in hits])
+
+
+class WhiskeyFactList(generics.ListAPIView):
+    queryset = WhiskeyFact.objects.order_by('?')[:1]
+    serializer_class = WhiskeyFactSerializer
 
 
 """
