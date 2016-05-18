@@ -204,11 +204,11 @@ class SearchList(generics.ListCreateAPIView):
             qs = qs.filter(region__in=regions)
 
         if "price" in self.request.query_params:
-            price_ranges = {'1': [x for x in range(1,41)],
-                            '2': [x for x in range(41, 76)],
-                            '3': [x for x in range(76, 300)]}
+            price_ranges = {'$': [x for x in range(1,41)],
+                            '$$': [x for x in range(41, 76)],
+                            '$$$': [x for x in range(76, 300)]}
             prices = []
-            for price in self.request.query_params["price"]:
+            for price in self.request.query_params["price"].split(","):
                 prices += price_ranges.get(price, [])
 
             qs = qs.filter(price__in=prices)

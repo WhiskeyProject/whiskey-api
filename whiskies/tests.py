@@ -104,7 +104,6 @@ class ReviewTest(APITestCase):
         self.assertEqual(Review.objects.count(), 2)
 
 
-# Check for adding duplicates and removing ones that are not present.
 class ChangeLikesTest(APITestCase):
 
     def setUp(self):
@@ -217,12 +216,12 @@ class TagTrackerSearchTest(APITestCase):
         self.assertEqual(len(results), 2)
 
     def test_price_search(self):
-        response = self.client.get(self.url + "?price=1")
+        response = self.client.get(self.url + "?price=$")
         results = response.data['results']
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(results), 1)
 
-        response = self.client.get(self.url + "?price=1,3")
+        response = self.client.get(self.url + "?price=$,$$$")
         results = response.data['results']
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(results), 2)
@@ -233,7 +232,7 @@ class TagTrackerSearchTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(results), 2)
 
-        response = self.client.get(self.url + "?price=3&region=a")
+        response = self.client.get(self.url + "?price=$$$&region=a")
         results = response.data['results']
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertFalse(results)
@@ -302,8 +301,10 @@ class ComparablesTest(APITestCase):
         first_whiskey = scores[0]
         second_whiskey = scores[1]
 
-        self.assertLess(first_whiskey[self.whiskey2.id], first_whiskey[self.whiskey3.id])
-        self.assertLess(second_whiskey[self.whiskey3.id], second_whiskey[self.whiskey1.id])
+        self.assertLess(first_whiskey[self.whiskey2.id],
+                        first_whiskey[self.whiskey3.id])
+        self.assertLess(second_whiskey[self.whiskey3.id],
+                        second_whiskey[self.whiskey1.id])
 
     def test_main_scores(self):
         scores_df = main_scores(Whiskey.objects.all(), self.tags)
