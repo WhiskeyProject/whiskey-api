@@ -179,3 +179,12 @@ class TagTracker(models.Model):
 
     def __str__(self):
         return "{} on {} {} times".format(self.tag, self.whiskey, self.count)
+
+
+class WhiskeyFact(models.Model):
+    """
+    A random fact or quote about whiskey.
+    """
+    text = models.TextField()
+
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 
 from whiskies.models import Whiskey, Tag, TagSearch, TagTracker, Review,\
-    Profile
+    Profile, WhiskeyFact
 
 
 @admin.register(Whiskey)
@@ -35,6 +35,12 @@ class ProfileAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "rating", "text", "whiskey", "user")
 
+
 @admin.register(TagSearch)
 class TagSearchAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "user", "search_string", "created_at")
+
+
+@admin.register(WhiskeyFact)
+class WhiskeyFactAdmin(admin.ModelAdmin):
+    list_display = ("id", "text", "created_at")

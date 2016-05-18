@@ -172,7 +172,7 @@ class SearchList(generics.ListCreateAPIView):
     Filter whiskies based on three optional parameters.\n
     <b>tags</b>: The titles of any Tags in the database, the endpoint
     /tag provides a list.\n
-    <b>price</b>: 1, 2, or 3 for low, mid, and/or high priced whiskies.\n
+    <b>price</b>: $, $$, or $$$ for low, mid, and/or high priced whiskies.\n
     <b>region</b>: Filter by one or more regions.\n
 
     For example a valid query could look like
