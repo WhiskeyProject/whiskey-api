@@ -114,8 +114,6 @@ def update_tagtracker_normalized_counts():
             tracker.save()
 
 
-
-
 """
 Elastic search functions.
 Some indexing and future tag search functions have been saved locally.
@@ -153,3 +151,24 @@ def heroku_search_whiskies(searchstring):
 
     search_body = {"query": {"terms": {"title": searchstring}}}
     return es.search(index="whiskies", body=search_body)
+
+
+# Create list and detail cloudinary links and write them to files in fixtures
+# push to heroku and loop through the file to set new fields.
+
+import os
+import cloudinary
+
+def cloudinary_urls(image_directory):
+    # responses should be a tuple of (whiskey_id, cloudinary_url)
+
+    responses = []
+    data = os.listdir(image_directory)
+
+    for name in data:
+        number = int(name.split(".")[0])
+        response = cloudinary.uploader.upload(name)
+        result = (number, response['secure_url'])
+
+    return responses
+
