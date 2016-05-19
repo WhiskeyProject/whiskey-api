@@ -168,8 +168,9 @@ def cloudinary_urls(image_directory):
 
     for name in data:
         number = int(name.split(".")[0])
-        response = cloudinary.uploader.upload(name)
+        response = cloudinary.uploader.upload(image_directory + '/' + name)
         result = (number, response['secure_url'])
+        responses.append(result)
 
     return responses
 
@@ -178,7 +179,8 @@ def write_responses(responses, new_url_file):
     with open(new_url_file, "w") as file:
         writer = csv.writer(file)
         for row in responses:
-            writer.writerow(row[0], row[1])
+            writer.writerow(row)
+            #writer.writerow(row[0], row[1])
     print("Done writing")
 
 
