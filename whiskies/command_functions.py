@@ -158,6 +158,7 @@ def heroku_search_whiskies(searchstring):
 
 import os
 import cloudinary
+import csv
 
 def cloudinary_urls(image_directory):
     # responses should be a tuple of (whiskey_id, cloudinary_url)
@@ -172,3 +173,22 @@ def cloudinary_urls(image_directory):
 
     return responses
 
+
+def write_responses(responses, new_url_file):
+    with open(new_url_file, "w") as file:
+        writer = csv.writer(file)
+        for row in responses:
+            writer.writerow(row[0], row[1])
+    print("Done writing")
+
+
+def apply_list_urls(url_file):
+    with open(url_file, "r") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            w = Whiskey.objects.get(pk=row[0])
+
+            # Change for detail image
+            w.list_img_url = row[1]
+            w.save()
+    print("Done adding image_urls")
