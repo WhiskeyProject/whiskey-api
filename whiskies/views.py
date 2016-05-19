@@ -39,8 +39,14 @@ def add_tag_to_whiskey(whiskey, tag):
 
 class ShootPagination(PageNumberPagination):
     page_size = 12
-    page_size_query_param = 'page_size'
+    page_size_query_param = "page_size"
     max_page_size = 120
+
+
+class LikedPagination(PageNumberPagination):
+    page_size = 200
+    page_query_param = "page_size"
+    max_page_size = 200
 
 
 class UserListCreate(generics.ListCreateAPIView):
@@ -152,6 +158,7 @@ class LikedWhiskeyList(generics.ListAPIView):
     """
     queryset = Whiskey.objects.all()
     serializer_class = WhiskeySerializer
+    pagination_class = LikedPagination
 
     def get_queryset(self):
 
