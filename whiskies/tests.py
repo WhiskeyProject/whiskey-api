@@ -11,7 +11,7 @@ from django.core.management import call_command
 from whiskies.command_functions import get_tag_counts, create_features_dict, \
     update_whiskey_comps, clear_saved, create_scores, main_scores, \
     update_tagtracker_normalized_counts
-from whiskies.models import Whiskey, Review, Tag, TagTracker
+from whiskies.models import Whiskey, Review, Tag, TagTracker, TagSearch
 from whiskies.views import add_tag_to_whiskey
 
 
@@ -421,3 +421,27 @@ class TextSearchBoxTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(results), 2)
         self.assertEqual(results[0]['title'], "Mackmyra First Edition")
+
+
+class TagSearchNameTest(APITestCase):
+
+    def setUp(self):
+        self.whiskey1 = Whiskey.objects.create(title="first whiskey",
+                                               price=10,
+                                               rating=10)
+        self.tags = [Tag.objects.create(title=x) for x in 'abcd']
+        self.user = User.objects.create_user(username="Tester",
+                                             password="pass_word")
+
+    def test_default_name(self):
+        search1 = TagSearch.objects.create(search_string="a,b,c,d,e",
+                                           user=self.user)
+        search2 = TagSearch.objects.create(search_string="a,b",
+                                           user=self.user)
+        search3 = TagSearch.objects.create(search_string="a,b,c,d,e",
+                                           user=self.user,
+                                           title="test")
+
+        self.assertEqual(search1.title, "a, b, c...")
+        self.assertEqual(search2.title, "a, b")
+        self.assertEqual(search3.title, "test")
