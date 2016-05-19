@@ -191,6 +191,7 @@ def apply_list_urls(url_file):
             w = Whiskey.objects.get(pk=row[0])
 
             # Change for detail image
-            w.list_img_url = row[1]
+            #w.list_img_url = row[1]
+            w.detail_img_url = row[1]
             w.save()
     print("Done adding image_urls")
