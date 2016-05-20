@@ -10,7 +10,8 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from whiskies.command_functions import heroku_search_whiskies
+from whiskies.command_functions import heroku_search_whiskies, \
+    local_whiskey_search
 from whiskies.models import Whiskey, Review, TagSearch, Tag, TagTracker, \
     WhiskeyFact
 from whiskies.serializers import UserSerializer, WhiskeySerializer,\
@@ -266,7 +267,21 @@ class WhiskeyFactList(generics.ListAPIView):
 Unused views for local testing.
 """
 
+class LocalSearchBox(APIView):
+    """
+    Elasticsearch of Whiskey titles.
+    """
+
+    def get(self, request, format=None):
+        search = request.query_params['terms']
+        terms = search.split(",")
+        res = local_whiskey_search([x.lower() for x in terms])
+        hits = res['hits']['hits']
+        return Response([hit["_source"] for hit in hits])
+
+
+
 class AllWhiskey(ListView):
     template_name = "whiskies/all_whiskies.html"
-    queryset = Whiskey.objects.first()
+    queryset = Whiskey.objects.all()
     context_object_name = "whiskies"

@@ -124,7 +124,7 @@ def local_whiskey_search(searchstring):
     es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
     search_body = {"query": {"terms": {"title": searchstring}}}
 
-    return es.search(index="full_whiskies", body=search_body, size=400)
+    return es.search(index="whiskies", body=search_body, size=400)
 
 
 def heroku_search_whiskies(searchstring):
