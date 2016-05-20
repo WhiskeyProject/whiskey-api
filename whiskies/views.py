@@ -268,5 +268,5 @@ Unused views for local testing.
 
 class AllWhiskey(ListView):
     template_name = "whiskies/all_whiskies.html"
-    queryset = Whiskey.objects.all()
+    queryset = Whiskey.objects.first()
     context_object_name = "whiskies"
