@@ -100,14 +100,14 @@ DATABASES = {
 }
 
 
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-#         'LOCATION': 'search_cache',
-#     }
-# }
-#
-# CACHE_BACKEND = 'db://search_cache'
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'search_cache',
+    }
+}
+
+CACHE_BACKEND = 'db://search_cache'
 #CACHE_MIDDLEWARE_SECONDS = 1#60 * 60 * 24
 #CACHE_MIDDLEWARE_KEY_PREFIX = ""
 
