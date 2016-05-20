@@ -1,20 +1,2 @@
-[2016-05-18 13:30:03,048][INFO ][monitor.jvm              ] [Wendell Vaughn] [gc][young][451021][206] duration [743ms], collections [1]/[1.5s], total [743ms]/[20.5s], memory [99mb]->[30.8mb]/[990.7mb], all_pools {[young] [68.3mb]->[183.2kb]/[266.2mb]}{[survivor] [274.4kb]->[219.1kb]/[33.2mb]}{[old] [30.4mb]->[30.4mb]/[691.2mb]}
-[2016-05-18 13:32:45,705][INFO ][node                     ] [Wendell Vaughn] stopping ...
-[2016-05-18 13:32:54,598][INFO ][node                     ] [Wendell Vaughn] stopped
-[2016-05-18 13:32:54,634][INFO ][node                     ] [Wendell Vaughn] closing ...
-[2016-05-18 13:32:55,467][INFO ][node                     ] [Wendell Vaughn] closed
-[2016-05-18 14:18:15,274][INFO ][node                     ] [Nezarr the Calculator] version[2.3.2], pid[808], build[b9e4a6a/2016-04-21T16:03:47Z]
-[2016-05-18 14:18:15,285][INFO ][node                     ] [Nezarr the Calculator] initializing ...
-[2016-05-18 14:18:17,175][INFO ][plugins                  ] [Nezarr the Calculator] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
-[2016-05-18 14:18:17,370][INFO ][env                      ] [Nezarr the Calculator] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [310.3gb], net total_space [464.6gb], spins? [unknown], types [hfs]
-[2016-05-18 14:18:17,370][INFO ][env                      ] [Nezarr the Calculator] heap size [990.7mb], compressed ordinary object pointers [true]
-[2016-05-18 14:18:17,372][WARN ][env                      ] [Nezarr the Calculator] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
-[2016-05-18 14:18:23,853][INFO ][node                     ] [Nezarr the Calculator] initialized
-[2016-05-18 14:18:23,875][INFO ][node                     ] [Nezarr the Calculator] starting ...
-[2016-05-18 14:18:24,244][INFO ][transport                ] [Nezarr the Calculator] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
-[2016-05-18 14:18:24,256][INFO ][discovery                ] [Nezarr the Calculator] elasticsearch/xIdeAlPURzSNNMaUtB7S8Q
-[2016-05-18 14:18:27,359][INFO ][cluster.service          ] [Nezarr the Calculator] new_master {Nezarr the Calculator}{xIdeAlPURzSNNMaUtB7S8Q}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2016-05-18 14:18:27,383][INFO ][http                     ] [Nezarr the Calculator] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
-[2016-05-18 14:18:27,383][INFO ][node                     ] [Nezarr the Calculator] started
-[2016-05-18 14:18:28,182][INFO ][gateway                  ] [Nezarr the Calculator] recovered [5] indices into cluster_state
-[2016-05-18 14:18:33,861][INFO ][cluster.routing.allocation] [Nezarr the Calculator] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[movies][0]] ...]).
+[2016-05-19 17:54:56,290][INFO ][cluster.metadata         ] [Nezarr the Calculator] [whiskies] update_mapping [whiskey]
+[2016-05-19 17:59:10,178][INFO ][cluster.metadata         ] [Nezarr the Calculator] [whiskies] update_mapping [whiskey]
