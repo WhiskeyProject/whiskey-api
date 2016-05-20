@@ -73,7 +73,8 @@ class CompWhiskeySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Whiskey
-        fields = ("id", "title", "img_url", "rating", "price", "region")
+        fields = ("id", "title", "img_url", "rating", "price", "region",
+                  "list_img_url", "detail_img_url")
 
 
 class WhiskeySerializer(serializers.ModelSerializer):
