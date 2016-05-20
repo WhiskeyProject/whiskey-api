@@ -60,7 +60,7 @@ urlpatterns = [
     url(r'^searchbox/$', TextSearchBox.as_view(), name="search_box"),
     #url(r'^testsearch/$', TestSearch.as_view(), name="test_search"),
 
-    url(r'^shoot/$', cache_page(60 * 2)(SearchList.as_view()),
+    url(r'^shoot/$', (SearchList.as_view()),
         name="search_list"),
 
     url(r'^randomfact/$', WhiskeyFactList.as_view(), name="random_fact"),
@@ -73,3 +73,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^', include('django.contrib.auth.urls')),
 ]
+#cache_page(60 * 2)
