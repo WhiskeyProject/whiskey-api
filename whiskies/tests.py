@@ -419,7 +419,10 @@ class TextSearchBoxTest(APITestCase):
         response = self.client.get(url + "?terms=first")
         results = response.data
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(results), 2)
+
+        # Change to 2 for elasticsearch.
+        self.assertEqual(len(results), 4)
+        
         self.assertEqual(results[0]['title'], "Mackmyra First Edition")
 
 
