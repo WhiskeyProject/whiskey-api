@@ -58,7 +58,8 @@ urlpatterns = [
     url(r'^tagsearch/(?P<pk>\d+)/$', TagSearchDetailUpdateDelete.as_view(),
         name="detail_tagsearch"),
 
-    url(r'^searchbox/$', TextSearchBox.as_view(), name="search_box"),
+    #url(r'^searchbox/$', TextSearchBox.as_view(), name="search_box"),
+    url(r'^searchbox/$', PlaceholderSearch.as_view(), name="search_box"),
 
     #url(r'^testsearchbox/$', LocalSearchBox.as_view(), name="test_search_box"),
     #url(r'^testsearch/$', TestSearch.as_view(), name="test_search"),
