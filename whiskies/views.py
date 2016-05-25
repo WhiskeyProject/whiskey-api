@@ -1,4 +1,7 @@
 import logging
+import operator
+from functools import reduce
+from django.db.models import Q
 
 from django.contrib.auth.models import User
 from django.db.models import Sum, Count
@@ -279,6 +282,30 @@ class LocalSearchBox(APIView):
         hits = res['hits']['hits']
         return Response([hit["_source"] for hit in hits])
 
+
+class PlaceholderSearch(generics.ListAPIView):
+    """
+    Returns a queryset of all whiskies with a title that contains 1 or more
+    of the search terms.
+
+    example: /searchbox/?terms=term1,term2
+    """
+
+    serializer_class = WhiskeySerializer
+
+    def get_queryset(self):
+
+        # if "terms" not in self.request.query_params:
+        #     return []
+
+        terms = self.request.query_params['terms'].split(',')
+
+        query = reduce(operator.or_, (
+            Q(title__icontains=item) for item in terms)
+                       )
+
+        qs = Whiskey.objects.filter(query)
+        return qs
 
 
 class AllWhiskey(ListView):

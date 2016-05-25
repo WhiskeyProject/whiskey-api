@@ -23,7 +23,8 @@ from whiskies.views import UserListCreate, UserDetail, WhiskeyList,\
     TagSearchListCreate, TagSearchDetailUpdateDelete, TagListCreate,\
     TagDetailUpdateDelete, WhiskeyLikeUpdate, LikedWhiskeyList,\
     DislikedWhiskeyList, AllWhiskey, SearchList, UserTagSearchList,\
-    TextSearchBox, RegionList, WhiskeyFactList, LocalSearchBox
+    TextSearchBox, RegionList, WhiskeyFactList, LocalSearchBox, \
+    PlaceholderSearch
 
 urlpatterns = [
     url(r'^users/$', UserListCreate.as_view(), name="list_users"),
