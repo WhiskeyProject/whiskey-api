@@ -264,6 +264,7 @@ class TextSearchBox(APIView):
         return Response([hit["_source"] for hit in hits])
 
 
+
 class WhiskeyFactList(generics.ListAPIView):
     queryset = WhiskeyFact.objects.order_by('?')[:1]
     serializer_class = WhiskeyFactSerializer
@@ -286,7 +287,8 @@ class LocalSearchBox(APIView):
         res = local_whiskey_search(search.lower())
 
         hits = res['hits']['hits']
-        return Response([hit["_source"] for hit in hits])
+        #return Response([hit["_source"] for hit in hits])
+        return Response(hits)
 
 
 class PlaceholderSearch(generics.ListAPIView):

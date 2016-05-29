@@ -29,3 +29,9 @@ All endpoints are listed and documented here: https://evening-citadel-85778.hero
 <b>Image hosting:</b> Cloudinary.
 
 <b>Continuous integration:</b> Travis and Coveralls.
+
+
+### Credits
+The Whiskey Proof front end was written by Mark Medeiros using Javascript and the React framework.
+
+Heather Borowinski edited and resized the whiskey images and created their background. 

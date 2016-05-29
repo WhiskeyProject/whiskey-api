@@ -125,7 +125,12 @@ def local_whiskey_search(searchstring):
 
     #search_body = {"query": {"terms": {"title": searchstring}}}
 
-    search_body = {"query": {"match": {"title": searchstring}}}
+    #search_body = {"query": {"match": {"title": searchstring}}}
+
+    search_body = {"query": {"match": {"title": {
+        "query": searchstring,
+        "fuzziness": 2}
+    }}}
 
     return es.search(index="whiskies", body=search_body, size=400)
 
@@ -153,6 +158,33 @@ def heroku_search_whiskies(searchstring):
     es.ping()
 
     #search_body = {"query": {"terms": {"title": searchstring}}}
-    search_body = {"query": {"match": {"title": searchstring}}}
+    #search_body = {"query": {"match": {"title": searchstring}}}
+
+    search_body = {"query": {"match": {"title": {
+        "query": searchstring,
+        "fuzziness": 2}
+    }}}
 
     return es.search(index="whiskies", body=search_body)
+
+
+def heroku_delete_whiskey(id_num):
+    """
+    Delete a whiskey document by id.
+    """
+
+    bonsai = os.environ['BONSAI_URL']
+
+    auth = re.search('https\:\/\/(.*)\@', bonsai).group(1).split(':')
+    host = bonsai.replace('https://%s:%s@' % (auth[0], auth[1]), '')
+
+    es_header = [{
+        'host': host,
+        'port': 443,
+        'use_ssl': True,
+        'http_auth': (auth[0], auth[1])
+    }]
+
+    es = Elasticsearch(es_header)
+
+    return es.delete(index="whiskies", doc_type="whiskey", id=id_num)
