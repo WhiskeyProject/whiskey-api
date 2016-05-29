@@ -61,7 +61,7 @@ urlpatterns = [
     url(r'^searchbox/$', TextSearchBox.as_view(), name="search_box"),
     #url(r'^searchbox/$', PlaceholderSearch.as_view(), name="search_box"),
 
-    #url(r'^testsearchbox/$', LocalSearchBox.as_view(), name="test_search_box"),
+    url(r'^testsearchbox/$', LocalSearchBox.as_view(), name="test_search_box"),
     #url(r'^testsearch/$', TestSearch.as_view(), name="test_search"),
 
     url(r'^shoot/$', cache_page(60 * 60 * 8)(SearchList.as_view()),

@@ -255,8 +255,11 @@ class TextSearchBox(APIView):
 
     def get(self, request, format=None):
         search = request.query_params['terms']
-        terms = search.split(",")
-        res = heroku_search_whiskies([x.lower() for x in terms])
+
+        #terms = search.split(",")
+        #res = heroku_search_whiskies([x.lower() for x in terms])
+        res = heroku_search_whiskies(search.lower())
+
         hits = res['hits']['hits']
         return Response([hit["_source"] for hit in hits])
 
@@ -277,8 +280,11 @@ class LocalSearchBox(APIView):
 
     def get(self, request, format=None):
         search = request.query_params['terms']
-        terms = search.split(",")
-        res = local_whiskey_search([x.lower() for x in terms])
+
+        #terms = search.split(",")
+        #res = local_whiskey_search([x.lower() for x in terms])
+        res = local_whiskey_search(search.lower())
+
         hits = res['hits']['hits']
         return Response([hit["_source"] for hit in hits])
 
