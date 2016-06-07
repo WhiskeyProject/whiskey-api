@@ -1,3 +1,45 @@
-[2016-05-19 17:54:56,290][INFO ][cluster.metadata         ] [Nezarr the Calculator] [whiskies] update_mapping [whiskey]
-[2016-05-19 17:59:10,178][INFO ][cluster.metadata         ] [Nezarr the Calculator] [whiskies] update_mapping [whiskey]
-[2016-05-19 18:05:31,446][INFO ][cluster.metadata         ] [Nezarr the Calculator] [whiskies] update_mapping [whiskey]
+[2016-06-02 13:46:25,945][INFO ][node                     ] [Nezarr the Calculator] stopping ...
+[2016-06-02 13:46:36,008][DEBUG][action.admin.cluster.node.stats] [Nezarr the Calculator] failed to execute on node [xIdeAlPURzSNNMaUtB7S8Q]
+SendRequestTransportException[[Nezarr the Calculator][127.0.0.1:9300][cluster:monitor/nodes/stats[n]]]; nested: TransportException[TransportService is closed stopped can't send request];
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:340)
+	at org.elasticsearch.action.support.nodes.TransportNodesAction$AsyncAction.start(TransportNodesAction.java:166)
+	at org.elasticsearch.action.support.nodes.TransportNodesAction$AsyncAction.access$100(TransportNodesAction.java:106)
+	at org.elasticsearch.action.support.nodes.TransportNodesAction.doExecute(TransportNodesAction.java:76)
+	at org.elasticsearch.action.support.nodes.TransportNodesAction.doExecute(TransportNodesAction.java:46)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:137)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:85)
+	at org.elasticsearch.cluster.InternalClusterInfoService.updateNodeStats(InternalClusterInfoService.java:289)
+	at org.elasticsearch.cluster.InternalClusterInfoService.refresh(InternalClusterInfoService.java:325)
+	at org.elasticsearch.cluster.InternalClusterInfoService.maybeRefresh(InternalClusterInfoService.java:310)
+	at org.elasticsearch.cluster.InternalClusterInfoService.access$600(InternalClusterInfoService.java:69)
+	at org.elasticsearch.cluster.InternalClusterInfoService$SubmitReschedulingClusterInfoUpdatedJob$1.run(InternalClusterInfoService.java:255)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: TransportException[TransportService is closed stopped can't send request]
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:320)
+	... 14 more
+[2016-06-02 13:46:36,008][DEBUG][action.admin.indices.stats] [Nezarr the Calculator] failed to execute [indices:monitor/stats] on node [xIdeAlPURzSNNMaUtB7S8Q]
+SendRequestTransportException[[Nezarr the Calculator][127.0.0.1:9300][indices:monitor/stats[n]]]; nested: TransportException[TransportService is closed stopped can't send request];
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:340)
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:299)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$AsyncAction.sendNodeRequest(TransportBroadcastByNodeAction.java:311)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$AsyncAction.start(TransportBroadcastByNodeAction.java:299)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction.doExecute(TransportBroadcastByNodeAction.java:222)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction.doExecute(TransportBroadcastByNodeAction.java:79)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:137)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:85)
+	at org.elasticsearch.cluster.InternalClusterInfoService.updateIndicesStats(InternalClusterInfoService.java:303)
+	at org.elasticsearch.cluster.InternalClusterInfoService.refresh(InternalClusterInfoService.java:354)
+	at org.elasticsearch.cluster.InternalClusterInfoService.maybeRefresh(InternalClusterInfoService.java:310)
+	at org.elasticsearch.cluster.InternalClusterInfoService.access$600(InternalClusterInfoService.java:69)
+	at org.elasticsearch.cluster.InternalClusterInfoService$SubmitReschedulingClusterInfoUpdatedJob$1.run(InternalClusterInfoService.java:255)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: TransportException[TransportService is closed stopped can't send request]
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:320)
+	... 15 more
+[2016-06-02 13:46:40,574][INFO ][node                     ] [Nezarr the Calculator] stopped
+[2016-06-02 13:46:40,575][INFO ][node                     ] [Nezarr the Calculator] closing ...
+[2016-06-02 13:46:40,777][INFO ][node                     ] [Nezarr the Calculator] closed

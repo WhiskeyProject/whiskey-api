@@ -165,7 +165,10 @@ class LikedWhiskeyList(generics.ListAPIView):
 
     def get_queryset(self):
 
-        return self.request.user.profile.liked_whiskies.all()
+        if not self.request.user.pk:
+            return []
+        else:
+            return self.request.user.profile.liked_whiskies.all()
 
 
 class DislikedWhiskeyList(generics.ListAPIView):
@@ -189,12 +192,12 @@ class SearchList(generics.ListCreateAPIView):
     <b>region</b>: Filter by one or more regions.\n
 
     For example a valid query could look like
-    "/shoot/?region=highland&tags=chocolate&price=1"
+    "/shoot/?region=highland&tags=chocolate,sweet&price=$"
 
     The price ranges are broken down as:
-    1: price <=40
-    2: 40< price <= 75
-    3: 75< price
+    $: price <=40
+    $$: 40< price <= 75
+    $$$: 75< price
     """
 
     serializer_class = WhiskeySerializer

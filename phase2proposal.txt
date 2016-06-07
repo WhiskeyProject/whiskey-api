@@ -1,0 +1,32 @@
+ Hi Karen.
+
+Good day, Greg.
+
+Just wanted to touch base with you both regarding what Aaron and I have discussed.  Here are some quick bullet points detailing what we'd like to do:  
+
+1. First, we'd like to refactor the code to more efficient frameworks. This'll add several weeks to the second phase of development but will save time on all future improvements and allow for more efficient scaling when traffic becomes substantial. We feel this will be well worth the investment in the long run.
+
+2. Finish adding features and fixing bugs on the main site. We'll finish the improvements laid out in the phase two plan and clean up bugs that remain after the refactor.
+
+3. Implement methods to expand GrainBit's functionality to other sites. We'll research the most efficient ways to do this starting with embeddable code (Plugins).  Ultimately, we'd like to have a product that works as closely to your original vision as possible. Creating our own file extension and partnering with other businesses may be the most efficient way to accomplish that. That would be a difficult longterm challenge on both the technical and business sides but we believe it to be a strong and attainable goal.  
+
+5. Create a dynamic landing page that introduces GrainBit in the most memorable and impressive way. When users arrive at our homepage, we need to make an impression that sells the entire platform.    
+
+6. Determine monetizing options to help valuate the concept and product. The site needs to generate users and, ideally, income. We'll work on creative avenues to accomplish both those aspects. This is an essential point that we will focus on at every stage. 
+ 
+7. Thinglink is a viable competitor and our goal is to out perform them and be proactive with our reach.  We want to build a better product and identify markets that will benefit from our service. We feel an important key to our success will be taking it to those markets, rather than waiting for them to find and come to us.     
+
+If everything goes smoothly we should be able to get through the refactor, finish the site, and work on expanding GrainBit in the next three to four months. It's hard to estimate timeframes precisely, but at a minimum we'll work with the funds allocated until we get the main site working as expected.  
+
+Aaron and I feel this is a great opportunity for all of us and a union that could potentially push this project to the next level. Not only do we have the resources that could prove invaluable to the process (Gabe and the entire Iron Yard community), but we care about the project and the people we're working with.  We understand the expense you both have incurred thus far and are more interested in the opportunity to learn and build something together than giving you another bill. Unfortunately, we have bills and Heather and Nerissa won't let us work for free.  We've discussed it and think we can bring this to the next stage in the next 3-4 months for $14K USD.  That breaks down to an hourly pay that we couldn't even admit to anyone, but we're in this for the long haul and hope that's enough to sustain us as we move forward and towards our ultimate goal.  And we're an unproven commodity at this point so we're ok with the 10% equity share (5% and 5%).       
+
+Guys, we feel very fortunate to have this opportunity and can promise we'll give everything we have in order to get this thing off the ground and flying. 
+
+We're interested in hearing your thoughts and whether the terms work for you.  Let us know a good time to talk and we'll make it happen. 
+
+We look forward to hearing from you both.  
+
+Thanks, Greg. Thanks, Karen. 
+
+Kind regards,
+Mark and Aaron
