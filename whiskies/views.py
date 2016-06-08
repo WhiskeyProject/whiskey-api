@@ -113,8 +113,10 @@ class UserTagSearchList(generics.ListAPIView):
     serializer_class = TagSearchSerializer
 
     def get_queryset(self):
-        return TagSearch.objects.filter(
-            user=self.request.user)
+        if not self.request.user.pk:
+            return []
+        else:
+            return TagSearch.objects.filter(user=self.request.user)
 
 
 class TagSearchDetailUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
