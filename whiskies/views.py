@@ -232,6 +232,7 @@ class SearchList(generics.ListCreateAPIView):
             qs = qs.filter(price__in=prices)
 
         if "tags" not in self.request.query_params:
+            logger.debug("count: {}".format(qs.count()))
             return qs
         else:
             tag_titles = self.request.query_params['tags'].split(',')
