@@ -123,10 +123,6 @@ Some indexing and future tag search functions have been saved locally.
 def local_whiskey_search(searchstring):
     es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 
-    #search_body = {"query": {"terms": {"title": searchstring}}}
-
-    #search_body = {"query": {"match": {"title": searchstring}}}
-
     search_body = {"query": {"match": {"title": {
         "query": searchstring,
         "fuzziness": 2}
@@ -156,9 +152,6 @@ def heroku_search_whiskies(searchstring):
     es = Elasticsearch(es_header)
 
     es.ping()
-
-    #search_body = {"query": {"terms": {"title": searchstring}}}
-    #search_body = {"query": {"match": {"title": searchstring}}}
 
     search_body = {"query": {"match": {"title": {
         "query": searchstring,

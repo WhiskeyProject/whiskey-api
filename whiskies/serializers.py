@@ -20,14 +20,19 @@ class UserSerializer(serializers.ModelSerializer):
                                                       read_only=True)
 
     profile = ProfileSerializer(read_only=True)
-    password = serializers.CharField(max_length=128, write_only=True)
 
     whiskey_id = serializers.IntegerField(read_only=True)
 
     class Meta:
         model = User
+        extra_kwargs = {'password': {'write_only': True}, }
+
         fields = ("id", "username", "password", "tag_searches", "reviews",
                   "profile", "whiskey_id")
+
+    def create(self, validated_data):
+        user = User.objects.create_user(**validated_data)
+        return user
 
 
 class ReviewSerializer(serializers.ModelSerializer):
