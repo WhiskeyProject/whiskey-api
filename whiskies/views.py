@@ -207,7 +207,8 @@ class SearchList(generics.ListCreateAPIView):
 
     def get_queryset(self):
 
-        if self.request.user.pk and self.request.user.profile.disliked_whiskies.all():
+        if self.request.user.pk and self.request.user.profile.\
+                disliked_whiskies.all():
 
             dislikes = self.request.user.profile.disliked_whiskies.all().\
                 values_list('pk', flat=True)
@@ -215,6 +216,15 @@ class SearchList(generics.ListCreateAPIView):
             qs = Whiskey.objects.exclude(pk__in=dislikes)
         else:
             qs = Whiskey.objects.all()
+
+        # Logging search params
+        params = self.request.query_params
+        searched = "region: {}, price: {}, tags: {}".format(
+            params.get('region'),
+            params.get('price'),
+            params.get('tags')
+        )
+        tag_logger.debug(searched)
 
         if "region" in self.request.query_params:
             regions = self.request.query_params['region'].split(',')
@@ -268,7 +278,6 @@ class TextSearchBox(APIView):
 
         hits = res['hits']['hits']
         return Response([hit["_source"] for hit in hits])
-
 
 
 class WhiskeyFactList(generics.ListAPIView):

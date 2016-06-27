@@ -26,3 +26,13 @@
 [DEBUG] 2016-05-08 21:59:06,193 views orange,caramel,sweet,green,brown
 [DEBUG] 2016-05-08 22:00:07,994 views orange,caramel,sweet,green,brown
 [DEBUG] 2016-05-08 22:00:10,271 views orange,caramel,sweet,green,brown
+[DEBUG] 2016-06-16 01:48:28,580 views sweet
+[DEBUG] 2016-06-16 01:48:33,124 views sweet
+[DEBUG] 2016-06-16 01:49:34,037 views sweet,apple
+[DEBUG] 2016-06-16 01:49:37,973 views sweet,apple
+[DEBUG] 2016-06-16 01:54:29,491 views region: None, price: None, tags: sweet,apple,cherry
+[DEBUG] 2016-06-16 01:54:33,418 views region: None, price: None, tags: sweet,apple,cherry
+[DEBUG] 2016-06-16 09:23:21,350 views region: None, price: $$, tags: sweet,apple
+[DEBUG] 2016-06-16 09:23:24,989 views region: None, price: $$, tags: sweet,apple
+[DEBUG] 2016-06-16 09:26:29,748 views region: None, price: $, tags: sweet,apple
+[DEBUG] 2016-06-16 09:26:33,698 views region: None, price: $, tags: sweet,apple
