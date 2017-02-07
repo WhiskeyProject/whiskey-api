@@ -15,6 +15,7 @@ There are two ways to discover new whiskeys with the API. The first is the shoot
 
 The other is with the comparable field that is on each whiskey. This is a list of the other whiskeys in the database that it most closely matches. These comparables are generated with the set_comps command which takes an array of each whiskeys' attributes, calculates the Euclidean Distance from every other array, and returns the most similar items.
 
+The website can be viewed at http://goo.gl/6ZdBRz
 All endpoints are listed and documented here: https://evening-citadel-85778.herokuapp.com/docs/
 
 
