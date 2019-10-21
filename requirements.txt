@@ -7,7 +7,7 @@ django-cors-headers==1.1.0
 django-debug-toolbar==1.4
 django-extensions==1.6.1
 django-rest-swagger==0.3.6
-djangorestframework==3.3.3
+djangorestframework==3.9.1
 docopt==0.6.2
 elasticsearch==2.3.0
 fake-factory==0.5.7
