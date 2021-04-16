@@ -4,7 +4,7 @@ coveralls==1.1
 dj-database-url==0.4.1
 Django==1.9.5
 django-cors-headers==1.1.0
-django-debug-toolbar==1.4
+django-debug-toolbar==1.11.1
 django-extensions==1.6.1
 django-rest-swagger==0.3.6
 djangorestframework==3.3.3
