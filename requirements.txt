@@ -12,7 +12,7 @@ docopt==0.6.2
 elasticsearch==2.3.0
 fake-factory==0.5.7
 gunicorn==19.4.5
-numpy==1.11.0
+numpy==1.22.0
 pandas==0.18.0
 psycopg2==2.6.1
 python-dateutil==2.5.3
